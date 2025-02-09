@@ -36,7 +36,7 @@ function MotionForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/generate-pdf', {
+      const response = await fetch('https://backend-cambio-corte.vercel.app/generate-pdf', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
