@@ -1,12 +1,11 @@
 const express = require('express');
 const { PDFDocument, rgb } = require('pdf-lib');
 const cors = require('cors');
-const fs = require('fs');
 
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3001', 'https://automatizar-cambio-corte.vercel.app'],
   methods: 'POST',
 }));
 
@@ -48,13 +47,11 @@ app.post('/generate-pdf', async (req, res) => {
     page.drawText(`Nombre del Juez: ${judgeName}`, { x: 50, y: 540, size: 12 });
     page.drawText(`Fecha de Audiencia: ${formattedHearingDate}`, { x: 50, y: 520, size: 12 });
 
-    const pdfBytes = await PDFDocument.save(pdfDoc);
-    const desktopPath = 'C:/Users/SERGIOALEJANDROPINZO/Desktop/motion-test.pdf';
-    fs.writeFileSync(desktopPath, pdfBytes);
+    const pdfBytes = await pdfDoc.save();
 
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', 'attachment; filename=motion.pdf');
-    res.end(Buffer.from(pdfBytes));
+    res.end(Buffer.from(pdfBytes));  // Enviar el PDF directamente al cliente
   } catch (error) {
     console.error('Error al generar el PDF:', error);
     res.status(500).send('Error al generar el PDF');
@@ -73,6 +70,7 @@ function formatDate(dateString) {
   return `${monthName} ${parseInt(day, 10)}, ${year}`;
 }
 
-app.listen(5000, () => {
-  console.log('Servidor corriendo en http://localhost:5000');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
