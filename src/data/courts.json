@@ -1,0 +1,228 @@
+[
+    {
+      "state": "Arizona",
+      "courts": [
+        "Eloy Immigration Court",
+        "Florence Immigration Court",
+        "Phoenix Immigration Court",
+        "Tucson Immigration Court"
+      ]
+    },
+    {
+      "state": "California",
+      "courts": [
+        "Adelanto Immigration Court",
+        "Concord Immigration Court",
+        "Imperial Immigration Court",
+        "Los Angeles - N. Los Angeles Street Immigration Court",
+        "Los Angeles - West Los Angeles Immigration Court",
+        "Los Angeles - Van Nuys Boulevard Immigration Court",
+        "Otay Mesa Immigration Court",
+        "Sacramento Immigration Court",
+        "San Diego Immigration Court",
+        "San Francisco Immigration Court",
+        "Santa Ana Immigration Court"
+      ]
+    },
+    {
+      "state": "Colorado",
+      "courts": [
+        "Aurora Immigration Court",
+        "Denver Immigration Court"
+      ]
+    },
+    {
+      "state": "Connecticut",
+      "courts": [
+        "Hartford Immigration Court"
+      ]
+    },
+    {
+      "state": "Florida",
+      "courts": [
+        "Miami Immigration Court",
+        "Miami Krome (Detained) Immigration Court",
+        "Orlando Immigration Court"
+      ]
+    },
+    {
+      "state": "Georgia",
+      "courts": [
+        "Atlanta - Ted Turner Drive Immigration Court",
+        "Atlanta - W. Peachtree Street Immigration Court",
+        "Stewart Immigration Court"
+      ]
+    },
+    {
+      "state": "Hawaii",
+      "courts": [
+        "Honolulu Immigration Court"
+      ]
+    },
+    {
+      "state": "Illinois",
+      "courts": [
+        "Chicago Immigration Court",
+        "Indianapolis Immigration Court"
+      ]
+    },
+    {
+      "state": "Louisiana",
+      "courts": [
+        "LaSalle Immigration Court",
+        "New Orleans Immigration Court",
+        "Oakdale Immigration Court"
+      ]
+    },
+    {
+      "state": "Maryland",
+      "courts": [
+        "Baltimore Immigration Court",
+        "Hyattsville Immigration Court"
+      ]
+    },
+    {
+      "state": "Massachusetts",
+      "courts": [
+        "Boston Immigration Court",
+        "Chelmsford Immigration Court"
+      ]
+    },
+    {
+      "state": "Michigan",
+      "courts": [
+        "Detroit Immigration Court"
+      ]
+    },
+    {
+      "state": "Minnesota",
+      "courts": [
+        "Fort Snelling Immigration Court"
+      ]
+    },
+    {
+      "state": "Missouri",
+      "courts": [
+        "Kansas City Immigration Court"
+      ]
+    },
+    {
+      "state": "Nebraska",
+      "courts": [
+        "Omaha Immigration Court"
+      ]
+    },
+    {
+      "state": "Nevada",
+      "courts": [
+        "Las Vegas Immigration Court"
+      ]
+    },
+    {
+      "state": "New Jersey",
+      "courts": [
+        "Elizabeth Immigration Court",
+        "Newark Immigration Court"
+      ]
+    },
+    {
+      "state": "New Mexico",
+      "courts": [
+        "Otero Immigration Court"
+      ]
+    },
+    {
+      "state": "New York",
+      "courts": [
+        "Batavia Immigration Court",
+        "Buffalo Immigration Court",
+        "New York - Broadway Immigration Court",
+        "New York - Federal Plaza Immigration Court",
+        "New York - Varick Immigration Court",
+        "Ulster Immigration Court"
+      ]
+    },
+    {
+      "state": "North Carolina",
+      "courts": [
+        "Charlotte Immigration Court"
+      ]
+    },
+    {
+      "state": "Northern Mariana Islands",
+      "courts": [
+        "Saipan Immigration Court"
+      ]
+    },
+    {
+      "state": "Ohio",
+      "courts": [
+        "Cleveland Immigration Court"
+      ]
+    },
+    {
+      "state": "Oregon",
+      "courts": [
+        "Portland Immigration Court"
+      ]
+    },
+    {
+      "state": "Pennsylvania",
+      "courts": [
+        "Philadelphia Immigration Court"
+      ]
+    },
+    {
+      "state": "Puerto Rico",
+      "courts": [
+        "Guaynabo Immigration Court"
+      ]
+    },
+    {
+      "state": "Tennessee",
+      "courts": [
+        "Memphis Immigration Court"
+      ]
+    },
+    {
+      "state": "Texas",
+      "courts": [
+        "Conroe Immigration Court",
+        "Dallas Immigration Court",
+        "El Paso Immigration Court",
+        "El Paso SPC Immigration Court",
+        "Fort Worth IAC Immigration Court",
+        "Harlingen Immigration Court",
+        "Houston - Jefferson Street Immigration Court",
+        "Houston - Greenspoint Park Immigration Court",
+        "Houston - S. Gessner Road Immigration Court",
+        "Laredo Immigration Court",
+        "Pearsall Immigration Court",
+        "Port Isabel Immigration Court",
+        "San Antonio Immigration Court"
+      ]
+    },
+    {
+      "state": "Utah",
+      "courts": [
+        "Salt Lake City Immigration Court"
+      ]
+    },
+    {
+      "state": "Virginia",
+      "courts": [
+        "Annandale Immigration Court",
+        "Falls Church IAC Immigration Court",
+        "Richmond IAC Immigration Court",
+        "Sterling Immigration Court"
+      ]
+    },
+    {
+      "state": "Washington",
+      "courts": [
+        "Seattle Immigration Court",
+        "Tacoma Immigration Court"
+      ]
+    }
+  ]
+  
