@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import courtsData from './data/courts.json';
-import oplaOffices from './data/oplaOffices.json';  // Importar las oficinas de OPLA
+import oplaOffices from './data/oplaOffices.json';
 
 function MotionForm() {
   const [formData, setFormData] = useState({
     name: '',
     aNumber: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    postalCode: '',
+    currentCourtState: '',
     currentCourt: '',
+    newCourtState: '',
     newCourt: '',
-    oplaOffice: '',     // Nueva propiedad para OPLA Office
+    oplaOffice: '',
     reason: '',
-    currentState: '',
-    newState: '',
+    judgeName: '',
+    hearingDate: '',
     motionDate: '',
   });
 
@@ -20,6 +26,11 @@ function MotionForm() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const getCourtsByState = (state) => {
+    const stateData = courtsData.find((item) => item.state === state);
+    return stateData ? stateData.courts : [];
   };
 
   const handleSubmit = async (e) => {
@@ -47,11 +58,6 @@ function MotionForm() {
     }
   };
 
-  const getCourtsByState = (state) => {
-    const stateData = courtsData.find((item) => item.state === state);
-    return stateData ? stateData.courts : [];
-  };
-
   return (
     <form onSubmit={handleSubmit}>
       <h1>Moción de Cambio de Corte</h1>
@@ -64,8 +70,31 @@ function MotionForm() {
         <input type="text" name="aNumber" value={formData.aNumber} onChange={handleChange} required />
       </div>
       <div>
-        <label>Estado de Corte Actual:</label>
-        <select name="currentState" value={formData.currentState} onChange={handleChange} required>
+        <label>Dirección de Calle:</label>
+        <input type="text" name="streetAddress" value={formData.streetAddress} onChange={handleChange} required />
+      </div>
+      <div>
+        <label>Ciudad:</label>
+        <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+      </div>
+      <div>
+        <label>Estado:</label>
+        <select name="state" value={formData.state} onChange={handleChange} required>
+          <option value="">Selecciona un estado</option>
+          {courtsData.map((courtData, index) => (
+            <option key={index} value={courtData.state}>
+              {courtData.state}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label>Código Postal:</label>
+        <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required />
+      </div>
+      <div>
+        <label>Corte Actual - Estado:</label>
+        <select name="currentCourtState" value={formData.currentCourtState} onChange={handleChange} required>
           <option value="">Selecciona un estado</option>
           {courtsData.map((courtData, index) => (
             <option key={index} value={courtData.state}>
@@ -78,7 +107,7 @@ function MotionForm() {
         <label>Corte Actual:</label>
         <select name="currentCourt" value={formData.currentCourt} onChange={handleChange} required>
           <option value="">Selecciona tu corte</option>
-          {getCourtsByState(formData.currentState).map((court, index) => (
+          {getCourtsByState(formData.currentCourtState).map((court, index) => (
             <option key={index} value={court}>
               {court}
             </option>
@@ -86,8 +115,8 @@ function MotionForm() {
         </select>
       </div>
       <div>
-        <label>Estado de Nueva Corte:</label>
-        <select name="newState" value={formData.newState} onChange={handleChange} required>
+        <label>Nueva Corte - Estado:</label>
+        <select name="newCourtState" value={formData.newCourtState} onChange={handleChange} required>
           <option value="">Selecciona un estado</option>
           {courtsData.map((courtData, index) => (
             <option key={index} value={courtData.state}>
@@ -100,15 +129,13 @@ function MotionForm() {
         <label>Nueva Corte:</label>
         <select name="newCourt" value={formData.newCourt} onChange={handleChange} required>
           <option value="">Selecciona la nueva corte</option>
-          {getCourtsByState(formData.newState).map((court, index) => (
+          {getCourtsByState(formData.newCourtState).map((court, index) => (
             <option key={index} value={court}>
               {court}
             </option>
           ))}
         </select>
       </div>
-
-      {/* Campo para OPLA Office */}
       <div>
         <label>Oficina de OPLA:</label>
         <select name="oplaOffice" value={formData.oplaOffice} onChange={handleChange} required>
@@ -120,7 +147,14 @@ function MotionForm() {
           ))}
         </select>
       </div>
-
+      <div>
+        <label>Nombre del Juez:</label>
+        <input type="text" name="judgeName" value={formData.judgeName} onChange={handleChange} required />
+      </div>
+      <div>
+        <label>Fecha de Audiencia:</label>
+        <input type="date" name="hearingDate" value={formData.hearingDate} onChange={handleChange} required />
+      </div>
       <div>
         <label>Fecha de la Moción:</label>
         <input type="date" name="motionDate" value={formData.motionDate} onChange={handleChange} required />

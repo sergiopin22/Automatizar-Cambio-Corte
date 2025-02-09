@@ -1,88 +1,96 @@
-/* Utilizando una tipografía más moderna */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-
 body {
-  font-family: 'Roboto', sans-serif; /* Moderno */
+  font-family: 'Poppins', sans-serif;
+  background-color: #1b1b32;
   margin: 0;
   padding: 0;
-  background-color: #0c0432; /* Color suave de fondo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Centrado verticalmente */
 }
 
 h1 {
+  color: #feffff;
   text-align: center;
-  color: #ffffff;
-  font-size: 2.5em;
-  margin-bottom: 20px;
 }
 
 form {
-  max-width: 600px; /* Ampliamos el formulario */
-  width: 100%;
+  max-width: 1000px; /* Más ancho */
+  margin: 50px auto;
   padding: 40px;
-  background: rgb(20, 23, 45);
-  border-radius: 8px;
-  box-shadow: 0 6px 15px rgb(254, 254, 254); /* Sombra más suave */
-  box-sizing: border-box;
+  background: #f4f8fb; /* Gris claro elegante */
+  border-radius: 15px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
 }
 
-input, textarea, select {
+form h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #1b1b32;
+  margin-bottom: 30px;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #0056b3; /* Azul elegante */
+}
+
+input, select, textarea {
   width: 100%;
-  padding: 12px; /* Más relleno para los campos */
-  margin-bottom: 16px; /* Más espacio entre los campos */
-  border: 1px solid #ccc;
+  padding: 14px;
+  border: 2px solid #ddd;
   border-radius: 8px;
-  font-size: 1em;
-  background-color: #f8f9fa; /* Fondo suave para los campos */
-  transition: border-color 0.3s ease-in-out; /* Transición suave */
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
 }
 
-input:focus, textarea:focus, select:focus {
-  border-color: #007bff; /* Resaltar en azul */
+input:hover, select:hover, textarea:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4A90E2;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
   outline: none;
 }
 
 button {
   width: 100%;
-  padding: 12px;
-  background-color: #007bff; /* Azul profesional */
+  padding: 15px;
+  background-color: #007bff;
   color: white;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
-  font-size: 1.1em;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3; /* Azul más oscuro en hover */
-  transform: translateY(-2px); /* Efecto de elevación */
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
 button:active {
-  transform: translateY(2px); /* Efecto de "presionar" */
+  transform: scale(0.98);
 }
 
-label {
-  font-size: 1em;
-  margin-bottom: 8px;
-  color: #fffb94;
-}
-
-textarea {
-  height: 120px; /* Aumentamos el tamaño del textarea */
-  resize: vertical; /* Permitir redimensionar solo en la vertical */
-}
-
-@media (max-width: 600px) {
-  form {
-    padding: 20px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-10px);
   }
-  
-  h1 {
-    font-size: 2em;
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
   }
 }
