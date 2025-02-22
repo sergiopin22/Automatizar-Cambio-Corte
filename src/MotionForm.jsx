@@ -33,15 +33,59 @@ function MotionForm() {
     return stateData ? stateData.courts : [];
   };
 
+  const generateMotionText = () => {
+    return `
+      PRO-SE 
+
+      ${formData.name}
+      ${formData.streetAddress}, ${formData.city}, ${formData.state}, ${formData.postalCode}
+
+      UNITED STATES DEPARTMENT OF JUSTICE
+      EXECUTIVE OFFICE FOR IMMIGRATION REVIEW
+      IMMIGRATION COURT
+      
+      ${formData.currentCourtState}
+
+      In the matters of:
+      
+      ${formData.name} 
+      File No: A ${formData.aNumber}
+      
+      Immigration Judge: ${formData.judgeName}
+      Next Hearing Date: ${formData.hearingDate}
+      
+      MOTION TO CHANGE VENUE
+
+      RESPONDENT’S MOTION TO CHANGE VENUE
+
+      Now comes Respondent, ${formData.name}, and moves this Honorable Court to change the venue of his removal proceedings
+      from: ${formData.currentCourt}, ${formData.currentCourtState} 
+      to: ${formData.newCourt}, ${formData.newCourtState}.
+      
+      I seek this change of venue pursuant to 8 CFR 100.20.
+
+      In support of this motion, I state as follows:
+
+      ${formData.reason}
+
+      Respectfully submitted,
+
+      ${formData.name}
+      ${formData.motionDate}
+    `;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const motionText = generateMotionText();
+    
     try {
       const response = await fetch('https://backend-cambio-corte.vercel.app/generate-pdf', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ text: motionText }),
       });
 
       if (!response.ok) throw new Error('Error al generar el PDF');
