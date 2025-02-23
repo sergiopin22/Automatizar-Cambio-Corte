@@ -19,6 +19,8 @@ function MotionForm() {
     judgeName: '',
     hearingDate: '',
     motionDate: '',
+    submissionDate: '', // Nuevo campo
+    deliveryMethod: '', // Nuevo campo
   });
 
   const handleChange = (e) => {
@@ -158,6 +160,19 @@ function MotionForm() {
       <div>
         <label>Fecha de la Moción:</label>
         <input type="date" name="motionDate" value={formData.motionDate} onChange={handleChange} required />
+      </div>
+      <div>
+        <label>Fecha de Envío de la Moción:</label>
+        <input type="date" name="submissionDate" value={formData.submissionDate} onChange={handleChange} required />
+      </div>
+      <div>
+        <label>Método de Entrega:</label>
+        <select name="deliveryMethod" value={formData.deliveryMethod} onChange={handleChange} required>
+          <option value="">Selecciona un método</option>
+          <option value="Priority Mail">Priority Mail</option>
+          <option value="Hand Delivery">Hand Delivery</option>
+          <option value="First Class Mail">First Class Mail</option>
+        </select>
       </div>
       <div>
         <label>Razón del Cambio:</label>
