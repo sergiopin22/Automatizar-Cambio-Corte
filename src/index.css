@@ -1,96 +1,162 @@
+/* Estilo Global */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #1b1b32;
+  background: linear-gradient(135deg, #0a0f1d, #1c2337, #2e3b5e); /* Fondo degradado azul oscuro */
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ffffff;
 }
 
-h1 {
-  color: #feffff;
-  text-align: center;
-}
-
-form {
-  max-width: 1000px; /* Más ancho */
-  margin: 50px auto;
-  padding: 40px;
-  background: #f4f8fb; /* Gris claro elegante */
-  border-radius: 15px;
-  border: 2px solid #e0e0e0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+/* Contenedor principal con efecto Glassmorphism */
+.container {
+  width: 95vw; /* Más ancho en PC */
+  max-width: 1600px; /* Ajuste para pantallas grandes */
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px); /* Efecto Glass */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   animation: fadeIn 1s ease-in-out;
 }
 
-form h1 {
+/* Título */
+h1 {
   text-align: center;
-  font-size: 32px;
-  color: #1b1b32;
-  margin-bottom: 30px;
-}
-
-form div {
-  margin-bottom: 20px;
-}
-
-label {
+  font-size: 36px; /* Más grande */
   font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos del formulario */
+form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 20px;
+}
+
+/* Etiquetas */
+label {
+  font-weight: 600;
   display: block;
   margin-bottom: 8px;
-  color: #0056b3; /* Azul elegante */
+  color: #ffffff;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.4);
 }
 
+/* Inputs, Selects y Textareas con efecto Glass */
 input, select, textarea {
   width: 100%;
-  padding: 14px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 18px; /* Más alto */
+  font-size: 18px; /* Texto más grande */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1); /* Suave fondo translúcido */
+  color: #ffffff;
   transition: all 0.3s ease;
-  background: #f9f9f9;
+  outline: none;
+  backdrop-filter: blur(10px); /* Efecto Glass */
+}
+
+/* Ajustes para Select */
+select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Asegurar visibilidad en opciones del select */
+select option {
+  background: #1b263b;
+  color: #ffffff;
+  padding: 12px;
+}
+
+select:focus {
+  border-color: #009dff;
+  box-shadow: 0 0 15px rgba(0, 157, 255, 0.6);
+}
+
+/* Placeholder de los Inputs */
+input::placeholder, textarea::placeholder {
+  color: #d6d6d6;
 }
 
 input:hover, select:hover, textarea:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: #4A90E2;
-  background: #fff;
-  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
-  outline: none;
+/* Ajuste especial para textarea */
+textarea {
+  height: 140px;
+  resize: vertical;
+  grid-column: span 3;
 }
 
+/* Botón de Envío más grande y con efecto 3D */
 button {
+  grid-column: span 3;
   width: 100%;
-  padding: 15px;
-  background-color: #007bff;
-  color: white;
-  font-size: 18px;
+  padding: 20px;
+  font-size: 20px; /* Más grande */
   font-weight: bold;
+  background: linear-gradient(90deg, #007bff, #0047b3);
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5);
 }
 
 button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  background: linear-gradient(90deg, #0047b3, #007bff);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.6);
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
 }
 
+/* Responsividad */
+@media (max-width: 1100px) {
+  form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 95vw; /* Mantiene buen ancho en mobile */
+  }
+  
+  form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  textarea, button {
+    grid-column: span 1;
+  }
+}
+
+/* Animación de Aparición */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px) translateX(-10px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) translateX(0);
+    transform: translateY(0);
   }
 }

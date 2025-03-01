@@ -84,7 +84,6 @@ function MotionForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Moción de Cambio de Corte</h1>
       <div>
         <label>Nombre Completo:</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} required />
