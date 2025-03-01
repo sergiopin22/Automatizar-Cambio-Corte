@@ -1,0 +1,187 @@
+[
+    {
+        "state": "Arizona",
+        "courts": [
+            {
+                "name": "Eloy Immigration Court",
+                "address": "1705 E. Hanna Road, Suite 366, Eloy, AZ 85131",
+                "oplaOffice": "1705 East Hanna Road, Eloy, AZ 85131",
+                "judges": [
+                    "Orechwa, Nicolas",
+                    "Bartlemay, Robert C., Sr.",
+                    "Phelps, Richard A.",
+                    "Gaz, Jennifer I.",
+                    "Habich, Paul M.",
+                    "Penalosa, Jose Luis, Jr."
+                ]
+            },
+            {
+                "name": "Florence Immigration Court",
+                "address": "3260 N. Pinal Parkway Avenue, Florence, AZ 85132",
+                "oplaOffice": "3250 N. Pinal Parkway Avenue, Florence, AZ 85132",
+                "judges": [
+                    "Guerrero, Marni",
+                    "Taylor, Bruce A.",
+                    "Frazer, Molly S."
+                ]
+            },
+            {
+                "name": "Phoenix Immigration Court",
+                "address": "250 N. Seventh Ave., Suite 300, Phoenix, AZ 85007",
+                "oplaOffice": "2035 N. Central Avenue, Phoenix, AZ 85004",
+                "judges": [
+                    "Spencer-Walters, Linda Inez",
+                    "Bartlemay, Robert C., Sr.",
+                    "Sharda, Munish",
+                    "Imburgia, Joseph S.",
+                    "Cottor, Elizabeth A.",
+                    "Cortes, John W.",
+                    "Karlen, Melissa Beth",
+                    "Freerks, LaMonte S.",
+                    "Habich, Paul M."
+                ]
+            },
+            {
+                "name": "Tucson Immigration Court",
+                "address": "300 West Congress Street, Suite 300, Tucson, AZ 85701",
+                "oplaOffice": "6431 S. Country Club Road, Tucson, AZ 85706",
+                "judges": [
+                    "Terrazas, Gilda M.",
+                    "O'Leary, Thomas Michael",
+                    "Davis, John W.",
+                    "Keenan, Sean H.",
+                    "Deangelis, Kathryn L."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "California",
+        "courts": [
+            {
+                "name": "Adelanto Immigration Court",
+                "address": "10250 Rancho Road, Suite 201A, Adelanto, CA 92301",
+                "oplaOffice": "10250 Rancho Road, Adelanto, CA 92301",
+                "judges": [
+                    "Mullins, Katie G.",
+                    "Riley, Kevin W.",
+                    "Depowell, Bryan E.",
+                    "White, Curtis G.",
+                    "Left, James M.",
+                    "Walker, Nathaniel B.",
+                    "Penalosa, Jose Luis, Jr.",
+                    "Lee, Amy T.",
+                    "Santos-Garcia, Sandra J.",
+                    "Bjornerud, Maria"
+                ]
+            },
+            {
+                "name": "Concord Immigration Court",
+                "address": "1855 Gateway Boulevard, Ste 850, Concord, CA 94520",
+                "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
+                "judges": [
+                    "Wilson, Roberta A.",
+                    "Lilien, Kyra S.",
+                    "Butler, Jeremy J.",
+                    "Stender, Jacob J.",
+                    "Chamberlin, Florence A.",
+                    "Price, Justin M."
+                ]
+            },
+            {
+                "name": "Imperial Immigration Court",
+                "address": "2409 La Brucherie Road, Imperial, CA 92251",
+                "oplaOffice": "2409 La Brucherie Road, Suite 3, Imperial, CA 92251",
+                "judges": [
+                    "Perry, Anne",
+                    "Pressman, Christian M.",
+                    "Barcus, E. Mark",
+                    "Robinson, Eugene H., Jr.",
+                    "Munoz, Jeffrey V."
+                ]
+            },
+            {
+                "name": "Los Angeles - North Immigration Court",
+                "address": "300 North Los Angeles Street, Room 4330, Los Angeles, CA 90012",
+                "oplaOffice": "300 N. Los Angeles Street, Suite 1240",
+                "judges": [
+                    "Naselow-Nahas, Tara",
+                    "Hope, Karen",
+                    "Riley, Kevin W.",
+                    "Amaya, Roberto",
+                    "Medved, Paul N.",
+                    "Piepmeier, Kristin",
+                    "Travieso, Frank M.",
+                    "Left, James M.",
+                    "Hsu, Lily C.",
+                    "Aina, Nathan N.",
+                    "Ryan, Kyle J.",
+                    "Skomra, Taiyyeba S.",
+                    "Nare, Jake",
+                    "Kim, Peter A."
+                ]
+            },
+            {
+                "name": "Los Angeles - WLA Immigration Court",
+                "address": "5245 Pacific Concourse Drive, Los Angeles, CA. 90045",
+                "oplaOffice": "606 South Olive Street, 8th Floor, Los Angeles, CA 90014",
+                "judges": [
+                    "Francis, Leon J.",
+                    "Miller, Jeffrey S.",
+                    "Calcadon, Kerri",
+                    "Chon, Hye Y.",
+                    "Waterloo, Jason",
+                    "Perry, Anne",
+                    "Martz, Nicholas A.",
+                    "Bank, Ira E.",
+                    "Juelle, Carlos R.",
+                    "Jasso, Jaime",
+                    "Latimore, Jan D.",
+                    "Guerrero, Marni",
+                    "Huddleston, Natalie",
+                    "Burke, David H.",
+                    "Behne, Audra R.",
+                    "Dorfman, Arlene E.",
+                    "Miller, Nancy",
+                    "Tabaddor, Afsaneh Ashley",
+                    "Ruane, Rachel A.",
+                    "Malvin, Daniel H.",
+                    "Patti, Sebastian T.",
+                    "Virchis, Bridget",
+                    "Costa, Philip J.",
+                    "Bakke Varzandeh, Joyce A.",
+                    "Everett, Timothy R.",
+                    "Neumeister, David",
+                    "Lee, Edward",
+                    "Simons, Anita L.",
+                    "Allen, Janette L.",
+                    "Park, Jeannette Lim",
+                    "Desai, Jankhana",
+                    "Stancill, Christine E.",
+                    "Hong, Andrea",
+                    "Villegas, Veronica S.",
+                    "Vahid-Tehrani, Gita",
+                    "Gadson-Andrews, Ashley",
+                    "Siebert, Andrea"
+                ]
+            },
+            {
+                "name": "Van Nuys Immigration Court",
+                "address": "6230 Van Nuys Blvd. 3rd Floor, Suite 300, Van Nuys, CA 91401",
+                "oplaOffice": "6230 Van Nuys Boulevard, Suite 1011, Van Nuys, CA 91401",
+                "judges": [
+                    "Naselow-Nahas, Tara",
+                    "Riley, Kevin W.",
+                    "Marcus, Steven",
+                    "Burke, David H.",
+                    "Santos-Garcia, Sandra J.",
+                    "Burke, Brian",
+                    "Medved, Paul N.",
+                    "Dorfman, Arlene E.",
+                    "Maury, Carlos E."
+                ]
+            }
+            
+        ]
+    }
+]
