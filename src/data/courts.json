@@ -4,6 +4,7 @@
       "courts": [
           {
               "name": "Eloy Immigration Court",
+              "city": "Eloy",
               "address": "1705 E. Hanna Road, Suite 366, Eloy, AZ 85131",
               "oplaOffice": "1705 East Hanna Road, Eloy, AZ 85131",
               "judges": [
@@ -17,6 +18,7 @@
           },
           {
               "name": "Florence Immigration Court",
+              "city": "Florence",
               "address": "3260 N. Pinal Parkway Avenue, Florence, AZ 85132",
               "oplaOffice": "3250 N. Pinal Parkway Avenue, Florence, AZ 85132",
               "judges": [
@@ -27,6 +29,7 @@
           },
           {
               "name": "Phoenix Immigration Court",
+              "city": "Phoenix",
               "address": "250 N. Seventh Ave., Suite 300, Phoenix, AZ 85007",
               "oplaOffice": "2035 N. Central Avenue, Phoenix, AZ 85004",
               "judges": [
@@ -43,6 +46,7 @@
           },
           {
               "name": "Tucson Immigration Court",
+              "city": "Tucson",
               "address": "300 West Congress Street, Suite 300, Tucson, AZ 85701",
               "oplaOffice": "6431 S. Country Club Road, Tucson, AZ 85706",
               "judges": [
@@ -60,6 +64,7 @@
       "courts": [
           {
               "name": "Adelanto Immigration Court",
+              "city": "Adelanto",
               "address": "10250 Rancho Road, Suite 201A, Adelanto, CA 92301",
               "oplaOffice": "10250 Rancho Road, Adelanto, CA 92301",
               "judges": [
@@ -77,6 +82,7 @@
           },
           {
               "name": "Concord Immigration Court",
+              "city": "Concord",
               "address": "1855 Gateway Boulevard, Ste 850, Concord, CA 94520",
               "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
               "judges": [
@@ -90,6 +96,7 @@
           },
           {
               "name": "Imperial Immigration Court",
+              "city": "Imperial",
               "address": "2409 La Brucherie Road, Imperial, CA 92251",
               "oplaOffice": "2409 La Brucherie Road, Suite 3, Imperial, CA 92251",
               "judges": [
@@ -102,6 +109,7 @@
           },
           {
               "name": "Otay Mesa Immigration Court",
+              "city": "San Ysidro",
               "address": "P.O. Box 438150, San Ysidro, CA 92143-8150",
               "oplaOffice": "7488 Calzada de la Fuente, San Diego, CA 92154",
               "judges": [
@@ -115,6 +123,7 @@
           },
           {
               "name": "Sacramento Immigration Court",
+              "city": "Sacramento",
               "address": "John Moss Federal Building, 650 Capitol Mall, Suite 4-200, Sacramento, CA 95814",
               "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
               "judges": [
@@ -133,6 +142,7 @@
           },
           {
               "name": "San Diego Immigration Court",
+              "city": "San Diego",
               "address": "880 Front Street, Suite 4240, San Diego, CA 92101",
               "oplaOffice": "880 Front Street, Suite 2246, San Diego, CA 92101",
               "judges": [
@@ -152,6 +162,7 @@
           },
           {
               "name": "San Francisco Immigration Court",
+              "city": "San Francisco",
               "address": "100 Montgomery Street, Suite 800, San Francisco, CA 94104",
               "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
               "judges": [
@@ -175,6 +186,7 @@
           },
           {
               "name": "Santa Ana Immigration Court",
+              "city": "Santa Ana",
               "address": "1241 E. Dyer Road, Suite 200, Santa Ana, CA 92705",
               "oplaOffice": "1231 E. Dyer Road, Suite 155, Santa Ana, CA 92705",
               "judges": [
@@ -210,6 +222,7 @@
       "courts": [
           {
               "name": "Aurora Immigration Court",
+              "city": "Aurora",
               "address": "3130 North Oakland Street, Aurora, CO 80010",
               "oplaOffice": "12445 East Caley Avenue, Centennial, CO 80111-6432",
               "judges": [
@@ -221,6 +234,7 @@
           },
           {
               "name": "Denver Immigration Court",
+              "city": "Denver",
               "address": "1961 Stout Street, Suite 3101, Denver, CO 80294",
               "oplaOffice": "12445 East Caley Avenue, Centennial, CO 80111-6432",
               "judges": [
@@ -243,6 +257,7 @@
       "courts": [
           {
               "name": "Hartford Immigration Court",
+              "city": "Hartford",
               "address": "AA Ribicoff Federal Building & Courthouse, 450 Main Street, Suite 628, Hartford, CT 06103-3015",
               "oplaOffice": "Ribicoff Federal Building, 450 Main Street, Room 483, Hartford, CT 06103-3060",
               "judges": [
@@ -258,6 +273,7 @@
       "courts": [
           {
               "name": "Miami Immigration Court",
+              "city": "Miami",
               "address": "One Riverview Square, 333 S. Miami Avenue, Suite 700, Miami, FL 33130",
               "oplaOffice": "333 S. Miami Avenue, Suite 200, Miami, FL 33130",
               "judges": [
@@ -299,6 +315,7 @@
           },
           {
               "name": "Orlando Immigration Court",
+              "city": "Orlando",
               "address": "500 N. Orange Ave, Suite 1100, Orlando, FL 32801",
               "oplaOffice": "500 North Orange Avenue, Suite 5000, Orlando, FL 32801",
               "judges": [
@@ -324,6 +341,7 @@
       "courts": [
           {
               "name": "Atlanta - Ted Turner Drive Immigration Court",
+              "city": "Georgia",
               "address": "180 Ted Turner Drive, SW, Suite 241, Atlanta, GA 30303",
               "oplaOffice": "180 Ted Turner Drive, SW, Suite 332, Atlanta, GA 30303",
               "judges": [
@@ -345,6 +363,7 @@
           },
           {
               "name": "Atlanta - W. Peachtree Street Immigration Court",
+              "city": "Atlanta",
               "address": "Peachtree Summit Federal Building, 401 W. Peachtree Street, Suite 2600, Atlanta, GA 30308",
               "oplaOffice": "Peachtree Summit Federal Building, 401 W. Peachtree Street, NW, Suite 2850, Atlanta, GA 30308",
               "judges": [
@@ -363,6 +382,7 @@
           },
           {
               "name": "Stewart Immigration Court",
+              "city": "Stewart",
               "address": "146 CCA Road, PO Box 248, Lumpkin, GA 31815",
               "oplaOffice": "Stewart County Detention Facility, 146 CCA Road, Lumpkin, GA 31815",
               "judges": [
@@ -382,6 +402,7 @@
       "courts": [
           {
               "name": "Honolulu Immigration Court",
+              "city": "Honolulu",
               "address": "PJKK Federal Building, 300 Ala Moana Blvd., Room 8-112, Honolulu, HI 96850",
               "oplaOffice": "300 Ala Moana Boulevard, Suite 7-220, Honolulu, HI 96850",
               "judges": [
@@ -396,6 +417,7 @@
       "courts": [
           {
               "name": "Chicago Immigration Court",
+              "city": "Chicago",
               "address": "55 E. Monroe St., Suite 1500, Chicago, IL 60603",
               "oplaOffice": "55 E. Monroe Street, Suite 1400, Chicago, IL 60603",
               "judges": [
@@ -432,6 +454,7 @@
       "courts": [
           {
               "name": "LaSalle Immigration Court",
+              "city": "Jena",
               "address": "830 Pine Hill Road, P.O. Box 2179, Jena, LA 71342",
               "oplaOffice": "LaSalle Detention Center, 830 Pinehill Road, Jena, LA 71342",
               "judges": [
@@ -449,6 +472,7 @@
           },
           {
               "name": "New Orleans Immigration Court",
+              "city": "New Orleans",
               "address": "One Canal Place, 365 Canal Street, Suite 500, New Orleans, LA 70130",
               "oplaOffice": "423 Canal Street, Suite 450, New Orleans, LA 70130",
               "judges": [
@@ -464,6 +488,7 @@
           },
           {
               "name": "Oakdale Immigration Court",
+              "city": "Oakdale",
               "address": "1900 E. Whatley Road, Oakdale, LA 71463",
               "oplaOffice": "1010 E. Whatley Road, Oakdale, LA 71463-1128",
               "judges": [
@@ -485,6 +510,7 @@
       "courts": [
           {
               "name": "Baltimore Immigration Court",
+              "city": "Baltimore",
               "address": "George Fallon Federal Building, 31 Hopkins Plaza, Room 440, Baltimore, MD 21201",
               "oplaOffice": "31 Hopkins Plaza, Room 1600, Baltimore, MD 21201",
               "judges": [
@@ -505,6 +531,7 @@
           },
           {
               "name": "Hyattsville Immigration Court",
+              "city": "Hyattsville",
               "address": "3311 Toledo Road, Suite 105, Hyattsville, MD 20782",
               "oplaOffice": "500 12th Street, S.W., Stop 5904, Washington, DC 20536-5904",
               "judges": [
@@ -533,6 +560,7 @@
       "courts": [
           {
               "name": "Boston Immigration Court",
+              "city": "Boston",
               "address": "JFK Federal Building, 15 New Sudbury Street, Room 320, Boston, MA 02203",
               "oplaOffice": "JFK Federal Building, 15 New Sudbury Street, Room 425, Boston, MA 02203",
               "judges": [
@@ -566,6 +594,7 @@
           },
           {
               "name": "Chelmsford Immigration Court",
+              "city": "Chelmsford",
               "address": "2 Courthouse Lane, 2nd Floor, Unit B, Chelmsford, MA 01824",
               "oplaOffice": "2 Courthouse Lane, 2nd Floor, Unit B, Chelmsford, MA 01824",
               "judges": [
@@ -584,6 +613,7 @@
       "courts": [
           {
               "name": "Detroit Immigration Court",
+              "city": "Detroit",
               "address": "477 Michigan Avenue, Suite 440, Detroit, MI 48226",
               "oplaOffice": "Rosa Parks Federal Building, 985 Michigan Avenue, Suite 1010, Detroit, MI 48226",
               "judges": [
@@ -601,6 +631,7 @@
       "courts": [
           {
               "name": "Fort Snelling Immigration Court",
+              "city": "Fort Snelling",
               "address": "Bishop Henry Whipple Federal Building, 1 Federal Drive, Suite 1850, Fort Snelling, MN 55111",
               "oplaOffice": "1 Federal Drive, Suite 1800, Fort Snelling, MN 55111",
               "judges": [
@@ -624,6 +655,7 @@
       "courts": [
           {
               "name": "Kansas City Immigration Court",
+              "city": "Kansas City",
               "address": "2345 Grand Boulevard, Suite 525, Kansas City, MO 64108",
               "oplaOffice": "2345 Grand Boulevard, Suite 500, Kansas City, MO 64108",
               "judges": [
@@ -640,6 +672,7 @@
       "courts": [
           {
               "name": "Omaha Immigration Court",
+              "city": "Omaha",
               "address": "1717 Avenue H, Suite 100, Omaha, NE 68110",
               "oplaOffice": "1717 Avenue H, Room 174, Omaha, NE 68110",
               "judges": [
@@ -655,6 +688,7 @@
       "courts": [
           {
               "name": "Las Vegas Immigration Court",
+              "city": "Las Vegas",
               "address": "110 North City Parkway, Suite 400, Las Vegas, NV 89106",
               "oplaOffice": "501 S. Las Vegas Blvd, Suite 200, Las Vegas, NV 89101",
               "judges": [
@@ -673,6 +707,7 @@
       "courts": [
           {
               "name": "Elizabeth Immigration Court",
+              "city": "Elizabeth",
               "address": "625 Evans Street, Room 148A, Elizabeth, NJ 07201",
               "oplaOffice": "Elizabeth Detention Facility, 625 Evans Street, Room 135, Elizabeth, NJ 07201",
               "judges": [
@@ -688,6 +723,7 @@
           },
           {
               "name": "Newark Immigration Court",
+              "city": "Newark",
               "address": "970 Broad Street, Room 1200, Newark, NJ 07102",
               "oplaOffice": "970 Broad Street, Room 1300, Newark, NJ 07102",
               "judges": [
@@ -711,6 +747,7 @@
       "courts": [
           {
               "name": "Otero Immigration Court",
+              "city": "Otero",
               "address": "26 McGregor Range Road, Door #1, Chaparral, NM 88081",
               "oplaOffice": "Trial Attorney Unit, 26 McGregor Range Road, Chaparral, NM 88081",
               "judges": [
@@ -728,6 +765,7 @@
       "courts": [
           {
               "name": "Batavia Immigration Court",
+              "city": "Batavia",
               "address": "4250 Federal Drive, Room F108, Batavia, NY 14020",
               "oplaOffice": "Buffalo Federal Detention Facility, 4250 Federal Drive, Batavia, NY 14020",
               "judges": [
@@ -737,6 +775,7 @@
           },
           {
               "name": "Buffalo Immigration Court",
+              "city": "Buffalo",
               "address": "130 Delaware Avenue, Suite 300, Buffalo, NY 14202",
               "oplaOffice": "250 Delaware Avenue, Suite 773, Buffalo, NY 14202",
               "judges": [
@@ -748,6 +787,7 @@
           },
           {
               "name": "New York - Broadway Immigration Court",
+              "city": "New York",
               "address": "290 Broadway, 27th Floor, New York, NY 10007",
               "oplaOffice": "26 Federal Plaza, Room 1130, New York, NY 10278",
               "judges": [
@@ -760,6 +800,7 @@
           },
           {
               "name": "New York - Federal Plaza Immigration Court",
+              "city": "New York",
               "address": "26 Federal Plaza, 12th Floor, Room 1237, New York, NY 10278",
               "oplaOffice": "26 Federal Plaza, Room 1130, New York, NY 10278",
               "judges": [
@@ -776,6 +817,7 @@
           },
           {
               "name": "New York - Varick Immigration Court",
+              "city": "New York",
               "address": "201 Varick Street, Room 1140, New York, NY 10014",
               "oplaOffice": "201 Varick Street, Room 1140, New York, NY 10014",
               "judges": [
@@ -789,6 +831,7 @@
           },
           {
               "name": "Ulster Immigration Court",
+              "city": "Napanoch",
               "address": "Ulster Correctional Facility, 750 Berme Road, Napanoch, NY 12458",
               "oplaOffice": "Ulster Correctional Facility, 750 Berme Road, Napanoch, NY 12458",
               "judges": [
@@ -805,6 +848,7 @@
       "courts": [
           {
               "name": "Charlotte Immigration Court",
+              "city": "Charlotte",
               "address": "5701 Executive Center Drive, Suite 400, Charlotte, NC 28212",
               "oplaOffice": "5701 Executive Center Drive, Suite 300, Charlotte, NC 28212",
               "judges": [
@@ -826,6 +870,7 @@
       "courts": [
           {
               "name": "Saipan Immigration Court",
+              "city": "Saipan",
               "address": "Horiguchi Building, 2nd Floor, Garapan, Saipan, MP 96950",
               "oplaOffice": "Horiguchi Building, 2nd Floor, Garapan, Saipan, MP 96950",
               "judges": [
@@ -839,6 +884,7 @@
       "courts": [
           {
               "name": "Cleveland Immigration Court",
+              "city": "Cleveland",
               "address": "801 W. Superior Avenue, Suite 13-100, Cleveland, OH 44113",
               "oplaOffice": "925 Keynote Circle, Room 201, Brooklyn Heights, OH 44131",
               "judges": [
@@ -864,6 +910,7 @@
       "courts": [
           {
               "name": "Portland Immigration Court",
+              "city": "Portland",
               "address": "1220 SW 3rd Avenue, Suite 500, Portland, OR 97204",
               "oplaOffice": "1220 SW 3rd Avenue, Suite 300, Portland, OR 97204",
               "judges": [
@@ -884,6 +931,7 @@
       "courts": [
           {
               "name": "Philadelphia Immigration Court",
+              "city": "Philadelphia",
               "address": "Robert Nix Federal Building & Courthouse, 900 Market Street, Suite 504, Philadelphia, PA 19107",
               "oplaOffice": "900 Market Street, Suite 346, Philadelphia, PA 19107",
               "judges": [
@@ -909,6 +957,7 @@
       "courts": [
           {
               "name": "Memphis Immigration Court",
+              "city": "Memphis",
               "address": "80 Monroe Avenue, Lower Level, Suite G-10, Memphis, TN 38103",
               "oplaOffice": "80 Monroe Avenue, Suite 200, Memphis, TN 38103",
               "judges": [
@@ -934,6 +983,7 @@
       "courts": [
           {
               "name": "Conroe Immigration Court",
+              "city": "Conroe",
               "address": "806 Hilbig Road, Suite 2-300, 2nd Floor, Conroe, TX 77301",
               "oplaOffice": "Montgomery Processing Center, 806 Hilbig Road, Suite 2-201, Conroe, TX 77301",
               "judges": [
@@ -952,6 +1002,7 @@
           },
           {
               "name": "Dallas Immigration Court",
+              "city": "Dallas",
               "address": "1100 Commerce Street, Suite 1060, Dallas, TX 75242",
               "oplaOffice": "125 E. John Carpenter Fwy., Suite 500, Irving, TX 75062",
               "judges": [
@@ -970,6 +1021,7 @@
           },
           {
               "name": "El Paso Immigration Court",
+              "city": "El Paso",
               "address": "700 E. San Antonio Avenue, Suite 750, El Paso, TX 79901",
               "oplaOffice": "11541 Montana Avenue, Suite O, El Paso, TX 79936",
               "judges": [
@@ -982,6 +1034,7 @@
           },
           {
               "name": "Houston - Jefferson Street Immigration Court",
+              "city": "Houston",
               "address": "500 Jefferson Street, Suite 300, Houston, TX 77002",
               "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
               "judges": [
@@ -1000,6 +1053,7 @@
           },
           {
               "name": "Houston - Greenspoint Park Immigration Court",
+              "city": "Houston",
               "address": "16800 Greenspoint Park Drive, 2nd Floor, Houston, TX 77060",
               "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
               "judges": [
@@ -1027,6 +1081,7 @@
           },
           {
               "name": "Houston - S. Gessner Road Immigration Court",
+              "city": "Houston",
               "address": "8701 S. Gessner Road, 10th Floor, Houston, TX 77074",
               "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
               "judges": [
@@ -1044,6 +1099,7 @@
           },
           {
               "name": "Harlingen Immigration Court",
+              "city": "Harlingen",
               "address": "2009 West Jefferson Avenue, Suite 300, Harlingen, TX 78550",
               "oplaOffice": "1717 Zoy Street, Annex, Harlingen, TX 78552",
               "judges": [
@@ -1060,6 +1116,7 @@
           },
           {
               "name": "Laredo Immigration Court",
+              "city": "Laredo",
               "address": "1406 Jacaman Road, Suite B, Laredo, TX 78041",
               "oplaOffice": "1406 Jacaman Road, Suite C, Laredo, TX 78041",
               "judges": [
@@ -1078,6 +1135,7 @@
           },
           {
               "name": "Pearsall Immigration Court",
+              "city": "Pearsall",
               "address": "566 Veterans Drive, Pearsall, TX 78061",
               "oplaOffice": "South Texas ICE Processing Center, 566 Veterans Drive, Pearsall, TX 78061",
               "judges": [
@@ -1091,6 +1149,7 @@
           },
           {
               "name": "Port Isabel Immigration Court",
+              "city": "Los Fresnos",
               "address": "27991 Buena Vista Blvd., Los Fresnos, TX 78566",
               "oplaOffice": "Port Isabel Detention Center, 27991 Buena Vista Blvd, Los Fresnos, TX 78566",
               "judges": [
@@ -1103,6 +1162,7 @@
           },
           {
               "name": "San Antonio Immigration Court",
+              "city": "San Antonio",
               "address": "800 Dolorosa, Suite 300, San Antonio, TX 78207",
               "oplaOffice": "1015 Jackson-Keller Road, Suite 100, San Antonio, TX 78213",
               "judges": [
@@ -1127,6 +1187,7 @@
       "courts": [
           {
               "name": "Sterling Immigration Court",
+              "city": "Sterling",
               "address": "21400 Ridgetop Circle, Suite 200, Sterling, VA 20166",
               "oplaOffice": "21400 Ridgetop Circle, Suite 100, Sterling, VA 20166",
               "judges": [
@@ -1151,6 +1212,7 @@
       "courts": [
           {
               "name": "Seattle Immigration Court",
+              "city": "Seattle",
               "address": "915 2nd Ave., Suite 613, Seattle, WA 98174",
               "oplaOffice": "915 Second Avenue, Suite 708, Seattle, WA 98174",
               "judges": [
@@ -1166,6 +1228,7 @@
           },
           {
               "name": "Tacoma Immigration Court",
+              "city": "Tacoma",
               "address": "1623 East J Street, Suite 3, Tacoma, WA 98421",
               "oplaOffice": "Northwest ICE Processing Center, 1623 East J Street, Suite 2, Tacoma, WA 98421",
               "judges": [
