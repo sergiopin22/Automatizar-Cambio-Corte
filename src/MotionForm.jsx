@@ -3,12 +3,13 @@ import courtsData from './data/courts.json';
 
 function MotionForm() {
   const [formData, setFormData] = useState({
-    // Información Personal (5 campos)
+    // Información Personal (6 campos - añadido residenceState)
     name: '',
     aNumber: '',
     streetAddress: '',
     city: '',
     postalCode: '',
+    residenceState: '', // Nuevo campo para el estado de residencia
     
     // Corte Actual (6 campos)
     currentCourtState: '',
@@ -192,6 +193,24 @@ function MotionForm() {
               required 
               placeholder="Ciudad donde vive"
             />
+          </div>
+          
+          {/* Nuevo campo para estado de residencia */}
+          <div className="form-field">
+            <label>Estado de Residencia:</label>
+            <select 
+              name="residenceState" 
+              value={formData.residenceState} 
+              onChange={handleChange} 
+              required
+            >
+              <option value="">Selecciona un estado</option>
+              {courtsData.map((courtData, index) => (
+                <option key={index} value={courtData.state}>
+                  {courtData.state}
+                </option>
+              ))}
+            </select>
           </div>
           
           <div className="form-field">
