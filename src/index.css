@@ -1,271 +1,279 @@
-/* Estilo Global con enfoque corporativo-ofimático */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Estilo Tech-Legal Híbrido */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f8f9fb; /* Fondo claro profesional */
+:root {
+  --color-bg: #0f1215;
+  --color-surface: #171c21;
+  --color-surface-raised: #1e242c;
+  --color-primary: #6e3de0;    /* Púrpura distintivo */
+  --color-primary-light: #8f66ff;
+  --color-secondary: #08c7cd;  /* Cian tech */
+  --color-accent: #6e3de0;
+  --color-text: #f2f5f9;
+  --color-text-secondary: #9fadbf;
+  --color-border: rgba(143, 102, 255, 0.12);
+  --color-error: #ff4967;
+  --color-success: #20e070;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.22);
+  --shadow-accent: 0 6px 20px rgba(110, 61, 224, 0.15);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --grid-gap: 24px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  background-image: 
+    linear-gradient(120deg, rgba(110, 61, 224, 0.05) 0%, transparent 70%),
+    linear-gradient(240deg, rgba(8, 199, 205, 0.05) 0%, transparent 70%),
+    radial-gradient(circle at 80% 20%, rgba(110, 61, 224, 0.03) 0%, transparent 30%);
+  background-attachment: fixed;
+  color: var(--color-text);
   min-height: 100vh;
-  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  line-height: 1.6;
 }
 
-/* Contenedor principal con diseño limpio */
+/* Contenedor principal con diseño tech */
 .container {
-  width: 92%;
+  width: 100%;
   max-width: 1500px;
-  padding: 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.7s ease-in-out;
-  border: 1px solid #eaeef5;
   position: relative;
+  margin: 0 auto;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 40px;
 }
 
-/* Título principal */
+/* Efecto tech para el contenedor */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  z-index: 1;
+}
+
+/* Título principal estilo tech-legal */
 h1 {
+  font-family: var(--font-heading);
   text-align: center;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
-  color: #0d76cc; /* Azul profesional */
-  margin-bottom: 30px;
+  color: var(--color-text);
+  margin-bottom: 40px;
   letter-spacing: 0.5px;
-  padding-bottom: 12px;
   position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
 h1::after {
   content: '';
   position: absolute;
-  width: 60px;
-  height: 3px;
-  background: #0d76cc; /* Azul corporativo */
-  bottom: 0;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--color-primary);
   border-radius: 3px;
 }
 
-/* Subtítulos para secciones */
-h2 {
-  color: #0d76cc;
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #eaeef5;
-  position: relative;
-}
-
-/* Añadir etiqueta "Requerido" automáticamente a h2 */
-h2::after {
-  content: "Requerido";
-  display: inline-block;
-  font-size: 10px;
-  background: #0d76cc;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 10px;
-  margin-left: 10px;
-  font-weight: 500;
-  vertical-align: middle;
-  position: absolute;
-  right: 0;
-  top: 5px;
+/* Efecto tech para el título */
+h1 span {
+  color: var(--color-secondary);
 }
 
 /* Organización del formulario */
 form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 15px 0;
+  gap: var(--grid-gap);
+  margin-top: 30px;
+}
+
+/* Mensaje informativo estilo tech legal */
+form::before {
+  content: "Complete todos los campos obligatorios marcados con *";
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  background: rgba(110, 61, 224, 0.1);
+  border-left: 3px solid var(--color-primary);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  position: relative;
+}
+
+form::before::before {
+  content: "ℹ️";
+  margin-right: 12px;
+  font-size: 16px;
 }
 
 /* Secciones del formulario */
 .form-section {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
-  grid-column: span 1;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  border: 1px solid #eaeef5;
-  transition: all 0.3s ease;
+  background: var(--color-surface-raised);
+  padding: 26px;
+  border-radius: var(--radius-md);
   position: relative;
-}
-
-/* Destacar sección al hacer hover */
-.form-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  border-left: 3px solid #0d76cc;
-}
-
-/* Añadir animación sutil a las secciones */
-.form-section {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
-  position: relative;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.03);
   overflow: hidden;
 }
 
-/* Simular línea de progreso en cada sección */
-.form-section::before {
-  content: '';
-  position: absolute;
-  height: 3px;
-  top: 0;
-  left: 0;
-  background: linear-gradient(90deg, #0d76cc, #4098e0);
-  width: 0;
-  transition: width 0.5s ease;
+/* Efecto hover para secciones */
+.form-section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md), var(--shadow-accent);
 }
 
-.form-section:hover::before {
-  width: 100%;
+/* Indicador de conexión tech en secciones */
+.form-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-image: 
+    linear-gradient(225deg, transparent 50%, rgba(8, 199, 205, 0.1) 50%),
+    linear-gradient(225deg, transparent 70%, rgba(8, 199, 205, 0.2) 70%);
+  z-index: 1;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.form-section:hover::after {
+  opacity: 1;
+}
+
+/* Subtítulos para secciones estilo tech */
+h2 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(110, 61, 224, 0.1);
+}
+
+/* Indicador tech para títulos de sección */
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: var(--color-primary);
+  margin-right: 10px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
 /* Campos del formulario */
 .form-field {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   position: relative;
 }
 
-/* Etiquetas claras */
+/* Etiquetas de campos */
 label {
-  font-weight: 500;
   display: block;
-  margin-bottom: 8px;
-  color: #444;
+  font-weight: 500;
+  color: var(--color-text-secondary);
   font-size: 14px;
-  position: relative;
+  margin-bottom: 8px;
+  transition: color var(--transition-fast);
 }
 
 /* Indicador de campo requerido */
 label::after {
   content: " *";
-  color: #dc3545;
+  color: var(--color-primary-light);
   font-weight: bold;
 }
 
-/* Añadir un pseudo-elemento para información de ayuda */
-label[for="aNumber"]::before {
-  content: "?";
-  position: absolute;
-  right: -20px;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  background: #f0f4fa;
-  color: #0d76cc;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  cursor: help;
-}
-
-/* Tooltip para aNumber */
-label[for="aNumber"]::before:hover::after {
-  content: "Ingrese su número de registro de extranjero de 9 dígitos";
-  position: absolute;
-  top: -30px;
-  right: 0;
-  background: #333;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
-  z-index: 100;
-}
-
-/* Añadir texto de ayuda específico bajo el campo A-Number */
-#aNumber {
-  margin-bottom: 4px;
-}
-
-#aNumber + label {
-  display: none;
-}
-
-#aNumber::after {
-  content: "Formato: 9 dígitos numéricos sin guiones o espacios";
-  display: block;
-  font-size: 12px;
-  color: #666;
-  margin-top: 4px;
-  font-weight: normal;
-}
-
-/* Inputs estilo ofimático */
+/* Campos de formulario estilo tech */
 input, select, textarea {
   width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #dde3ee;
-  border-radius: 6px;
-  box-sizing: border-box;
-  background: #f8fafd;
-  color: #333;
-  transition: all 0.2s ease;
+  padding: 14px 16px;
+  font-size: 15px;
+  background-color: rgba(15, 18, 21, 0.6);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border var(--transition-fast), box-shadow var(--transition-fast);
   outline: none;
-  position: relative;
-}
-
-/* Campos de solo lectura */
-.readonly-field {
-  background: #f0f4fa;
-  border: 1px solid #dde3ee;
-  color: #666;
-  cursor: not-allowed;
+  font-family: var(--font-body);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Estados de hover y focus */
 input:hover, select:hover, textarea:hover {
-  border-color: #c2d2e9;
+  border-color: rgba(110, 61, 224, 0.5);
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: #0d76cc;
-  box-shadow: 0 0 0 3px rgba(13, 118, 204, 0.12);
-  background: #fff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(110, 61, 224, 0.2);
 }
 
-/* Estilos para validación visual */
-input:valid, select:valid, textarea:valid {
-  border-left-color: #28a745;
-  border-left-width: 3px;
-}
-
-input:invalid, select:invalid, textarea:invalid {
-  border-left-color: #dc3545;
-  border-left-width: 3px;
-}
-
-/* Ajuste para select */
-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 14px;
-  padding-right: 40px;
+/* Campos de solo lectura estilo tech */
+.readonly-field {
+  background-color: rgba(15, 18, 21, 0.8);
+  color: var(--color-text-secondary);
+  border-style: dashed;
+  cursor: not-allowed;
 }
 
 /* Placeholder */
-input::placeholder, textarea::placeholder {
-  color: #aab5c9;
+::placeholder {
+  color: rgba(159, 173, 191, 0.5);
+  opacity: 1;
 }
 
-/* Ajuste para textarea */
+/* Estilización de select con ícono tech */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238f66ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+/* Ajustes para textarea */
 textarea {
-  height: 140px;
+  min-height: 150px;
   resize: vertical;
 }
 
@@ -273,33 +281,33 @@ textarea {
   grid-column: span 3;
 }
 
-/* Botón principal estilo moderno */
+/* Botón estilo tech-legal */
 button {
   grid-column: span 3;
   width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  background: #0d76cc; /* Azul principal */
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: white;
   border: none;
-  border-radius: 6px;
+  padding: 16px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(13, 118, 204, 0.25);
-  margin-top: 15px;
+  transition: all var(--transition-medium);
   position: relative;
   overflow: hidden;
+  margin-top: 20px;
+  box-shadow: var(--shadow-accent);
 }
 
-/* Efecto hover para botón */
 button:hover {
-  background: #0a63ac;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(13, 118, 204, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(110, 61, 224, 0.3);
 }
 
-/* Efecto de resplandor al pasar el mouse sobre el botón */
+/* Efecto tech para el botón */
 button::before {
   content: '';
   position: absolute;
@@ -311,33 +319,97 @@ button::before {
     rgba(255, 255, 255, 0), 
     rgba(255, 255, 255, 0.2), 
     rgba(255, 255, 255, 0));
-  transform: skewX(-25deg);
-  transition: all 0.75s ease;
+  transform: skewX(-15deg);
+  transition: left 0.6s ease;
 }
 
 button:hover::before {
   left: 100%;
 }
 
-button:active {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(13, 118, 204, 0.25);
-}
-
-/* Añadir ícono para el botón */
+/* Ícono de documento para el botón */
 button::after {
   content: '';
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z'%3E%3C/path%3E%3Cpolyline points='13 2 13 9 20 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'%3E%3C/path%3E%3Cpolyline points='14 2 14 8 20 8'%3E%3C/polyline%3E%3Cline x1='16' y1='13' x2='8' y2='13'%3E%3C/line%3E%3Cline x1='16' y1='17' x2='8' y2='17'%3E%3C/line%3E%3Cpolyline points='10 9 9 9 8 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: 10px;
+  margin-left: 8px;
   vertical-align: middle;
 }
 
-/* Mejorar accesibilidad visual */
+/* Validación visual estilo tech */
+input:valid, select:valid, textarea:valid {
+  border-left-color: var(--color-success);
+  border-left-width: 3px;
+}
+
+input:invalid:not(:placeholder-shown), 
+select:invalid:not(:placeholder-shown), 
+textarea:invalid:not(:placeholder-shown) {
+  border-left-color: var(--color-error);
+  border-left-width: 3px;
+}
+
+/* Efecto de completado */
+@keyframes completionPulse {
+  0% { background-color: rgba(110, 61, 224, 0.1); }
+  100% { background-color: transparent; }
+}
+
+input:not(:placeholder-shown), 
+select:not([value=""]), 
+textarea:not(:placeholder-shown) {
+  animation: completionPulse 1s ease;
+}
+
+/* Responsive grid para pantallas medianas */
+@media (max-width: 1200px) {
+  form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .reason-field, button, form::before {
+    grid-column: span 2;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 800px) {
+  .container {
+    padding: 25px 20px;
+  }
+  
+  form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .form-section {
+    padding: 20px;
+  }
+  
+  .reason-field, button, form::before {
+    grid-column: span 1;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+}
+
+/* Accesibilidad */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
@@ -347,121 +419,47 @@ button::after {
   }
 }
 
-/* Banner informativo que aparece en la parte superior del formulario */
-form::before {
-  content: "Asegúrese de que todos los datos sean correctos. Los campos marcados con * son obligatorios.";
-  display: block;
-  grid-column: span 3;
-  background: #e9f3ff;
-  padding: 15px;
-  border-radius: 6px;
-  color: #0d76cc;
-  border-left: 4px solid #0d76cc;
-  margin-bottom: 20px;
-  font-size: 14px;
+/* Estado de focus visible para accesibilidad */
+input:focus-visible, 
+select:focus-visible, 
+textarea:focus-visible, 
+button:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
 }
 
-/* Añadir un banner de notificación al final del formulario */
-form::after {
-  content: "Su información es confidencial y será utilizada únicamente para el proceso de cambio de corte.";
-  display: block;
-  grid-column: span 3;
-  text-align: center;
-  margin-top: 20px;
-  color: #666;
-  font-size: 13px;
+/* Personalización de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-/* Mensaje flotante de guardado automático */
-@keyframes saveNotice {
-  0% { opacity: 0; transform: translateY(20px); }
-  10% { opacity: 1; transform: translateY(0); }
-  90% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
 }
 
-/* Animaciones para mejorar interactividad */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 5px;
+  border: 2px solid var(--color-surface);
 }
 
-@keyframes highlight {
-  0% { background-color: rgba(13, 118, 204, 0.1); }
-  100% { background-color: transparent; }
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
 }
 
-/* Mejora visual para campos al rellenarlos */
-input:not(:placeholder-shown), 
-select:not([value=""]), 
-textarea:not(:placeholder-shown) {
-  animation: highlight 1s ease;
-}
-
-/* Responsividad */
-@media (max-width: 1200px) {
-  form {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .form-section {
-    grid-column: span 1;
-  }
-  
-  .reason-field {
-    grid-column: span 2;
-  }
-  
-  button {
-    grid-column: span 2;
-  }
-  
-  form::before, form::after {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 800px) {
-  .container {
-    width: 95%;
-    padding: 25px;
-  }
-  
-  form {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .form-section, .reason-field, button {
-    grid-column: span 1;
-  }
-  
-  form::before, form::after {
-    grid-column: span 1;
-  }
-  
-  h1 {
-    font-size: 24px;
-  }
-  
-  h2 {
-    font-size: 18px;
-  }
-}
-
-/* Accesibilidad mejorada */
-input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
-  outline: 2px solid #0d76cc;
-  outline-offset: 2px;
-}
-
-/* Mejora de contraste para accesibilidad */
-label, h1, h2 {
-  color: #0a5896; /* Azul más oscuro para mejor contraste */
-}
-
-/* Estado activo para teclado */
-button:focus {
-  outline: 2px solid #0d76cc;
-  outline-offset: 2px;
+/* Líneas de conexión decorativas */
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background-image: 
+    linear-gradient(45deg, transparent 48%, rgba(8, 199, 205, 0.03) 50%),
+    linear-gradient(45deg, transparent 48%, rgba(8, 199, 205, 0.05) 52%),
+    linear-gradient(45deg, transparent 48%, rgba(8, 199, 205, 0.07) 54%);
+  opacity: 0.7;
+  pointer-events: none;
 }
