@@ -1,162 +1,467 @@
-/* Estilo Global */
+/* Estilo Global con enfoque corporativo-ofimático */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0a0f1d, #1c2337, #2e3b5e); /* Fondo degradado azul oscuro */
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fb; /* Fondo claro profesional */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #ffffff;
+  color: #333;
 }
 
-/* Contenedor principal con efecto Glassmorphism */
+/* Contenedor principal con diseño limpio */
 .container {
-  width: 95vw; /* Más ancho en PC */
-  max-width: 1600px; /* Ajuste para pantallas grandes */
-  padding: 50px;
-  background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(15px); /* Efecto Glass */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  animation: fadeIn 1s ease-in-out;
+  width: 92%;
+  max-width: 1500px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.7s ease-in-out;
+  border: 1px solid #eaeef5;
+  position: relative;
 }
 
-/* Título */
+/* Título principal */
 h1 {
   text-align: center;
-  font-size: 36px; /* Más grande */
-  font-weight: bold;
-  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0d76cc; /* Azul profesional */
   margin-bottom: 30px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 6px rgba(207, 21, 21, 0.3);
+  letter-spacing: 0.5px;
+  padding-bottom: 12px;
+  position: relative;
 }
 
-/* Estilos del formulario */
+h1::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: #0d76cc; /* Azul corporativo */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+/* Subtítulos para secciones */
+h2 {
+  color: #0d76cc;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eaeef5;
+  position: relative;
+}
+
+/* Añadir etiqueta "Requerido" automáticamente a h2 */
+h2::after {
+  content: "Requerido";
+  display: inline-block;
+  font-size: 10px;
+  background: #0d76cc;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-weight: 500;
+  vertical-align: middle;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+/* Organización del formulario */
 form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  padding: 20px;
+  padding: 15px 0;
 }
 
-/* Etiquetas */
+/* Secciones del formulario */
+.form-section {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  grid-column: span 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 1px solid #eaeef5;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Destacar sección al hacer hover */
+.form-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-left: 3px solid #0d76cc;
+}
+
+/* Añadir animación sutil a las secciones */
+.form-section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Simular línea de progreso en cada sección */
+.form-section::before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #0d76cc, #4098e0);
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+.form-section:hover::before {
+  width: 100%;
+}
+
+/* Campos del formulario */
+.form-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Etiquetas claras */
 label {
-  font-weight: 600;
+  font-weight: 500;
   display: block;
   margin-bottom: 8px;
-  color: #ffffff;
-  font-size: 16px;
-  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.4);
+  color: #444;
+  font-size: 14px;
+  position: relative;
 }
 
-/* Inputs, Selects y Textareas con efecto Glass */
+/* Indicador de campo requerido */
+label::after {
+  content: " *";
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Añadir un pseudo-elemento para información de ayuda */
+label[for="aNumber"]::before {
+  content: "?";
+  position: absolute;
+  right: -20px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: #f0f4fa;
+  color: #0d76cc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: help;
+}
+
+/* Tooltip para aNumber */
+label[for="aNumber"]::before:hover::after {
+  content: "Ingrese su número de registro de extranjero de 9 dígitos";
+  position: absolute;
+  top: -30px;
+  right: 0;
+  background: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+/* Añadir texto de ayuda específico bajo el campo A-Number */
+#aNumber {
+  margin-bottom: 4px;
+}
+
+#aNumber + label {
+  display: none;
+}
+
+#aNumber::after {
+  content: "Formato: 9 dígitos numéricos sin guiones o espacios";
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  font-weight: normal;
+}
+
+/* Inputs estilo ofimático */
 input, select, textarea {
   width: 100%;
-  padding: 18px; /* Más alto */
-  font-size: 18px; /* Texto más grande */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #dde3ee;
+  border-radius: 6px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.1); /* Suave fondo translúcido */
-  color: #ffffff;
-  transition: all 0.3s ease;
+  background: #f8fafd;
+  color: #333;
+  transition: all 0.2s ease;
   outline: none;
-  backdrop-filter: blur(10px); /* Efecto Glass */
+  position: relative;
 }
 
-/* Ajustes para Select */
+/* Campos de solo lectura */
+.readonly-field {
+  background: #f0f4fa;
+  border: 1px solid #dde3ee;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Estados de hover y focus */
+input:hover, select:hover, textarea:hover {
+  border-color: #c2d2e9;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #0d76cc;
+  box-shadow: 0 0 0 3px rgba(13, 118, 204, 0.12);
+  background: #fff;
+}
+
+/* Estilos para validación visual */
+input:valid, select:valid, textarea:valid {
+  border-left-color: #28a745;
+  border-left-width: 3px;
+}
+
+input:invalid, select:invalid, textarea:invalid {
+  border-left-color: #dc3545;
+  border-left-width: 3px;
+}
+
+/* Ajuste para select */
 select {
   appearance: none;
-  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 40px;
 }
 
-/* Asegurar visibilidad en opciones del select */
-select option {
-  background: #1b263b;
-  color: #ffffff;
-  padding: 12px;
-}
-
-select:focus {
-  border-color: #009dff;
-  box-shadow: 0 0 15px rgba(0, 157, 255, 0.6);
-}
-
-/* Placeholder de los Inputs */
+/* Placeholder */
 input::placeholder, textarea::placeholder {
-  color: #d6d6d6;
+  color: #aab5c9;
 }
 
-input:hover, select:hover, textarea:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-/* Ajuste especial para textarea */
+/* Ajuste para textarea */
 textarea {
   height: 140px;
   resize: vertical;
+}
+
+.reason-field {
   grid-column: span 3;
 }
 
-/* Botón de Envío más grande y con efecto 3D */
+/* Botón principal estilo moderno */
 button {
   grid-column: span 3;
   width: 100%;
-  padding: 20px;
-  font-size: 20px; /* Más grande */
-  font-weight: bold;
-  background: linear-gradient(90deg, #007bff, #0047b3);
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #0d76cc; /* Azul principal */
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(13, 118, 204, 0.25);
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Efecto hover para botón */
 button:hover {
-  background: linear-gradient(90deg, #0047b3, #007bff);
+  background: #0a63ac;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.6);
+  box-shadow: 0 6px 15px rgba(13, 118, 204, 0.35);
+}
+
+/* Efecto de resplandor al pasar el mouse sobre el botón */
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0), 
+    rgba(255, 255, 255, 0.2), 
+    rgba(255, 255, 255, 0));
+  transform: skewX(-25deg);
+  transition: all 0.75s ease;
+}
+
+button:hover::before {
+  left: 100%;
 }
 
 button:active {
-  transform: scale(0.96);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(13, 118, 204, 0.25);
+}
+
+/* Añadir ícono para el botón */
+button::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z'%3E%3C/path%3E%3Cpolyline points='13 2 13 9 20 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Mejorar accesibilidad visual */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Banner informativo que aparece en la parte superior del formulario */
+form::before {
+  content: "Asegúrese de que todos los datos sean correctos. Los campos marcados con * son obligatorios.";
+  display: block;
+  grid-column: span 3;
+  background: #e9f3ff;
+  padding: 15px;
+  border-radius: 6px;
+  color: #0d76cc;
+  border-left: 4px solid #0d76cc;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Añadir un banner de notificación al final del formulario */
+form::after {
+  content: "Su información es confidencial y será utilizada únicamente para el proceso de cambio de corte.";
+  display: block;
+  grid-column: span 3;
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* Mensaje flotante de guardado automático */
+@keyframes saveNotice {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Animaciones para mejorar interactividad */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes highlight {
+  0% { background-color: rgba(13, 118, 204, 0.1); }
+  100% { background-color: transparent; }
+}
+
+/* Mejora visual para campos al rellenarlos */
+input:not(:placeholder-shown), 
+select:not([value=""]), 
+textarea:not(:placeholder-shown) {
+  animation: highlight 1s ease;
 }
 
 /* Responsividad */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   form {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .form-section {
+    grid-column: span 1;
+  }
+  
+  .reason-field {
+    grid-column: span 2;
+  }
+  
+  button {
+    grid-column: span 2;
+  }
+  
+  form::before, form::after {
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 800px) {
   .container {
-    width: 95vw; /* Mantiene buen ancho en mobile */
+    width: 95%;
+    padding: 25px;
   }
   
   form {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-
-  textarea, button {
+  
+  .form-section, .reason-field, button {
     grid-column: span 1;
+  }
+  
+  form::before, form::after {
+    grid-column: span 1;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 18px;
   }
 }
 
-/* Animación de Aparición */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Accesibilidad mejorada */
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+  outline: 2px solid #0d76cc;
+  outline-offset: 2px;
+}
+
+/* Mejora de contraste para accesibilidad */
+label, h1, h2 {
+  color: #0a5896; /* Azul más oscuro para mejor contraste */
+}
+
+/* Estado activo para teclado */
+button:focus {
+  outline: 2px solid #0d76cc;
+  outline-offset: 2px;
 }
