@@ -109,7 +109,7 @@ h1::after {
 
 /* Solo dejamos un logo al título - eliminamos la estrella */
 h1::before {
-  content: "PRO TRÁMITES";
+  content: "PRO TRÁMITES LLC";
   display: block;
   font-size: 14px;
   margin: 0 auto 20px;
