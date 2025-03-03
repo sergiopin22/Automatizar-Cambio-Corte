@@ -1,22 +1,22 @@
-/* Estilo Tech-Legal Híbrido */
+/* Estilo Tech-Legal para Pro Trámites LLC */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   --color-bg: #0f1215;
   --color-surface: #171c21;
   --color-surface-raised: #1e242c;
-  --color-primary: #6e3de0;    /* Púrpura distintivo */
-  --color-primary-light: #8f66ff;
-  --color-secondary: #08c7cd;  /* Cian tech */
-  --color-accent: #6e3de0;
+  --color-primary: #cf1e2d;    /* Rojo de Pro Trámites */
+  --color-primary-light: #e8454f;
+  --color-secondary: #2a5193;  /* Azul de la bandera */
+  --color-accent: #ffffff;     /* Blanco para acentos */
   --color-text: #f2f5f9;
   --color-text-secondary: #9fadbf;
-  --color-border: rgba(143, 102, 255, 0.12);
+  --color-border: rgba(207, 30, 45, 0.12);
   --color-error: #ff4967;
   --color-success: #20e070;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.22);
-  --shadow-accent: 0 6px 20px rgba(110, 61, 224, 0.15);
+  --shadow-accent: 0 6px 20px rgba(207, 30, 45, 0.15);
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
@@ -37,9 +37,9 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
   background-image: 
-    linear-gradient(120deg, rgba(110, 61, 224, 0.05) 0%, transparent 70%),
-    linear-gradient(240deg, rgba(8, 199, 205, 0.05) 0%, transparent 70%),
-    radial-gradient(circle at 80% 20%, rgba(110, 61, 224, 0.03) 0%, transparent 30%);
+    linear-gradient(120deg, rgba(207, 30, 45, 0.05) 0%, transparent 70%),
+    linear-gradient(240deg, rgba(42, 81, 147, 0.05) 0%, transparent 70%),
+    radial-gradient(circle at 80% 20%, rgba(207, 30, 45, 0.03) 0%, transparent 30%);
   background-attachment: fixed;
   color: var(--color-text);
   min-height: 100vh;
@@ -50,7 +50,7 @@ body {
   line-height: 1.6;
 }
 
-/* Contenedor principal con diseño tech */
+/* Contenedor principal con diseño tech mejorado */
 .container {
   width: 100%;
   max-width: 1500px;
@@ -62,17 +62,22 @@ body {
   box-shadow: var(--shadow-md);
   border: 1px solid rgba(255, 255, 255, 0.03);
   padding: 40px;
+  /* Añadir un sutil patrón de rejilla tech en el fondo */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* Efecto tech para el contenedor */
+/* Efecto tech para el contenedor con colores de marca */
 .container::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
   z-index: 1;
 }
 
@@ -98,13 +103,21 @@ h1::after {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: var(--color-primary);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
   border-radius: 3px;
 }
 
-/* Efecto tech para el título */
-h1 span {
-  color: var(--color-secondary);
+/* Solo dejamos un logo al título - eliminamos la estrella */
+h1::before {
+  content: "PRO TRÁMITES";
+  display: block;
+  font-size: 14px;
+  margin: 0 auto 20px;
+  color: var(--color-primary);
+  letter-spacing: 3px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 /* Organización del formulario */
@@ -115,15 +128,15 @@ form {
   margin-top: 30px;
 }
 
-/* Mensaje informativo estilo tech legal */
+/* Mensaje informativo estilo Pro Trámites mejorado */
 form::before {
   content: "Complete todos los campos obligatorios marcados con *";
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  background: rgba(110, 61, 224, 0.1);
+  background: rgba(207, 30, 45, 0.08);
   border-left: 3px solid var(--color-primary);
-  padding: 16px 20px;
+  padding: 16px 20px 16px 50px;
   border-radius: var(--radius-sm);
   color: var(--color-text-secondary);
   font-size: 14px;
@@ -131,12 +144,25 @@ form::before {
 }
 
 form::before::before {
-  content: "ℹ️";
-  margin-right: 12px;
-  font-size: 16px;
+  content: "ℹ";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  font-size: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-weight: bold;
 }
 
-/* Secciones del formulario */
+/* Secciones del formulario mejoradas */
 .form-section {
   background: var(--color-surface-raised);
   padding: 26px;
@@ -146,6 +172,10 @@ form::before::before {
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(255, 255, 255, 0.03);
   overflow: hidden;
+  /* Añadir línea de circuito como detalle tech */
+  background-image: 
+    radial-gradient(circle at 90% 10%, rgba(207, 30, 45, 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 10% 90%, rgba(42, 81, 147, 0.1) 0%, transparent 25%);
 }
 
 /* Efecto hover para secciones */
@@ -154,7 +184,7 @@ form::before::before {
   box-shadow: var(--shadow-md), var(--shadow-accent);
 }
 
-/* Indicador de conexión tech en secciones */
+/* Indicador de esquina estilo Pro Trámites */
 .form-section::after {
   content: '';
   position: absolute;
@@ -163,8 +193,8 @@ form::before::before {
   width: 40px;
   height: 40px;
   background-image: 
-    linear-gradient(225deg, transparent 50%, rgba(8, 199, 205, 0.1) 50%),
-    linear-gradient(225deg, transparent 70%, rgba(8, 199, 205, 0.2) 70%);
+    linear-gradient(225deg, transparent 50%, rgba(207, 30, 45, 0.1) 50%),
+    linear-gradient(225deg, transparent 70%, rgba(207, 30, 45, 0.2) 70%);
   z-index: 1;
   opacity: 0.5;
   transition: opacity var(--transition-fast);
@@ -174,7 +204,7 @@ form::before::before {
   opacity: 1;
 }
 
-/* Subtítulos para secciones estilo tech */
+/* Subtítulos para secciones estilo Pro Trámites mejorado */
 h2 {
   font-family: var(--font-heading);
   color: var(--color-text);
@@ -185,18 +215,20 @@ h2 {
   position: relative;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(110, 61, 224, 0.1);
+  border-bottom: 1px solid rgba(207, 30, 45, 0.1);
+  letter-spacing: 0.5px;
 }
 
-/* Indicador tech para títulos de sección */
+/* Indicador para títulos de sección mejorado */
 h2::before {
   content: "";
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   background: var(--color-primary);
   margin-right: 10px;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  box-shadow: 0 0 10px rgba(207, 30, 45, 0.3);
 }
 
 /* Campos del formulario */
@@ -205,7 +237,7 @@ h2::before {
   position: relative;
 }
 
-/* Etiquetas de campos */
+/* Etiquetas de campos mejoradas */
 label {
   display: block;
   font-weight: 500;
@@ -213,16 +245,30 @@ label {
   font-size: 14px;
   margin-bottom: 8px;
   transition: color var(--transition-fast);
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Estilo tech para labels */
+label::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-family: monospace;
+  opacity: 0.8;
 }
 
 /* Indicador de campo requerido */
 label::after {
   content: " *";
-  color: var(--color-primary-light);
+  color: var(--color-primary);
   font-weight: bold;
 }
 
-/* Campos de formulario estilo tech */
+/* Campos de formulario estilo Pro Trámites mejorado */
 input, select, textarea {
   width: 100%;
   padding: 14px 16px;
@@ -231,7 +277,7 @@ input, select, textarea {
   color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  transition: border var(--transition-fast), box-shadow var(--transition-fast);
+  transition: all var(--transition-fast);
   outline: none;
   font-family: var(--font-body);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -239,20 +285,33 @@ input, select, textarea {
 
 /* Estados de hover y focus */
 input:hover, select:hover, textarea:hover {
-  border-color: rgba(110, 61, 224, 0.5);
+  border-color: rgba(207, 30, 45, 0.5);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(207, 30, 45, 0.2);
 }
 
 input:focus, select:focus, textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(110, 61, 224, 0.2);
+  box-shadow: 0 0 0 3px rgba(207, 30, 45, 0.15);
+  background-color: rgba(15, 18, 21, 0.7);
 }
 
-/* Campos de solo lectura estilo tech */
+/* Campos de solo lectura mejorados */
 .readonly-field {
   background-color: rgba(15, 18, 21, 0.8);
   color: var(--color-text-secondary);
   border-style: dashed;
   cursor: not-allowed;
+  position: relative;
+}
+
+.readonly-field::after {
+  content: "🔒";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0.5;
 }
 
 /* Placeholder */
@@ -261,10 +320,10 @@ input:focus, select:focus, textarea:focus {
   opacity: 1;
 }
 
-/* Estilización de select con ícono tech */
+/* Estilización de select con ícono mejorado */
 select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238f66ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23cf1e2d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;
@@ -281,14 +340,14 @@ textarea {
   grid-column: span 3;
 }
 
-/* Botón estilo tech-legal */
+/* Botón estilo Pro Trámites mejorado */
 button {
   grid-column: span 3;
   width: 100%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  background: linear-gradient(135deg, var(--color-primary), #ab1825);
   color: white;
   border: none;
-  padding: 16px;
+  padding: 16px 20px;
   font-family: var(--font-heading);
   font-size: 16px;
   font-weight: 600;
@@ -300,14 +359,15 @@ button {
   overflow: hidden;
   margin-top: 20px;
   box-shadow: var(--shadow-accent);
+  text-transform: uppercase;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(110, 61, 224, 0.3);
+  box-shadow: 0 8px 25px rgba(207, 30, 45, 0.3);
 }
 
-/* Efecto tech para el botón */
+/* Efecto tech para el botón mejorado */
 button::before {
   content: '';
   position: absolute;
@@ -317,7 +377,7 @@ button::before {
   height: 100%;
   background: linear-gradient(90deg, 
     rgba(255, 255, 255, 0), 
-    rgba(255, 255, 255, 0.2), 
+    rgba(255, 255, 255, 0.3), 
     rgba(255, 255, 255, 0));
   transform: skewX(-15deg);
   transition: left 0.6s ease;
@@ -340,7 +400,7 @@ button::after {
   vertical-align: middle;
 }
 
-/* Validación visual estilo tech */
+/* Validación visual estilo Pro Trámites */
 input:valid, select:valid, textarea:valid {
   border-left-color: var(--color-success);
   border-left-width: 3px;
@@ -355,7 +415,7 @@ textarea:invalid:not(:placeholder-shown) {
 
 /* Efecto de completado */
 @keyframes completionPulse {
-  0% { background-color: rgba(110, 61, 224, 0.1); }
+  0% { background-color: rgba(207, 30, 45, 0.1); }
   100% { background-color: transparent; }
 }
 
@@ -448,7 +508,7 @@ button:focus-visible {
   background: var(--color-primary-light);
 }
 
-/* Líneas de conexión decorativas */
+/* Líneas de conexión decorativas estilo Pro Trámites mejoradas */
 .container::after {
   content: "";
   position: absolute;
@@ -457,9 +517,65 @@ button:focus-visible {
   width: 150px;
   height: 150px;
   background-image: 
-    linear-gradient(45deg, transparent 48%, rgba(8, 199, 205, 0.03) 50%),
-    linear-gradient(45deg, transparent 48%, rgba(8, 199, 205, 0.05) 52%),
-    linear-gradient(45deg, transparent 48%, rgba(8, 199, 205, 0.07) 54%);
-  opacity: 0.7;
+    linear-gradient(45deg, transparent 48%, rgba(42, 81, 147, 0.05) 50%),
+    linear-gradient(45deg, transparent 48%, rgba(42, 81, 147, 0.07) 52%),
+    linear-gradient(45deg, transparent 48%, rgba(42, 81, 147, 0.09) 54%);
+  opacity: 0.8;
   pointer-events: none;
+}
+
+/* Añadir efecto patriótico sutil al pasar sobre secciones */
+.form-section::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 10px;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary) 33%, white 33%, white 66%, var(--color-secondary) 66%);
+  opacity: 0;
+  transition: opacity var(--transition-medium), transform var(--transition-medium);
+  transform: translateY(5px);
+}
+
+.form-section:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto de dataflow digital - líneas de trama flotantes */
+@keyframes dataflow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+  z-index: 1;
+}
+
+/* Añadir una luz de estado en la esquina superior derecha */
+.container::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-primary);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
 }
