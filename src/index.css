@@ -1,123 +1,211 @@
-/* Estilo Tech-Legal para Pro Trámites LLC */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+/* Tema Azul Confiable Pro Trámites LLC */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-  --color-bg: #0f1215;
-  --color-surface: #171c21;
-  --color-surface-raised: #1e242c;
-  --color-primary: #cf1e2d;    /* Rojo de Pro Trámites */
-  --color-primary-light: #e8454f;
-  --color-secondary: #2a5193;  /* Azul de la bandera */
-  --color-accent: #ffffff;     /* Blanco para acentos */
-  --color-text: #f2f5f9;
-  --color-text-secondary: #9fadbf;
-  --color-border: rgba(207, 30, 45, 0.12);
-  --color-error: #ff4967;
-  --color-success: #20e070;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.22);
-  --shadow-accent: 0 6px 20px rgba(207, 30, 45, 0.15);
+  /* Colores patrióticos optimizados */
+  --color-red: #cc0e1e;        /* Rojo del logo */
+  --color-red-light: #e62a3a;
+  --color-blue-primary: #2a4785;  /* Azul principal confiable */
+  --color-blue-dark: #172a55;     /* Azul oscuro para acentos */
+  --color-blue-light: #3a69b9;    /* Azul brillante para elementos interactivos */
+  --color-blue-pale: #506ca6;     /* Azul pálido para bordes sutiles */
+  --color-blue-dark-bg: #1e2b45;  /* Azul oscuro para fondos */
+  --color-white: #ffffff;
+  --color-off-white: #f0f0f0;
+  
+  /* Paleta de modo oscuro ajustada */
+  --color-bg: #12151e;
+  --color-surface: #1c202c;
+  --color-surface-raised: #262b3a;
+  --color-surface-blue: #1e2d45;   /* Contenedor azul oscuro - NUEVO */
+  --color-surface-blue-light: #23345a;  /* Contenedor azul más claro - NUEVO */
+  --color-border: #32374a;
+  --color-border-blue: #3a4e79;    /* Borde azul - NUEVO */
+  
+  /* Colores para los desplegables */
+  --color-dropdown-bg: #293858;
+  --color-dropdown-hover: #344573;
+  --color-dropdown-selected: #3a69b9;
+  --color-dropdown-text: #e6e8ee;
+  --color-dropdown-text-selected: #ffffff;
+  
+  /* Colores de texto */
+  --color-text: #e6e8ee;
+  --color-text-secondary: #a9aebb;
+  --color-text-tertiary: #767a8a;
+  
+  /* Colores de estado */
+  --color-success: #45d68a;
+  --color-error: #ff4758;
+  --color-warning: #ffb347;
+  --color-info: #47a3ff;
+  
+  /* Sombras y efectos */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-blue: 0 4px 20px rgba(42, 71, 133, 0.25);
+  --shadow-dropdown: 0 6px 16px rgba(0, 0, 0, 0.3);
+  
+  /* Bordes redondeados */
   --radius-sm: 6px;
   --radius-md: 10px;
-  --radius-lg: 16px;
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --grid-gap: 24px;
+  --radius-lg: 14px;
+  --radius-round: 9999px;
+  
+  /* Tipografía */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  
+  /* Espaciado */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  
+  /* Grid */
+  --grid-gap: 20px;
+  
+  /* Transiciones */
+  --transition-fast: 0.15s ease;
+  --transition-medium: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Reset y normalización */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInTop {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes patrioticGlow {
+  0% { box-shadow: 0 0 15px rgba(42, 71, 133, 0.3); }
+  33% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.25); }
+  66% { box-shadow: 0 0 15px rgba(204, 14, 30, 0.3); }
+  100% { box-shadow: 0 0 15px rgba(42, 71, 133, 0.3); }
+}
+
+@keyframes stripesAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes pulseScale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
-  background-image: 
-    linear-gradient(120deg, rgba(207, 30, 45, 0.05) 0%, transparent 70%),
-    linear-gradient(240deg, rgba(42, 81, 147, 0.05) 0%, transparent 70%),
-    radial-gradient(circle at 80% 20%, rgba(207, 30, 45, 0.03) 0%, transparent 30%);
-  background-attachment: fixed;
   color: var(--color-text);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px 16px;
+  padding: var(--space-md);
   line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(42, 71, 133, 0.1) 0%, transparent 25%), 
+    radial-gradient(circle at 85% 85%, rgba(23, 42, 85, 0.08) 0%, transparent 20%);
+  background-attachment: fixed;
+  animation: fadeIn 0.8s ease-out;
 }
 
-/* Contenedor principal con diseño tech mejorado */
+/* Contenedor principal */
 .container {
   width: 100%;
-  max-width: 1500px;
-  position: relative;
+  max-width: 1400px;
   margin: 0 auto;
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  padding: 40px;
-  /* Añadir un sutil patrón de rejilla tech en el fondo */
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 20px 20px;
+  border: 1px solid var(--color-border);
+  padding: var(--space-xl);
+  position: relative;
+  animation: slideInTop 0.6s ease-out;
 }
 
-/* Efecto tech para el contenedor con colores de marca */
+/* Barra superior estilo logo con animación */
 .container::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-  z-index: 1;
+  height: 6px;
+  background: linear-gradient(90deg, 
+    var(--color-red) 0%, 
+    var(--color-red) 20%, 
+    var(--color-white) 20%, 
+    var(--color-white) 40%, 
+    var(--color-blue-primary) 40%, 
+    var(--color-blue-primary) 60%, 
+    var(--color-white) 60%, 
+    var(--color-white) 80%, 
+    var(--color-red) 80%, 
+    var(--color-red) 100%
+  );
+  background-size: 200% 100%;
+  z-index: 2;
+  animation: stripesAnimation 15s linear infinite alternate;
 }
 
-/* Título principal estilo tech-legal */
+/* Título principal con animación */
 h1 {
   font-family: var(--font-heading);
   text-align: center;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 800;
   color: var(--color-text);
-  margin-bottom: 40px;
-  letter-spacing: 0.5px;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
   position: relative;
-  display: inline-block;
-  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: fadeIn 1s ease-out;
 }
 
+/* Subrayado del título con los colores de la bandera y animación */
 h1::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-  border-radius: 3px;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-red) 33%, var(--color-white) 33%, var(--color-white) 66%, var(--color-blue-primary) 66%);
+  border-radius: var(--radius-round);
+  animation: patrioticGlow 6s infinite;
 }
 
-/* Solo dejamos un logo al título - eliminamos la estrella */
+/* Elemento de logo en título */
 h1::before {
   content: "PRO TRÁMITES LLC";
   display: block;
   font-size: 14px;
-  margin: 0 auto 20px;
-  color: var(--color-primary);
+  margin: 0 auto 12px;
+  color: var(--color-blue-light);
   letter-spacing: 3px;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 /* Organización del formulario */
@@ -125,249 +213,287 @@ form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--grid-gap);
-  margin-top: 30px;
+  margin-top: var(--space-lg);
+  animation: fadeIn 0.8s ease-out 0.3s both;
 }
 
-/* Mensaje informativo estilo Pro Trámites mejorado */
+/* Mensaje informativo con animación */
 form::before {
   content: "Complete todos los campos obligatorios marcados con *";
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  background: rgba(207, 30, 45, 0.08);
-  border-left: 3px solid var(--color-primary);
-  padding: 16px 20px 16px 50px;
+  background: rgba(42, 71, 133, 0.1);
+  border-left: 3px solid var(--color-blue-light);
+  padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-sm);
   color: var(--color-text-secondary);
   font-size: 14px;
+  font-weight: 500;
   position: relative;
+  margin-bottom: var(--space-md);
+  animation: slideInTop 0.5s ease-out 0.5s both;
 }
 
-form::before::before {
-  content: "ℹ";
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background-color: var(--color-primary);
-  color: var(--color-accent);
-  font-size: 14px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-style: italic;
-  font-weight: bold;
-}
-
-/* Secciones del formulario mejoradas */
+/* Secciones del formulario con color azul confiable y animación */
 .form-section {
-  background: var(--color-surface-raised);
-  padding: 26px;
+  background: var(--color-surface-blue);
+  padding: var(--space-lg);
   border-radius: var(--radius-md);
   position: relative;
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  overflow: hidden;
-  /* Añadir línea de circuito como detalle tech */
-  background-image: 
-    radial-gradient(circle at 90% 10%, rgba(207, 30, 45, 0.1) 0%, transparent 25%),
-    radial-gradient(circle at 10% 90%, rgba(42, 81, 147, 0.1) 0%, transparent 25%);
+  border: 1px solid var(--color-border-blue);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+  animation-delay: calc(0.1s * var(--animation-order, 0));
 }
+
+/* Agregar orden de animación a las secciones */
+.form-section:nth-child(1) { --animation-order: 1; }
+.form-section:nth-child(2) { --animation-order: 2; }
+.form-section:nth-child(3) { --animation-order: 3; }
+.form-section:nth-child(4) { --animation-order: 4; }
+.form-section:nth-child(5) { --animation-order: 5; }
+.form-section:nth-child(6) { --animation-order: 6; }
 
 /* Efecto hover para secciones */
 .form-section:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md), var(--shadow-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-blue);
+  background: var(--color-surface-blue-light);
 }
 
-/* Indicador de esquina estilo Pro Trámites */
+/* Estrella patriótica en la esquina de cada sección */
 .form-section::after {
-  content: '';
+  content: '★';
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  background-image: 
-    linear-gradient(225deg, transparent 50%, rgba(207, 30, 45, 0.1) 50%),
-    linear-gradient(225deg, transparent 70%, rgba(207, 30, 45, 0.2) 70%);
-  z-index: 1;
-  opacity: 0.5;
-  transition: opacity var(--transition-fast);
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: rgba(42, 71, 133, 0.4);
+  pointer-events: none;
 }
 
-.form-section:hover::after {
-  opacity: 1;
-}
-
-/* Subtítulos para secciones estilo Pro Trámites mejorado */
+/* Subtítulos de sección */
 h2 {
   font-family: var(--font-heading);
   color: var(--color-text);
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  padding-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-xs);
   position: relative;
+  border-bottom: 1px solid rgba(42, 71, 133, 0.3);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(207, 30, 45, 0.1);
-  letter-spacing: 0.5px;
 }
 
-/* Indicador para títulos de sección mejorado */
+/* Icono para los subtítulos */
 h2::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: var(--color-primary);
-  margin-right: 10px;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  box-shadow: 0 0 10px rgba(207, 30, 45, 0.3);
+  content: "★";
+  color: var(--color-blue-light);
+  margin-right: var(--space-sm);
+}
+
+/* Contenedor de campos */
+.form-field {
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+/* Etiquetas de campo */
+label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-bottom: var(--space-xs);
+  transition: color var(--transition-fast);
+}
+
+/* Indicador de campo obligatorio */
+label::after {
+  content: " *";
+  color: var(--color-red-light);
+  font-weight: bold;
 }
 
 /* Campos del formulario */
-.form-field {
-  margin-bottom: 24px;
-  position: relative;
-}
-
-/* Etiquetas de campos mejoradas */
-label {
-  display: block;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  font-size: 14px;
-  margin-bottom: 8px;
-  transition: color var(--transition-fast);
-  position: relative;
-  padding-left: 20px;
-}
-
-/* Estilo tech para labels */
-label::before {
-  content: ">";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--color-primary);
-  font-weight: bold;
-  font-family: monospace;
-  opacity: 0.8;
-}
-
-/* Indicador de campo requerido */
-label::after {
-  content: " *";
-  color: var(--color-primary);
-  font-weight: bold;
-}
-
-/* Campos de formulario estilo Pro Trámites mejorado */
 input, select, textarea {
   width: 100%;
-  padding: 14px 16px;
+  padding: 12px 14px;
   font-size: 15px;
-  background-color: rgba(15, 18, 21, 0.6);
+  background-color: rgba(0, 0, 0, 0.15);
   color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   outline: none;
   font-family: var(--font-body);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Estados de hover y focus */
+/* Estados de hover */
 input:hover, select:hover, textarea:hover {
-  border-color: rgba(207, 30, 45, 0.5);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(207, 30, 45, 0.2);
+  border-color: rgba(58, 105, 185, 0.5);
 }
 
+/* Estados de focus */
 input:focus, select:focus, textarea:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(207, 30, 45, 0.15);
-  background-color: rgba(15, 18, 21, 0.7);
+  border-color: var(--color-blue-light);
+  box-shadow: 0 0 0 2px rgba(42, 71, 133, 0.2);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
-/* Campos de solo lectura mejorados */
-.readonly-field {
-  background-color: rgba(15, 18, 21, 0.8);
-  color: var(--color-text-secondary);
-  border-style: dashed;
-  cursor: not-allowed;
-  position: relative;
+/* Campos completados con indicador visual */
+input:not(:placeholder-shown):not(:invalid), 
+select:not(:invalid):not([value=""]), 
+textarea:not(:placeholder-shown):not(:invalid) {
+  background-color: rgba(69, 214, 138, 0.05);
+  border-color: var(--color-success);
 }
 
-.readonly-field::after {
-  content: "🔒";
+/* Icono de verificación para campos completados */
+.form-field:has(input:not(:placeholder-shown):not(:invalid))::after,
+.form-field:has(select:not(:invalid):not([value=""]))::after,
+.form-field:has(textarea:not(:placeholder-shown):not(:invalid))::after {
+  content: "✓";
   position: absolute;
   right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  opacity: 0.5;
+  top: 36px;
+  color: var(--color-success);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Campos inválidos */
+input:invalid:not(:placeholder-shown), 
+select:invalid:not([value=""]), 
+textarea:invalid:not(:placeholder-shown) {
+  background-color: rgba(255, 71, 88, 0.05);
+  border-color: var(--color-error);
+}
+
+/* Campos de solo lectura */
+.readonly-field {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--color-text-tertiary);
+  border: 1px dashed var(--color-border);
+  cursor: not-allowed;
 }
 
 /* Placeholder */
 ::placeholder {
-  color: rgba(159, 173, 191, 0.5);
-  opacity: 1;
+  color: var(--color-text-tertiary);
+  opacity: 0.7;
 }
 
-/* Estilización de select con ícono mejorado */
+/* Estilizado de selects */
 select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23cf1e2d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233a69b9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;
-  padding-right: 40px;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Mejoras para el menú desplegable */
+select option {
+  background-color: var(--color-dropdown-bg);
+  color: var(--color-dropdown-text);
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* Estilo para opciones al pasar el mouse */
+select option:hover,
+select option:focus {
+  background-color: var(--color-dropdown-hover);
+}
+
+/* Estilo para opción seleccionada */
+select option:checked {
+  background-color: var(--color-dropdown-selected);
+  color: var(--color-dropdown-text-selected);
+  font-weight: 500;
+}
+
+/* Animación al desplegar select */
+select:focus {
+  animation: pulseScale 0.3s ease-out;
+}
+
+/* Animación para opciones */
+@keyframes optionFadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos adicionales necesarios para el navegador */
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Menu desplegable personalizado en navegadores modernos */
+@supports (selector(:has(*))) {
+  /* Cuando el select está abierto, aplicar estilos al contenedor */
+  .form-field:has(select:focus) {
+    z-index: 100;
+  }
+  
+  /* Algunos navegadores modernos permiten estos estilos */
+  select:focus option {
+    animation: optionFadeIn 0.2s ease-out forwards;
+  }
 }
 
 /* Ajustes para textarea */
 textarea {
-  min-height: 150px;
+  min-height: 120px;
   resize: vertical;
 }
 
+/* Campo de razón (ancho completo) */
 .reason-field {
   grid-column: span 3;
 }
 
-/* Botón estilo Pro Trámites mejorado */
+/* Botón con estilo patriótico y animación */
 button {
   grid-column: span 3;
   width: 100%;
-  background: linear-gradient(135deg, var(--color-primary), #ab1825);
-  color: white;
+  background: linear-gradient(135deg, var(--color-blue-light), var(--color-blue-dark));
+  color: var(--color-white);
   border: none;
-  padding: 16px 20px;
+  padding: 14px 20px;
   font-family: var(--font-heading);
   font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border-radius: var(--radius-sm);
+  font-weight: 700;
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-medium);
   position: relative;
-  overflow: hidden;
-  margin-top: 20px;
-  box-shadow: var(--shadow-accent);
+  margin-top: var(--space-md);
   text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-blue);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out 1s both;
 }
 
+/* Efecto hover en botón */
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(207, 30, 45, 0.3);
+  box-shadow: 0 8px 25px rgba(42, 71, 133, 0.35);
 }
 
-/* Efecto tech para el botón mejorado */
+/* Efecto de brillo del botón */
 button::before {
   content: '';
   position: absolute;
@@ -375,19 +501,21 @@ button::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
-    rgba(255, 255, 255, 0), 
-    rgba(255, 255, 255, 0.3), 
-    rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
   transform: skewX(-15deg);
-  transition: left 0.6s ease;
+  transition: left 0.7s ease;
 }
 
 button:hover::before {
   left: 100%;
 }
 
-/* Ícono de documento para el botón */
+/* Icono del botón */
 button::after {
   content: '';
   display: inline-block;
@@ -396,36 +524,60 @@ button::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'%3E%3C/path%3E%3Cpolyline points='14 2 14 8 20 8'%3E%3C/polyline%3E%3Cline x1='16' y1='13' x2='8' y2='13'%3E%3C/line%3E%3Cline x1='16' y1='17' x2='8' y2='17'%3E%3C/line%3E%3Cpolyline points='10 9 9 9 8 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: 8px;
-  vertical-align: middle;
+  margin-left: var(--space-sm);
 }
 
-/* Validación visual estilo Pro Trámites */
-input:valid, select:valid, textarea:valid {
-  border-left-color: var(--color-success);
-  border-left-width: 3px;
+/* Solución para menús desplegables selectores */
+/* Para navegadores webkit como Chrome y Safari */
+select::-webkit-scrollbar {
+  width: 8px;
 }
 
-input:invalid:not(:placeholder-shown), 
-select:invalid:not(:placeholder-shown), 
-textarea:invalid:not(:placeholder-shown) {
-  border-left-color: var(--color-error);
-  border-left-width: 3px;
+select::-webkit-scrollbar-track {
+  background: var(--color-dropdown-bg);
 }
 
-/* Efecto de completado */
-@keyframes completionPulse {
-  0% { background-color: rgba(207, 30, 45, 0.1); }
-  100% { background-color: transparent; }
+select::-webkit-scrollbar-thumb {
+  background: var(--color-blue-light);
+  border-radius: 4px;
 }
 
-input:not(:placeholder-shown), 
-select:not([value=""]), 
-textarea:not(:placeholder-shown) {
-  animation: completionPulse 1s ease;
+/* Para Firefox */
+select {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue-light) var(--color-dropdown-bg);
 }
 
-/* Responsive grid para pantallas medianas */
+/* Estilos adicionales para la apariencia del dropdown */
+select {
+  background-color: var(--color-surface-blue);
+}
+
+/* Enfatizar el select cuando está abierto */
+select:focus {
+  box-shadow: 0 0 0 2px var(--color-blue-light), var(--shadow-blue);
+  z-index: 10;
+}
+
+/* Usar datalist para mejorar la experiencia con opciones */
+input[list]:focus {
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+/* Agregar estilos específicos para Microsoft Edge */
+@supports (-ms-ime-align:auto) {
+  select {
+    padding-right: 30px;
+  }
+  
+  select option {
+    background-color: var(--color-dropdown-bg);
+    color: var(--color-text);
+  }
+}
+
+/* Responsive para tablets */
 @media (max-width: 1200px) {
   form {
     grid-template-columns: repeat(2, 1fr);
@@ -434,25 +586,21 @@ textarea:not(:placeholder-shown) {
   .reason-field, button, form::before {
     grid-column: span 2;
   }
-  
-  h1 {
-    font-size: 32px;
-  }
 }
 
-/* Responsive para pantallas pequeñas */
-@media (max-width: 800px) {
+/* Responsive para móviles */
+@media (max-width: 768px) {
   .container {
-    padding: 25px 20px;
+    padding: var(--space-lg) var(--space-md);
   }
   
   form {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: var(--space-md);
   }
   
   .form-section {
-    padding: 20px;
+    padding: var(--space-md);
   }
   
   .reason-field, button, form::before {
@@ -460,12 +608,11 @@ textarea:not(:placeholder-shown) {
   }
   
   h1 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 24px;
   }
   
   h2 {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -479,19 +626,19 @@ textarea:not(:placeholder-shown) {
   }
 }
 
-/* Estado de focus visible para accesibilidad */
+/* Focus visible para accesibilidad */
 input:focus-visible, 
 select:focus-visible, 
 textarea:focus-visible, 
 button:focus-visible {
-  outline: 2px solid var(--color-secondary);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-blue-light);
+  outline-offset: 2px;
 }
 
-/* Personalización de la barra de desplazamiento */
+/* Personalización de scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -499,83 +646,10 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 5px;
-  border: 2px solid var(--color-surface);
+  background: var(--color-blue-light);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-light);
-}
-
-/* Líneas de conexión decorativas estilo Pro Trámites mejoradas */
-.container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  background-image: 
-    linear-gradient(45deg, transparent 48%, rgba(42, 81, 147, 0.05) 50%),
-    linear-gradient(45deg, transparent 48%, rgba(42, 81, 147, 0.07) 52%),
-    linear-gradient(45deg, transparent 48%, rgba(42, 81, 147, 0.09) 54%);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-/* Añadir efecto patriótico sutil al pasar sobre secciones */
-.form-section::before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 10px;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary) 33%, white 33%, white 66%, var(--color-secondary) 66%);
-  opacity: 0;
-  transition: opacity var(--transition-medium), transform var(--transition-medium);
-  transform: translateY(5px);
-}
-
-.form-section:hover::before {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Efecto de dataflow digital - líneas de trama flotantes */
-@keyframes dataflow {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-  z-index: 1;
-}
-
-/* Añadir una luz de estado en la esquina superior derecha */
-.container::after {
-  content: "";
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--color-primary);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
+  background: var(--color-blue-primary);
 }
