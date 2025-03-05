@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './PdfGenerationAnimation.css';
+import StarConfetti from './StarConfetti'; // Importando tu componente existente
 
 const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [isAnimationActive, setIsAnimationActive] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [showDownloadButton, setShowDownloadButton] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false); // Estado para controlar el confeti
 
   useEffect(() => {
     if (isActive) {
@@ -13,6 +15,7 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
       setProgress(0);
       setIsComplete(false);
       setShowDownloadButton(false);
+      setShowConfetti(false); // Reiniciar el estado del confeti
       
       // Comenzamos la animación de las líneas después de un breve retraso
       setTimeout(() => {
@@ -31,6 +34,22 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
             // Mostrar animación de completado
             setTimeout(() => {
               setIsComplete(true);
+              
+              // Activar el confeti y efectos de éxito simultáneamente
+              setTimeout(() => {
+                setShowConfetti(true);
+                
+                // Añadir clase de éxito destacado al documento
+                const pdfDocument = document.querySelector('.pdf-document');
+                if (pdfDocument) {
+                  pdfDocument.classList.add('success-highlight');
+                  
+                  // Quitar la clase después de la animación
+                  setTimeout(() => {
+                    pdfDocument.classList.remove('success-highlight');
+                  }, 1500);
+                }
+              }, 100);
               
               // Mostrar el botón de descarga
               setTimeout(() => {
@@ -53,6 +72,7 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
     } else {
       setIsAnimationActive(false);
       setShowDownloadButton(false);
+      setShowConfetti(false); // Desactivar el confeti cuando se cierra
     }
   }, [isActive, onComplete]);
 
@@ -62,14 +82,19 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
     const event = new Event('pdfDownloadRequested');
     window.dispatchEvent(event);
     
-    // Cerrar la animación
-    if (onComplete) {
-      onComplete();
-    }
+    // Mantenemos la animación de confeti por un momento antes de cerrar
+    setTimeout(() => {
+      if (onComplete) {
+        onComplete();
+      }
+    }, 1500); // Dar tiempo para disfrutar del confeti antes de cerrar
   };
 
   return (
     <div className={`pdf-animation-overlay ${isActive ? 'active' : ''}`}>
+      {/* Componente de confeti de estrellas */}
+      <StarConfetti isActive={showConfetti} />
+      
       <div className="pdf-animation-container">
         <div className="pdf-document">
           <div className={`pdf-document-content ${isAnimationActive ? 'pdf-animation-active' : ''} ${isComplete ? 'pdf-animation-complete' : ''}`}>
