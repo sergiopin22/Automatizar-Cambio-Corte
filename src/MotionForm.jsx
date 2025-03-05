@@ -90,11 +90,25 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     }
   }, [formData.newCourtState, formData.newCourt]);
 
-  // Efecto para manejar el evento de animación completa
+  // Efecto para manejar el evento de animación completa - ya no descarga automáticamente
   useEffect(() => {
     const handleAnimationComplete = () => {
+      // Ya no descargamos automáticamente
+      // Ahora esperamos a que el usuario haga clic en el botón
+    };
+    
+    window.addEventListener('pdfAnimationComplete', handleAnimationComplete);
+    
+    return () => {
+      window.removeEventListener('pdfAnimationComplete', handleAnimationComplete);
+    };
+  }, []);
+
+  // Efecto para manejar el evento de solicitud de descarga manual
+  useEffect(() => {
+    const handleDownloadRequest = () => {
       if (pdfData) {
-        // Descargar el PDF cuando la animación se complete
+        // Descargar el PDF cuando se solicita a través del botón
         const a = document.createElement('a');
         a.href = pdfData.url;
         a.download = pdfData.filename;
@@ -105,12 +119,12 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
       }
     };
     
-    // Agregamos el evento que escuchará cuando la animación termine
-    window.addEventListener('pdfAnimationComplete', handleAnimationComplete);
+    // Agregamos el evento que escuchará cuando se presione el botón de descarga
+    window.addEventListener('pdfDownloadRequested', handleDownloadRequest);
     
     // Limpieza al desmontar
     return () => {
-      window.removeEventListener('pdfAnimationComplete', handleAnimationComplete);
+      window.removeEventListener('pdfDownloadRequested', handleDownloadRequest);
     };
   }, [pdfData]);
 
