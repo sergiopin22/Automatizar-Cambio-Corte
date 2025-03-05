@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './PdfGenerationAnimation.css';
-import StarConfetti from './StarConfetti'; // Importando tu componente existente
+import StarConfetti from '../StarConfetti/StarConfetti';
 
 const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [progress, setProgress] = useState(0);
