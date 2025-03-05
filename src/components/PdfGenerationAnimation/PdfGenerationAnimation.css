@@ -1,0 +1,196 @@
+/* Animación de generación de PDF */
+.pdf-animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 21, 30, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .pdf-animation-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .pdf-animation-container {
+    background-color: var(--color-surface-blue);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border-blue);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .pdf-animation-overlay.active .pdf-animation-container {
+    transform: translateY(0);
+  }
+  
+  .pdf-document {
+    width: 220px;
+    height: 280px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  
+  .pdf-document::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-surface);
+    transform: translate(15px, -15px) rotate(45deg);
+    z-index: 1;
+  }
+  
+  .pdf-document-content {
+    padding: 25px 20px;
+  }
+  
+  .pdf-line {
+    height: 10px;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 0;
+    transition: width 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pdf-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.4), 
+      transparent
+    );
+    transform: skewX(-15deg);
+    animation: pdfLineGlow 2s infinite;
+    opacity: 0;
+  }
+  
+  @keyframes pdfLineGlow {
+    0% { left: -30px; opacity: 0; }
+    30% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+  }
+  
+  .pdf-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .pdf-progress {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .pdf-progress-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .pdf-progress svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pdf-progress-bg {
+    fill: none;
+    stroke: rgba(58, 105, 185, 0.2);
+    stroke-width: 3;
+  }
+  
+  .pdf-progress-fill {
+    fill: none;
+    stroke: var(--color-blue-light);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 100 100;
+    stroke-dashoffset: 100;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  
+  .pdf-progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 18px;
+    font-family: var(--font-heading);
+  }
+  
+  .pdf-message {
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  .pdf-success-message {
+    color: var(--color-success);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Clases para la animación por pasos */
+  .pdf-animation-active .pdf-line:nth-child(1) { width: 100%; transition-delay: 0.2s; }
+  .pdf-animation-active .pdf-line:nth-child(2) { width: 90%; transition-delay: 0.4s; }
+  .pdf-animation-active .pdf-line:nth-child(3) { width: 85%; transition-delay: 0.6s; }
+  .pdf-animation-active .pdf-line:nth-child(4) { width: 95%; transition-delay: 0.8s; }
+  .pdf-animation-active .pdf-line:nth-child(5) { width: 75%; transition-delay: 1.0s; }
+  .pdf-animation-active .pdf-line:nth-child(6) { width: 88%; transition-delay: 1.2s; }
+  .pdf-animation-active .pdf-line:nth-child(7) { width: 92%; transition-delay: 1.4s; }
+  .pdf-animation-active .pdf-line:nth-child(8) { width: 80%; transition-delay: 1.6s; }
+  
+  .pdf-animation-active .pdf-line::after { opacity: 1; }
+  
+  .pdf-animation-complete .pdf-icon {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .pdf-animation-complete .pdf-success-message {
+    opacity: 1;
+    transform: translateY(0);
+  }

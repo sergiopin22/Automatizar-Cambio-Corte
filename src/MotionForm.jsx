@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import courtsData from './data/courts.json';
+import PdfGenerationAnimation from './components/PdfGenerationAnimation/PdfGenerationAnimation';
 
 function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
   const [formData, setFormData] = useState({
@@ -31,6 +32,9 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     submissionDate: '',
     deliveryMethod: '',
   });
+
+  // Estado para controlar la animación de generación de PDF
+  const [showAnimation, setShowAnimation] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -104,8 +108,13 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     }));
   };
 
+  // Función modificada para incluir la animación
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Mostrar la animación de generación de PDF
+    setShowAnimation(true);
+    
     try {
       const response = await fetch('https://backend-cambio-corte.vercel.app/generate-pdf', {
         method: 'POST',
@@ -123,9 +132,14 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
       a.href = url;
       a.download = 'motion.pdf';
       a.click();
+      
+      // La animación se cerrará automáticamente a través del callback onComplete
     } catch (error) {
       console.error('Error en handleSubmit:', error);
       alert('Hubo un problema al generar el PDF.');
+      
+      // Cerrar la animación si hay un error
+      setShowAnimation(false);
     }
   };
 
@@ -430,6 +444,12 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
         
         <button type="submit">Generar PDF</button>
       </form>
+      
+      {/* Componente de animación de generación de PDF */}
+      <PdfGenerationAnimation 
+        isActive={showAnimation} 
+        onComplete={() => setShowAnimation(false)}
+      />
     </div>
   );
 }
