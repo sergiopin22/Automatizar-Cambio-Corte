@@ -30,6 +30,10 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
             setTimeout(() => {
               setIsComplete(true);
               
+              // Disparar un evento personalizado para señalar que la animación terminó
+              const event = new Event('pdfAnimationComplete');
+              window.dispatchEvent(event);
+              
               // Cerrar la animación después de mostrar el éxito
               setTimeout(() => {
                 if (onComplete) onComplete();

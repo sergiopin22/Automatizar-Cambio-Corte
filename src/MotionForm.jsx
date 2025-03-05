@@ -35,6 +35,8 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
 
   // Estado para controlar la animación de generación de PDF
   const [showAnimation, setShowAnimation] = useState(false);
+  // Estado para almacenar temporalmente la URL del PDF
+  const [pdfData, setPdfData] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -88,6 +90,30 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     }
   }, [formData.newCourtState, formData.newCourt]);
 
+  // Efecto para manejar el evento de animación completa
+  useEffect(() => {
+    const handleAnimationComplete = () => {
+      if (pdfData) {
+        // Descargar el PDF cuando la animación se complete
+        const a = document.createElement('a');
+        a.href = pdfData.url;
+        a.download = pdfData.filename;
+        a.click();
+        
+        // Limpiar el estado
+        setPdfData(null);
+      }
+    };
+    
+    // Agregamos el evento que escuchará cuando la animación termine
+    window.addEventListener('pdfAnimationComplete', handleAnimationComplete);
+    
+    // Limpieza al desmontar
+    return () => {
+      window.removeEventListener('pdfAnimationComplete', handleAnimationComplete);
+    };
+  }, [pdfData]);
+
   const handleCurrentCourtChange = (e) => {
     const selectedCourt = e.target.value;
     setFormData(prev => ({
@@ -108,7 +134,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     }));
   };
 
-  // Función modificada para incluir la animación
+  // Función modificada para incluir la animación sincronizada
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -128,12 +154,13 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
 
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'motion.pdf';
-      a.click();
       
-      // La animación se cerrará automáticamente a través del callback onComplete
+      // En lugar de descargar inmediatamente, guardamos la URL para descargar después
+      setPdfData({
+        url,
+        filename: 'motion.pdf'
+      });
+      
     } catch (error) {
       console.error('Error en handleSubmit:', error);
       alert('Hubo un problema al generar el PDF.');
