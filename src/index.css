@@ -126,10 +126,8 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-md);
+  padding: 0;
+  margin: 0;
   line-height: 1.6;
   background-image: 
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 100 100' opacity='0.03'%3E%3Cpath fill='%233a69b9' d='M50 0 L60 35 L95 35 L65 55 L75 90 L50 70 L25 90 L35 55 L5 35 L40 35 Z'/%3E%3C/svg%3E"),
@@ -138,6 +136,20 @@ body {
   background-attachment: fixed;
   background-size: 120px, cover, cover;
   animation: fadeIn 0.8s ease-out;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  margin: 0;
+  padding: 100px 0 0 0; /* Ajustado para el navbar más alto */
+  min-height: calc(100vh - 100px);
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Ajuste para cuando el navbar es más pequeño al hacer scroll */
+.app-container.nav-scrolled {
+  padding-top: 80px;
 }
 
 /* Contenedor principal */
@@ -153,44 +165,8 @@ body {
   padding: var(--space-xl);
   position: relative;
   animation: slideInTop 0.6s ease-out;
-}
-
-/* Barra superior modificada - SOLO ROJO Y BLANCO */
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: linear-gradient(90deg, 
-    var(--color-red) 0%, 
-    var(--color-red) 33%, 
-    var(--color-white) 33%, 
-    var(--color-white) 67%, 
-    var(--color-red) 67%, 
-    var(--color-red) 100%
-  );
-  background-size: 200% 100%;
-  z-index: 2;
-  animation: flagWave 15s linear infinite alternate;
-}
-
-/* Águila americana decorativa en el fondo */
-.container::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  width: 100px;
-  height: 100px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%233a69b9' opacity='0.1'%3E%3Cpath d='M50.5 14c-1 0-2 1-2 2 0 1.1 1 2 2 2s2-.9 2-2-1-2-2-2zM38 19.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm25 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-29 8c-1.3 0-2.5.2-3.6.6 1 .7 1.6 1.9 1.6 3.2 0 2.2-1.8 4-4 4-1 0-2-.4-2.7-1-1.4 10 5.2 17.2 12.2 17.2h14c7 0 13.6-7.3 12.2-17.2-.7.6-1.7 1-2.7 1-2.2 0-4-1.8-4-4 0-1.3.6-2.5 1.6-3.2-1.1-.4-2.3-.6-3.6-.6h-21zm-18.9 4.7c-1.1 0-2 1-2 2 0 1.2 1 2.1 2 2.1s2-.9 2-2c0-1.2-.9-2.1-2-2.1zm47.8 0c-1.1 0-2 1-2 2 0 1.2 1 2.1 2 2.1s2-.9 2-2c0-1.2-.9-2.1-2-2.1zM25.7 44c-1.1 0-2 1-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm47.6 0c-1.1 0-2 1-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM36 61s-1.5 4-3 9c-1.4 4.7-2.6 9.7-3 12h-2c-1.1 0-2 .9-2 2s.9 2 2 2h44c1.1 0 2-.9 2-2s-.9-2-2-2h-2c-.4-2.3-1.6-7.3-3-12-1.5-5-3-9-3-9H36zm1.6 2h24.8c.6 1.5 1.5 4 2.6 7.2 1.4 4.7 2.4 9.4 2.8 11.8H29.2c.4-2.5 1.4-7.1 2.8-11.8 1.1-3.2 2-5.7 2.6-7.2z'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-  animation: eagleSoar 4s ease-in-out infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%233a69b9' fill-opacity='0.03' d='M1 0h1v1H1V0zm2 1h1v1H3V1zm0 2h1v1H3V3zm-2 0h1v1H1V3z'/%3E%3C/svg%3E");
+  background-attachment: fixed;
 }
 
 /* Título principal con animación */
@@ -235,19 +211,21 @@ h1::before {
   opacity: 0.95;
 }
 
-/* Organización del formulario */
+/* Organización del formulario - MODIFICADO para usar flex column */
 form {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: var(--grid-gap);
   margin-top: var(--space-lg);
   animation: fadeIn 0.8s ease-out 0.3s both;
 }
 
-/* Mensaje informativo con animación */
+/* Mensaje informativo con animación - Ancho de 90% en PC */
 form::before {
   content: "Complete todos los campos obligatorios marcados con *";
-  grid-column: 1 / -1;
+  width: 90%;
+  max-width: 1260px;
   display: flex;
   align-items: center;
   background: rgba(42, 71, 133, 0.1);
@@ -267,8 +245,12 @@ form::before {
   padding-left: 46px;
 }
 
-/* Secciones del formulario con color azul confiable y animación */
+/* Secciones del formulario al 90% de ancho en PC */
 .form-section {
+  width: 90%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
   background: var(--color-surface-blue);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
@@ -509,15 +491,16 @@ textarea {
   resize: vertical;
 }
 
-/* Campo de razón (ancho completo) */
+/* Campo de razón (ancho completo) - MODIFICADO al 90% */
 .reason-field {
-  grid-column: span 3;
+  width: 90%;
+  max-width: 1260px;
 }
 
-/* Botón con estilo patriótico y animación */
+/* Botón con estilo patriótico y animación - MODIFICADO al 90% */
 button {
-  grid-column: span 3;
-  width: 100%;
+  width: 90%;
+  max-width: 1260px;
   background: linear-gradient(135deg, var(--color-blue-light), var(--color-blue-dark));
   color: var(--color-white);
   border: none;
@@ -580,8 +563,6 @@ button::after {
   margin-left: var(--space-sm);
 }
 
-/* Continuación de los estilos */
-
 /* Águila americana en el botón al hacer hover */
 button:hover::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'%3E%3C/path%3E%3Cpolyline points='14 2 14 8 20 8'%3E%3C/polyline%3E%3Cline x1='16' y1='13' x2='8' y2='13'%3E%3C/line%3E%3Cline x1='16' y1='17' x2='8' y2='17'%3E%3C/line%3E%3Cpolyline points='10 9 9 9 8 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -639,13 +620,9 @@ input[list]:focus {
 }
 
 /* Responsive para tablets */
-@media (max-width: 1200px) {
-  form {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .reason-field, button, form::before {
-    grid-column: span 2;
+@media (max-width: 1200px) and (min-width: 769px) {
+  .form-section, .reason-field, button, form::before, form::after {
+    width: 90%;
   }
 }
 
@@ -655,17 +632,13 @@ input[list]:focus {
     padding: var(--space-lg) var(--space-md);
   }
   
-  form {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-  
-  .form-section {
+  .form-section, .reason-field, button, form::before, form::after {
+    width: 95%;
     padding: var(--space-md);
   }
   
-  .reason-field, button, form::before {
-    grid-column: span 1;
+  form {
+    gap: var(--space-md);
   }
   
   h1 {
@@ -674,6 +647,35 @@ input[list]:focus {
   
   h2 {
     font-size: 16px;
+  }
+  
+  /* Corrección para el icono en el mensaje de campos obligatorios */
+  form::before {
+    padding: var(--space-md) var(--space-md) var(--space-md) 46px;
+    background-position: 12px center;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+  }
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 600px) {
+  .form-section, .reason-field, button, form::before, form::after {
+    width: 96%;
+  }
+  
+  .container {
+    padding: var(--space-md) var(--space-sm);
+  }
+  
+  /* Corrección para el icono en pantallas muy pequeñas */
+  form::before {
+    padding: var(--space-sm) var(--space-sm) var(--space-sm) 40px;
+    background-position: 10px center;
+    background-size: 18px;
+    font-size: 12px;
   }
 }
 
@@ -715,24 +717,6 @@ button:focus-visible {
   background: var(--color-blue-primary);
 }
 
-/* Elementos adicionales con simbología estadounidense */
-
-/* Sello de águila americana para el footer */
-.container::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 80px;
-  height: 80px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%233a69b9' opacity='0.1'%3E%3Cpath d='M50 5c-1.6 0-3 1.3-3 3s1.4 3 3 3 3-1.3 3-3-1.4-3-3-3zM32 12c-1.6 0-3 1.3-3 3s1.4 3 3 3 3-1.3 3-3-1.4-3-3-3zm36 0c-1.6 0-3 1.3-3 3s1.4 3 3 3 3-1.3 3-3-1.4-3-3-3zM50 23c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.3 4.7 11.3H26c-1.6 0-3 1.3-3 3 0 1.1.6 2.1 1.5 2.6C23.6 58.2 23 61 23 64c0 14.9 12.1 27 27 27s27-12.1 27-27c0-3-.6-5.8-1.5-8.1.9-.5 1.5-1.5 1.5-2.6 0-1.7-1.4-3-3-3H61.3c2.9-3 4.7-6.9 4.7-11.3 0-8.8-7.2-16-16-16zm0 6c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10 4.5-10 10-10zM29 57h42c.3 2.3.5 4.6.5 7 0 11.8-9.7 21.5-21.5 21.5S28.5 75.8 28.5 64c0-2.4.2-4.7.5-7z'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* Añadir estrellas a los bordes del formulario */
 .form-section:nth-child(1)::before {
   content: "";
@@ -747,128 +731,165 @@ button:focus-visible {
     var(--color-white) 33%, 
     var(--color-white) 67%, 
     var(--color-red) 67%, 
-    var(--color-red) 100%
-  );
-  background-size: 200% 100%;
-  z-index: 1;
-  
-}
-
-/* Añadir degradado de bandera americana al botón de envío - MODIFICADO A ROJO/BLANCO */
-button {
-  position: relative;
-  overflow: hidden;
-}
-
-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 150%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    rgba(255, 255, 255, 0) 20%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0) 80%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  animation: flagWave 5s infinite;
+   var(--color-red) 100%
+ );
+ background-size: 200% 100%;
+ z-index: 1;
 }
 
 /* Añadir textura de fondo con patrón de estrellas */
 body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' opacity='0.015'%3E%3Cpath fill='%23ffffff' d='M50 0 L52 35 L85 35 L58 55 L68 90 L50 70 L32 90 L42 55 L15 35 L48 35 Z'/%3E%3C/svg%3E");
-  background-size: 150px;
-  pointer-events: none;
-  z-index: -1;
+ content: "";
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' opacity='0.015'%3E%3Cpath fill='%23ffffff' d='M50 0 L52 35 L85 35 L58 55 L68 90 L50 70 L32 90 L42 55 L15 35 L48 35 Z'/%3E%3C/svg%3E");
+ background-size: 150px;
+ pointer-events: none;
+ z-index: -1;
 }
 
 /* Texto de libertad en el pie del formulario */
 form::after {
-  content: "We the People - Liberty & Justice";
-  display: block;
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-top: var(--space-md);
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-style: italic;
-  color: var(--color-text-tertiary);
-  opacity: 0.7;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+ content: "Trámites fáciles y accesibles para nuestros hermanos latinos: sin barreras, sin complicaciones.";
+ display: block;
+ width: 90%;
+ max-width: 1260px;
+ text-align: center;
+ margin-top: var(--space-md);
+ font-family: var(--font-heading);
+ font-size: 12px;
+ font-style: italic;
+ color: var(--color-text-tertiary);
+ opacity: 0.7;
+ text-transform: uppercase;
+ letter-spacing: 2px;
 }
 
-/* Elementos USA adicionales */
-.form-field:first-child {
-  position: relative;
+/* Organización de campos dentro de las secciones */
+.form-section-content {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: var(--space-lg);
 }
 
-.form-field:first-child::after {
-  content: "";
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 100 100' opacity='0.4'%3E%3Cg fill='%233a69b9'%3E%3Cpath d='M50 0 L55 30 L85 30 L60 50 L70 80 L50 65 L30 80 L40 50 L15 30 L45 30 Z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: translateY(-50%);
-  opacity: 0.1;
-  pointer-events: none;
+@media (max-width: 992px) {
+ .form-section-content {
+   grid-template-columns: 1fr;
+ }
 }
 
-/* Sello oficial para el formulario */
-.form-section:last-child::after {
-  content: "";
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 60px;
-  height: 60px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%233a69b9' stroke-width='1' opacity='0.1'%3E%3Ccircle cx='50' cy='50' r='45' fill='none'/%3E%3Ctext x='50' y='45' text-anchor='middle' font-family='serif' font-size='8' fill='%233a69b9'%3EUNITED STATES%3C/text%3E%3Ctext x='50' y='55' text-anchor='middle' font-family='serif' font-size='8' fill='%233a69b9'%3EOF AMERICA%3C/text%3E%3Ccircle cx='50' cy='50' r='35' fill='none'/%3E%3Cpath d='M50 15 L52 40 L77 40 L57 55 L65 80 L50 65 L35 80 L43 55 L23 40 L48 40 Z' fill='none'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.15;
-  pointer-events: none;
+/* Corrección para conflictos de ::after en selectores */
+.form-section .form-field:has(select:not(:invalid):not([value=""]))::after {
+ content: "✓";
+ position: absolute;
+ right: 12px;
+ top: 36px;
+ color: var(--color-success);
+ font-size: 16px;
+ pointer-events: none;
 }
 
-/* Esquinas con detalles de documento legal */
-.container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' opacity='0.1'%3E%3Cpath fill='%233a69b9' d='M0 0 L30 0 L30 30 Z'/%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.2;
-  pointer-events: none;
+/* Para evitar conflictos con otros selectores ::after */
+.form-section:not(:last-child)::after {
+ content: '★';
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ font-size: 14px;
+ color: rgba(42, 71, 133, 0.4);
+ pointer-events: none;
+ animation: starTwinkle 3s infinite;
 }
 
-/* Estilo de papel legal con textura */
-.container {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%233a69b9' fill-opacity='0.03' d='M1 0h1v1H1V0zm2 1h1v1H3V1zm0 2h1v1H3V3zm-2 0h1v1H1V3z'/%3E%3C/svg%3E");
-  background-attachment: fixed;
+/* Ajuste para sello oficial en todas las secciones */
+.form-section:nth-child(n+1):not(:last-child)::after {
+ bottom: auto;
+ top: 10px;
 }
 
 /* Barra decorativa rojo y blanco para elementos adicionales */
 .red-white-bar {
-  height: 4px;
-  background: linear-gradient(to right, var(--color-red) 50%, var(--color-white) 50%);
-  border-radius: var(--radius-round);
-  margin: 10px auto;
-  width: 150px;
+ height: 4px;
+ background: linear-gradient(to right, var(--color-red) 50%, var(--color-white) 50%);
+ border-radius: var(--radius-round);
+ margin: 10px auto;
+ width: 150px;
+}
+
+/* Mejora para agrupamiento de campo de fecha y hora en corte actual */
+.date-time-group {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+ .date-time-group {
+   grid-template-columns: 1fr;
+ }
+}
+
+/* Solución específica para el problema del icono en dispositivos móviles */
+@media (max-width: 480px) {
+ form::before {
+   padding-left: 40px;
+   padding-right: 10px;
+   background-position: 10px center;
+   background-size: 16px;
+   font-size: 11px;
+   min-height: 50px;
+   display: flex;
+   align-items: center;
+ }
+ 
+ .container {
+   border-radius: var(--radius-md);
+   padding: var(--space-md) var(--space-xs);
+ }
+ 
+ .app-container {
+   padding-top: 80px;
+ }
+ 
+ .app-container.nav-scrolled {
+   padding-top: 70px;
+ }
+}
+
+/* Evitar problemas de doble contenedor - Fijo específico */
+#root > .container {
+ padding-top: 0;
+ margin-top: 0;
+}
+
+/* Clases de utilidad para espaciado */
+.mt-0 { margin-top: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.pt-0 { padding-top: 0 !important; }
+.pb-0 { padding-bottom: 0 !important; }
+
+/* Clases para manejo de interacción táctil en móviles */
+@media (hover: none) {
+ .form-section:hover {
+   transform: none;
+   box-shadow: var(--shadow-sm);
+   background: var(--color-surface-blue);
+ }
+ 
+ /* Mejor feedback táctil */
+ .nav-link:active, button:active {
+   transform: scale(0.98);
+ }
+}
+
+/* Prevención de zoom no deseado en inputs en iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+ select,
+ textarea,
+ input {
+   font-size: 16px;
+ }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import courtsData from './data/courts.json';
 
-function MotionForm() {
+function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
   const [formData, setFormData] = useState({
     // Información Personal (6 campos - añadido residenceState)
     name: '',
@@ -140,7 +140,7 @@ function MotionForm() {
 
   return (
     <div className="container">
-      <h1>FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE</h1>
+      <h1>{titulo}</h1>
       
       <form onSubmit={handleSubmit}>
         {/* Sección: Información Personal */}
@@ -313,6 +313,16 @@ function MotionForm() {
               required
             />
           </div>
+          <div className="form-field">
+            <label>Hora de la Audiencia:</label>
+            <input 
+              type="time" 
+              name="hearingTime" 
+              value={formData.hearingTime} 
+              onChange={handleChange} 
+              required
+            />
+          </div>
         </div>
         
         {/* Sección: Nueva Corte */}
@@ -379,17 +389,6 @@ function MotionForm() {
         {/* Sección: Información Adicional */}
         <div className="form-section">
           <h2>Información Adicional</h2>
-          
-          <div className="form-field">
-            <label>Hora de la Audiencia:</label>
-            <input 
-              type="time" 
-              name="hearingTime" 
-              value={formData.hearingTime} 
-              onChange={handleChange} 
-              required
-            />
-          </div>
           
           <div className="form-field">
             <label>Fecha de Envío:</label>
