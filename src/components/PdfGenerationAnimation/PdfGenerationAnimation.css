@@ -13,11 +13,13 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(3px); /* Añadir un efecto de desenfoque para mayor contraste */
   }
   
   .pdf-animation-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: all; /* Asegura que capture todos los eventos */
   }
   
   .pdf-animation-container {
@@ -34,6 +36,7 @@
     position: relative;
     transform: translateY(20px);
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10000; /* Asegurar que está por encima del overlay */
   }
   
   .pdf-animation-overlay.active .pdf-animation-container {
@@ -49,6 +52,30 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 30px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  /* Efecto de destello para el documento al completarse */
+  .pdf-document.success-highlight {
+    box-shadow: 0 0 30px rgba(204, 14, 30, 0.6);
+    transform: scale(1.03);
+  }
+  
+  /* Efecto de destello general al completar */
+  @keyframes successFlash {
+    0% {
+      box-shadow: 0 0 0 rgba(204, 14, 30, 0);
+    }
+    50% {
+      box-shadow: 0 0 60px rgba(204, 14, 30, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(204, 14, 30, 0);
+    }
+  }
+  
+  .pdf-animation-overlay.active .pdf-success-icon {
+    animation: successFlash 1.5s ease-out;
   }
   
   .pdf-document::before {
@@ -194,9 +221,8 @@
     opacity: 1;
     transform: translateY(0);
   }
-
-
-.pdf-success-container {
+  
+  .pdf-success-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -223,6 +249,7 @@
     opacity: 1;
     transform: translateY(0);
     animation: fadeIn 0.5s ease-out;
+    pointer-events: none; /* Evita que interfiera con el botón */
   }
   
   .pdf-download-button {
@@ -241,6 +268,8 @@
     justify-content: center;
     box-shadow: var(--shadow-blue);
     animation: fadeIn 0.5s ease-out;
+    position: relative;
+    z-index: 10001; /* Asegurarse de que está por encima de todo */
   }
   
   .pdf-download-button svg {
@@ -249,9 +278,21 @@
   
   .pdf-download-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(42, 71, 133, 0.35);
+    box-shadow: 0 8px 25px rgba(42, 71, 133, 0.45); /* Sombra más pronunciada en hover */
   }
   
   .pdf-download-button:active {
     transform: translateY(1px);
+  }
+  
+  /* Animación de destello para las estrellas de confeti */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }

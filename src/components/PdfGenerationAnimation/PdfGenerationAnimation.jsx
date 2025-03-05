@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './PdfGenerationAnimation.css';
 import StarConfetti from '../StarConfetti/StarConfetti';
 
@@ -7,36 +7,82 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [isAnimationActive, setIsAnimationActive] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [showDownloadButton, setShowDownloadButton] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false); // Estado para controlar el confeti
+  const [showConfetti, setShowConfetti] = useState(false);
+  
+  // Usamos refs para evitar que los estados cambien inesperadamente
+  const isCompleteRef = useRef(false);
+  const progressIntervalRef = useRef(null);
+  const animationMountedRef = useRef(false);
 
   useEffect(() => {
-    if (isActive) {
-      // Reiniciamos los estados cuando se activa
+    // Evitamos que eventos inesperados reinicien la animación
+    const handleScroll = (e) => {
+      if (isCompleteRef.current) {
+        e.preventDefault();
+      }
+    };
+
+    // Agregamos y limpiamos el event listener
+    window.addEventListener('scroll', handleScroll, { passive: false });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Marcar que el componente está montado
+    animationMountedRef.current = true;
+    
+    // Limpiar cuando el componente se desmonte
+    return () => {
+      animationMountedRef.current = false;
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isActive && animationMountedRef.current) {
+      // Reiniciamos los estados solo cuando se activa
       setProgress(0);
       setIsComplete(false);
+      isCompleteRef.current = false;
       setShowDownloadButton(false);
-      setShowConfetti(false); // Reiniciar el estado del confeti
+      setShowConfetti(false);
+      
+      // Bloquear el scroll cuando la animación está activa
+      document.body.style.overflow = 'hidden';
       
       // Comenzamos la animación de las líneas después de un breve retraso
-      setTimeout(() => {
+      const animationTimeout = setTimeout(() => {
+        if (!animationMountedRef.current) return;
         setIsAnimationActive(true);
       }, 300);
       
       // Animamos el progreso
-      const progressInterval = setInterval(() => {
+      progressIntervalRef.current = setInterval(() => {
+        if (!animationMountedRef.current) return;
+        
         setProgress(prev => {
           const newProgress = prev + 1;
           
           // Al llegar al 100%
           if (newProgress >= 100) {
-            clearInterval(progressInterval);
+            clearInterval(progressIntervalRef.current);
             
             // Mostrar animación de completado
             setTimeout(() => {
+              if (!animationMountedRef.current) return;
+              
               setIsComplete(true);
+              isCompleteRef.current = true;
               
               // Activar el confeti y efectos de éxito simultáneamente
               setTimeout(() => {
+                if (!animationMountedRef.current) return;
+                
                 setShowConfetti(true);
                 
                 // Añadir clase de éxito destacado al documento
@@ -46,13 +92,17 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
                   
                   // Quitar la clase después de la animación
                   setTimeout(() => {
-                    pdfDocument.classList.remove('success-highlight');
+                    if (pdfDocument) {
+                      pdfDocument.classList.remove('success-highlight');
+                    }
                   }, 1500);
                 }
               }, 100);
               
               // Mostrar el botón de descarga
               setTimeout(() => {
+                if (!animationMountedRef.current) return;
+                
                 setShowDownloadButton(true);
                 
                 // Disparar un evento personalizado para señalar que la animación terminó
@@ -64,17 +114,17 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
           
           return newProgress;
         });
-      }, 50); // Actualizamos cada 50ms (5 segundos en total)
+      }, 50);
       
       return () => {
-        clearInterval(progressInterval);
+        clearTimeout(animationTimeout);
+        clearInterval(progressIntervalRef.current);
       };
-    } else {
-      setIsAnimationActive(false);
-      setShowDownloadButton(false);
-      setShowConfetti(false); // Desactivar el confeti cuando se cierra
+    } else if (!isActive) {
+      // Restaurar el scroll cuando la animación se cierra
+      document.body.style.overflow = '';
     }
-  }, [isActive, onComplete]);
+  }, [isActive]);
 
   // Función para manejar la descarga manual
   const handleDownload = () => {
@@ -84,10 +134,12 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
     
     // Mantenemos la animación de confeti por un momento antes de cerrar
     setTimeout(() => {
-      if (onComplete) {
+      if (onComplete && animationMountedRef.current) {
+        // Restaurar el scroll antes de cerrar
+        document.body.style.overflow = '';
         onComplete();
       }
-    }, 1500); // Dar tiempo para disfrutar del confeti antes de cerrar
+    }, 1500);
   };
 
   return (
