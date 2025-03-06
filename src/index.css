@@ -893,3 +893,19 @@ form::after {
    font-size: 16px;
  }
 }
+
+/* Eliminar el estilo anterior de la barra decorativa */
+.form-section::before {
+  display: none; /* Ocultamos la barra decorativa original */
+}
+
+/* Ajustar posición relativa para las secciones del formulario */
+.form-section {
+  position: relative; /* Aseguramos que la posición es relativa para posicionar la barra */
+  padding-top: calc(var(--space-lg) + 3px); /* Ajustamos el padding para considerar la altura de la barra */
+}
+
+/* Estilos para la sección completada */
+.form-section.completed h2 {
+  color: var(--color-success);
+}

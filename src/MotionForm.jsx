@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import courtsData from './data/courts.json';
 import PdfGenerationAnimation from './components/PdfGenerationAnimation/PdfGenerationAnimation';
+import ProgressBar from './components/ProgressBar/ProgressBar'; // Importamos el nuevo componente
 
 function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
   const [formData, setFormData] = useState({
@@ -37,6 +38,48 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
   const [showAnimation, setShowAnimation] = useState(false);
   // Estado para almacenar temporalmente la URL del PDF
   const [pdfData, setPdfData] = useState(null);
+  // Estado para rastrear el progreso de cada sección
+  const [sectionProgress, setSectionProgress] = useState({
+    personalInfo: 0,
+    currentCourt: 0,
+    newCourt: 0,
+    additionalInfo: 0
+  });
+
+  // Función para calcular el progreso de cada sección
+  const calculateSectionProgress = () => {
+    // Definir los campos requeridos en cada sección
+    const sections = {
+      personalInfo: ['name', 'aNumber', 'streetAddress', 'city', 'residenceState', 'postalCode'],
+      currentCourt: ['currentCourtState', 'currentCourt', 'judgeName', 'hearingDate', 'hearingTime'],
+      newCourt: ['newCourtState', 'newCourt', 'motionDate'],
+      additionalInfo: ['submissionDate', 'deliveryMethod', 'reason']
+    };
+
+    // Verificar qué campos están completos
+    const newProgress = {};
+    
+    Object.keys(sections).forEach(section => {
+      const fields = sections[section];
+      const filledFields = fields.filter(field => {
+        // Campos precompletados pero editables se consideran llenos
+        if (field === 'cityStateCurrentCourt' || field === 'cityStateFutureCourt' || field === 'oplaOffice') {
+          return formData[field] !== '';
+        }
+        return formData[field] && formData[field].trim() !== '';
+      });
+      
+      // Calcular porcentaje (redondeado a entero)
+      newProgress[section] = Math.round((filledFields.length / fields.length) * 100);
+    });
+    
+    setSectionProgress(newProgress);
+  };
+
+  // Calcular progreso cada vez que formData cambia
+  useEffect(() => {
+    calculateSectionProgress();
+  }, [formData]);
 
   const handleChange = (e) => {
     setFormData({
@@ -199,7 +242,10 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
       
       <form onSubmit={handleSubmit}>
         {/* Sección: Información Personal */}
-        <div className="form-section">
+        <div className={`form-section ${sectionProgress.personalInfo === 100 ? 'completed' : ''}`}>
+          {/* Barra de progreso para esta sección */}
+          <ProgressBar progress={sectionProgress.personalInfo} />
+          
           <h2>Información Personal</h2>
           
           <div className="form-field">
@@ -282,7 +328,10 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
         </div>
         
         {/* Sección: Corte Actual */}
-        <div className="form-section">
+        <div className={`form-section ${sectionProgress.currentCourt === 100 ? 'completed' : ''}`}>
+          {/* Barra de progreso para esta sección */}
+          <ProgressBar progress={sectionProgress.currentCourt} />
+          
           <h2>Corte Actual</h2>
           
           <div className="form-field">
@@ -381,7 +430,10 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
         </div>
         
         {/* Sección: Nueva Corte */}
-        <div className="form-section">
+        <div className={`form-section ${sectionProgress.newCourt === 100 ? 'completed' : ''}`}>
+          {/* Barra de progreso para esta sección */}
+          <ProgressBar progress={sectionProgress.newCourt} />
+          
           <h2>Nueva Corte</h2>
           
           <div className="form-field">
@@ -442,7 +494,10 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
         </div>
         
         {/* Sección: Información Adicional */}
-        <div className="form-section">
+        <div className={`form-section ${sectionProgress.additionalInfo === 100 ? 'completed' : ''}`}>
+          {/* Barra de progreso para esta sección */}
+          <ProgressBar progress={sectionProgress.additionalInfo} />
+          
           <h2>Información Adicional</h2>
           
           <div className="form-field">
@@ -473,6 +528,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
         </div>
         
         <div className="form-field reason-field">
+          {/* No añadimos barra de progreso aquí porque ya está incluida en la Información Adicional */}
           <label>Razón del Cambio:</label>
           <textarea 
             name="reason" 
