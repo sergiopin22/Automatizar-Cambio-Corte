@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './PdfGenerationAnimation.css';
 import StarConfetti from '../StarConfetti/StarConfetti';
+import PdfStamp from '../PdfStamp/PdfStamp'; // Importar el componente de sello
 
 const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -8,6 +9,7 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
   const [showDownloadButton, setShowDownloadButton] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showStamp, setShowStamp] = useState(false); // Estado para controlar la visibilidad del sello
   
   // Usamos refs para evitar que los estados cambien inesperadamente
   const isCompleteRef = useRef(false);
@@ -45,18 +47,19 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
 
   useEffect(() => {
     if (isActive && animationMountedRef.current) {
-      // Reiniciamos los estados solo cuando se activa
+      // Reiniciamos los estados cuando se activa
       setProgress(0);
       setIsComplete(false);
       isCompleteRef.current = false;
       setShowDownloadButton(false);
       setShowConfetti(false);
+      setShowStamp(false); // Reiniciar visibilidad del sello
       
       // Bloquear el scroll cuando la animación está activa
       document.body.style.overflow = 'hidden';
       
       // Comenzamos la animación de las líneas después de un breve retraso
-      const animationTimeout = setTimeout(() => {
+      setTimeout(() => {
         if (!animationMountedRef.current) return;
         setIsAnimationActive(true);
       }, 300);
@@ -84,6 +87,12 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
                 if (!animationMountedRef.current) return;
                 
                 setShowConfetti(true);
+                
+                // Mostrar el sello después de un pequeño retraso
+                setTimeout(() => {
+                  if (!animationMountedRef.current) return;
+                  setShowStamp(true);
+                }, 400);
                 
                 // Añadir clase de éxito destacado al documento
                 const pdfDocument = document.querySelector('.pdf-document');
@@ -117,7 +126,6 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
       }, 50);
       
       return () => {
-        clearTimeout(animationTimeout);
         clearInterval(progressIntervalRef.current);
       };
     } else if (!isActive) {
@@ -149,6 +157,9 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
       
       <div className="pdf-animation-container">
         <div className="pdf-document">
+          {/* Sello del documento cuando se completa */}
+          {showStamp && <PdfStamp />}
+          
           <div className={`pdf-document-content ${isAnimationActive ? 'pdf-animation-active' : ''} ${isComplete ? 'pdf-animation-complete' : ''}`}>
             <div className="pdf-line"></div>
             <div className="pdf-line"></div>
