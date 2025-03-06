@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import './PdfPreview.css'; // Archivo CSS para estilos específicos
 
-// Configuración necesaria para react-pdf
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+// Configurar el worker de PDF.js con una versión disponible y estable
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js`;
+
+// Estilos para el componente
+import './PdfPreview.css';
 
 /**
  * Componente de vista previa de PDF con marca de agua
@@ -29,6 +31,7 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
       setError(null);
 
       try {
+        console.log('Enviando solicitud para vista previa...');
         // Llamada al endpoint de vista previa (versión con marca de agua)
         const response = await fetch('https://backend-cambio-corte.vercel.app/preview-pdf', {
           method: 'POST',
@@ -38,12 +41,19 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
           body: JSON.stringify(formData),
         });
 
+        console.log('Respuesta recibida:', response.status);
+
         if (!response.ok) {
+          const errorText = await response.text();
+          console.error('Error en respuesta:', errorText);
           throw new Error(`Error al generar la vista previa (${response.status})`);
         }
 
         const blob = await response.blob();
-        setPdfBlob(URL.createObjectURL(blob));
+        console.log('Blob recibido:', blob.type, blob.size);
+        
+        const url = URL.createObjectURL(blob);
+        setPdfBlob(url);
       } catch (err) {
         console.error('Error en la vista previa del PDF:', err);
         setError(err.message || 'Error al generar la vista previa del PDF');
@@ -113,7 +123,10 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
             <Document
               file={pdfBlob}
               onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={(error) => setError('Error al cargar el PDF: ' + error.message)}
+              onLoadError={(error) => {
+                console.error('Error al cargar el PDF:', error);
+                setError('Error al cargar el PDF: ' + error.message);
+              }}
               loading={<div className="loading-pdf">Cargando documento...</div>}
             >
               {Array.from(new Array(numPages), (el, index) => (
