@@ -1,30 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './PdfPreview.css';
 
-/**
- * Componente de vista previa de PDF utilizando un formulario HTML real e iframe
- * @param {Object} props - Propiedades del componente
- * @param {Object} props.formData - Datos del formulario para generar el PDF
- * @param {boolean} props.isOpen - Controla si el modal está abierto
- * @param {Function} props.onClose - Función para cerrar el modal
- * @param {Function} props.onConfirm - Función para confirmar y generar el PDF final
- */
 const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const modalRef = useRef(null);
-  const formRef = useRef(null);
-  const iframeRef = useRef(null);
-
-  // Efecto para enviar el formulario cuando se abre el modal
-  useEffect(() => {
-    if (isOpen && formRef.current) {
-      console.log('Enviando formulario para vista previa...');
-      // Pequeño retraso para asegurar que el formulario esté listo
-      setTimeout(() => {
-        formRef.current.submit();
-      }, 500);
-    }
-  }, [isOpen]);
 
   // Manejar clic fuera del modal para cerrarlo
   useEffect(() => {
@@ -43,30 +23,52 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
     };
   }, [isOpen, onClose]);
 
-  // Manejar la carga del iframe
-  const handleIframeLoad = () => {
-    console.log('Iframe cargado');
-    setLoading(false);
-    
-    // Verificar si hay error en el iframe
+  // Generar la URL de vista previa
+  const generatePreviewUrl = async () => {
+    setLoading(true);
+    setError(null);
+
     try {
-      if (iframeRef.current) {
-        const iframeContent = iframeRef.current.contentWindow.document.body.textContent;
-        if (iframeContent && iframeContent.includes('error')) {
-          console.error('Error detectado en el iframe:', iframeContent);
-          setLoading(false);
+      // Crear y enviar formulario directamente para obtener el PDF
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://backend-cambio-corte.vercel.app/preview-pdf';
+      form.target = '_blank'; // Abrir en nueva pestaña
+      form.style.display = 'none';
+
+      // Agregar todos los campos del formulario
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== undefined && value !== null) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = value.toString();
+          form.appendChild(input);
         }
-      }
+      });
+
+      // Añadir el formulario al documento y enviarlo
+      document.body.appendChild(form);
+      
+      // Ya no necesitamos el indicador de carga
+      setLoading(false);
+      
+      return form;
     } catch (err) {
-      // Ignora errores CORS al intentar acceder al contenido del iframe
-      console.log('No se puede verificar el contenido del iframe debido a restricciones CORS');
+      console.error('Error preparando formulario:', err);
+      setError('Error al preparar vista previa');
+      setLoading(false);
+      return null;
     }
   };
 
-  // Manejador de error para el iframe
-  const handleIframeError = () => {
-    console.error('Error al cargar el iframe');
-    setLoading(false);
+  // Manejar la apertura del PDF en una nueva ventana
+  const handleOpenPreview = async () => {
+    const form = await generatePreviewUrl();
+    if (form) {
+      form.submit();
+      document.body.removeChild(form);
+    }
   };
 
   if (!isOpen) return null;
@@ -79,37 +81,31 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
           <button className="close-button" onClick={onClose}>×</button>
         </div>
 
-        <div className="pdf-preview-content">
-          {loading && (
+        <div className="pdf-preview-content simplified">
+          {loading ? (
             <div className="loading-indicator">
               <div className="spinner"></div>
-              <p>Generando vista previa...</p>
+              <p>Preparando vista previa...</p>
+            </div>
+          ) : error ? (
+            <div className="error-message">
+              <p>❌ {error}</p>
+            </div>
+          ) : (
+            <div className="preview-instructions">
+              <p>Para visualizar la vista previa del documento PDF:</p>
+              <button 
+                className="preview-button" 
+                onClick={handleOpenPreview}
+              >
+                Abrir Vista Previa
+              </button>
+              <p className="info-text">
+                Esto abrirá tu documento en una nueva pestaña. 
+                Una vez revisado, puedes cerrarla y regresar a esta ventana.
+              </p>
             </div>
           )}
-
-          {/* Formulario oculto para enviar datos al iframe */}
-          <form
-            ref={formRef}
-            action="https://backend-cambio-corte.vercel.app/preview-pdf"
-            method="post"
-            target="pdf-frame"
-            style={{ display: 'none' }}
-          >
-            {/* Convertir cada propiedad de formData en un input hidden */}
-            {Object.entries(formData).map(([key, value]) => (
-              <input key={key} type="hidden" name={key} value={value || ''} />
-            ))}
-          </form>
-
-          {/* iframe para mostrar el PDF */}
-          <iframe
-            ref={iframeRef}
-            name="pdf-frame"
-            className="pdf-iframe"
-            title="Vista Previa del PDF"
-            onLoad={handleIframeLoad}
-            onError={handleIframeError}
-          ></iframe>
         </div>
 
         <div className="pdf-preview-footer">
@@ -118,7 +114,10 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
           </p>
           <div className="button-group">
             <button className="cancel-button" onClick={onClose}>Cancelar</button>
-            <button className="confirm-button" onClick={onConfirm}>
+            <button 
+              className="confirm-button" 
+              onClick={onConfirm}
+            >
               Generar PDF Final
             </button>
           </div>
