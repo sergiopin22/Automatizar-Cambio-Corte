@@ -1,11 +1,35 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './PdfPreview.css';
 
 const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
   const [loading, setLoading] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState(null);
   const modalRef = useRef(null);
 
-  // Manejar clic fuera del modal para cerrarlo
+  // Generar URL con parámetros
+  useEffect(() => {
+    if (isOpen) {
+      setLoading(true);
+      
+      // Construir URL con parámetros
+      const url = new URL("https://backend-cambio-corte.vercel.app/preview-pdf");
+      
+      // Añadir todos los campos como parámetros
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== '') {
+          url.searchParams.append(key, value);
+        }
+      });
+      
+      // Añadir timestamp para evitar caché
+      url.searchParams.append('timestamp', Date.now().toString());
+      
+      setPdfUrl(url.toString());
+      setLoading(false);
+    }
+  }, [isOpen, formData]);
+
+  // Manejar clic fuera del modal
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -22,33 +46,6 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
     };
   }, [isOpen, onClose]);
 
-  // Función para abrir la vista previa del PDF directamente
-  const openPreviewDirectly = () => {
-    setLoading(true);
-
-    try {
-      // Construir una URL con todos los parámetros del formulario
-      const url = new URL("https://backend-cambio-corte.vercel.app/preview-pdf");
-      
-      // Añadir todos los campos del formulario como parámetros
-      Object.entries(formData).forEach(([key, value]) => {
-        if (value !== undefined && value !== null && value !== '') {
-          url.searchParams.append(key, value);
-        }
-      });
-
-      // Añadir un timestamp para evitar caching
-      url.searchParams.append('timestamp', Date.now().toString());
-      
-      // Abrir en una nueva pestaña
-      window.open(url.toString(), '_blank');
-    } catch (error) {
-      console.error("Error al generar URL de vista previa:", error);
-    }
-
-    setLoading(false);
-  };
-
   if (!isOpen) return null;
 
   return (
@@ -60,21 +57,20 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
         </div>
 
         <div className="pdf-preview-content">
-          <div className="preview-message">
-            <h3>Previsualización de Documento</h3>
-            <p>Para ver la vista previa de su documento de moción completo:</p>
-            <button 
-              className="preview-button" 
-              onClick={openPreviewDirectly}
-              disabled={loading}
-            >
-              {loading ? "Cargando..." : "Ver Vista Previa"}
-            </button>
-            <p className="instructions">
-              Se abrirá una nueva pestaña con el documento. 
-              Una vez revisado, puede regresar aquí para generar la versión final.
-            </p>
-          </div>
+          {loading ? (
+            <div className="loading-indicator">
+              <div className="spinner"></div>
+              <p>Generando vista previa...</p>
+            </div>
+          ) : pdfUrl ? (
+            <iframe 
+              src={pdfUrl} 
+              className="pdf-iframe" 
+              title="Vista Previa de PDF"
+            ></iframe>
+          ) : (
+            <div className="error-message">Error al generar la URL</div>
+          )}
         </div>
 
         <div className="pdf-preview-footer">
