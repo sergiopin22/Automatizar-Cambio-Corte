@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './PdfGenerationAnimation.css';
 import StarConfetti from '../StarConfetti/StarConfetti';
+import LegalConfetti from '../LegalConfetti/LegalConfetti'; // Importar el nuevo componente
 
 const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -8,6 +9,7 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
   const [showDownloadButton, setShowDownloadButton] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showLegalConfetti, setShowLegalConfetti] = useState(false); // Nuevo estado para el confeti legal
   
   // Usamos refs para evitar que los estados cambien inesperadamente
   const isCompleteRef = useRef(false);
@@ -51,6 +53,7 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
       isCompleteRef.current = false;
       setShowDownloadButton(false);
       setShowConfetti(false);
+      setShowLegalConfetti(false); // Reiniciar el confeti legal
       
       // Bloquear el scroll cuando la animación está activa
       document.body.style.overflow = 'hidden';
@@ -83,17 +86,25 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
               setTimeout(() => {
                 if (!animationMountedRef.current) return;
                 
-                setShowConfetti(true);
+                // Activar primero el confeti legal (el más elaborado)
+                setShowLegalConfetti(true);
+                
+                // También activamos el confeti de estrellas original como respaldo
+                setTimeout(() => {
+                  setShowConfetti(true);
+                }, 200);
                 
                 // Añadir clase de éxito destacado al documento
                 const pdfDocument = document.querySelector('.pdf-document');
                 if (pdfDocument) {
                   pdfDocument.classList.add('success-highlight');
+                  pdfDocument.classList.add('confetti-active');
                   
                   // Quitar la clase después de la animación
                   setTimeout(() => {
                     if (pdfDocument) {
                       pdfDocument.classList.remove('success-highlight');
+                      pdfDocument.classList.remove('confetti-active');
                     }
                   }, 1500);
                 }
@@ -139,12 +150,15 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
         document.body.style.overflow = '';
         onComplete();
       }
-    }, 1500);
+    }, 2000); // Aumentado para ver más tiempo el confeti
   };
 
   return (
     <div className={`pdf-animation-overlay ${isActive ? 'active' : ''}`}>
-      {/* Componente de confeti de estrellas */}
+      {/* Componente de confeti legal (nuevo) */}
+      <LegalConfetti isActive={showLegalConfetti} />
+      
+      {/* Componente de confeti de estrellas (original como respaldo) */}
       <StarConfetti isActive={showConfetti} />
       
       <div className="pdf-animation-container">
