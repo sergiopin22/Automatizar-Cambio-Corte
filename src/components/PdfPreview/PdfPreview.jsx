@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './PdfPreview.css';
 
 /**
- * Componente de vista previa de PDF utilizando iframe en lugar de react-pdf
+ * Componente de vista previa de PDF utilizando un formulario HTML real e iframe
  * @param {Object} props - Propiedades del componente
  * @param {Object} props.formData - Datos del formulario para generar el PDF
  * @param {boolean} props.isOpen - Controla si el modal está abierto
@@ -11,49 +11,22 @@ import './PdfPreview.css';
  */
 const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [pdfUrl, setPdfUrl] = useState(null);
   const modalRef = useRef(null);
+  const formRef = useRef(null);
   const iframeRef = useRef(null);
 
-  // Generar una vista previa del PDF con los datos del formulario
+  // Efecto para enviar el formulario cuando se abre el modal
   useEffect(() => {
-    if (!isOpen) return;
+    if (isOpen && formRef.current) {
+      console.log('Enviando formulario para vista previa...');
+      // Pequeño retraso para asegurar que el formulario esté listo
+      setTimeout(() => {
+        formRef.current.submit();
+      }, 500);
+    }
+  }, [isOpen]);
 
-    const generatePreview = async () => {
-      setLoading(true);
-      setError(null);
-      setPdfUrl(null);
-
-      try {
-        console.log('Enviando solicitud para vista previa...');
-        
-        // Crear FormData para enviar como multipart/form-data
-        const formDataObj = new FormData();
-        Object.keys(formData).forEach(key => {
-          formDataObj.append(key, formData[key]);
-        });
-
-        // Generamos una URL única para evitar problemas de caché
-        const timestamp = new Date().getTime();
-        const previewUrl = `https://backend-cambio-corte.vercel.app/preview-pdf?t=${timestamp}`;
-
-        // Configurar el iframe tras un breve retraso
-        setTimeout(() => {
-          setLoading(false);
-          setPdfUrl(previewUrl);
-        }, 500);
-      } catch (err) {
-        console.error('Error al preparar vista previa:', err);
-        setError(err.message || 'Error al generar la vista previa');
-        setLoading(false);
-      }
-    };
-
-    generatePreview();
-  }, [isOpen, formData]);
-
-  // Manejar el clic fuera del modal para cerrarlo
+  // Manejar clic fuera del modal para cerrarlo
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -70,37 +43,31 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
     };
   }, [isOpen, onClose]);
 
-  // Función para enviar datos al iframe
-  const submitFormToIframe = () => {
-    if (iframeRef.current) {
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.target = 'previewFrame';
-      form.action = 'https://backend-cambio-corte.vercel.app/preview-pdf';
-      form.style.display = 'none';
-
-      Object.keys(formData).forEach(key => {
-        if (formData[key]) {
-          const input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = key;
-          input.value = formData[key];
-          form.appendChild(input);
+  // Manejar la carga del iframe
+  const handleIframeLoad = () => {
+    console.log('Iframe cargado');
+    setLoading(false);
+    
+    // Verificar si hay error en el iframe
+    try {
+      if (iframeRef.current) {
+        const iframeContent = iframeRef.current.contentWindow.document.body.textContent;
+        if (iframeContent && iframeContent.includes('error')) {
+          console.error('Error detectado en el iframe:', iframeContent);
+          setLoading(false);
         }
-      });
-
-      document.body.appendChild(form);
-      form.submit();
-      document.body.removeChild(form);
+      }
+    } catch (err) {
+      // Ignora errores CORS al intentar acceder al contenido del iframe
+      console.log('No se puede verificar el contenido del iframe debido a restricciones CORS');
     }
   };
 
-  // Iniciar el envío del formulario cuando el iframe está listo
-  useEffect(() => {
-    if (isOpen && iframeRef.current) {
-      submitFormToIframe();
-    }
-  }, [isOpen, iframeRef.current]);
+  // Manejador de error para el iframe
+  const handleIframeError = () => {
+    console.error('Error al cargar el iframe');
+    setLoading(false);
+  };
 
   if (!isOpen) return null;
 
@@ -120,25 +87,29 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
             </div>
           )}
 
-          {error && (
-            <div className="error-message">
-              <p>❌ {error}</p>
-              <button onClick={onClose}>Cerrar</button>
-            </div>
-          )}
+          {/* Formulario oculto para enviar datos al iframe */}
+          <form
+            ref={formRef}
+            action="https://backend-cambio-corte.vercel.app/preview-pdf"
+            method="post"
+            target="pdf-frame"
+            style={{ display: 'none' }}
+          >
+            {/* Convertir cada propiedad de formData en un input hidden */}
+            {Object.entries(formData).map(([key, value]) => (
+              <input key={key} type="hidden" name={key} value={value || ''} />
+            ))}
+          </form>
 
-          {!loading && !error && (
-            <div className="iframe-container">
-              <iframe
-                name="previewFrame"
-                ref={iframeRef}
-                title="Vista Previa PDF"
-                className="pdf-iframe"
-                onLoad={() => setLoading(false)}
-                onError={() => setError('Error al cargar el PDF')}
-              />
-            </div>
-          )}
+          {/* iframe para mostrar el PDF */}
+          <iframe
+            ref={iframeRef}
+            name="pdf-frame"
+            className="pdf-iframe"
+            title="Vista Previa del PDF"
+            onLoad={handleIframeLoad}
+            onError={handleIframeError}
+          ></iframe>
         </div>
 
         <div className="pdf-preview-footer">
@@ -147,11 +118,7 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
           </p>
           <div className="button-group">
             <button className="cancel-button" onClick={onClose}>Cancelar</button>
-            <button 
-              className="confirm-button" 
-              onClick={onConfirm}
-              disabled={loading || error}
-            >
+            <button className="confirm-button" onClick={onConfirm}>
               Generar PDF Final
             </button>
           </div>
