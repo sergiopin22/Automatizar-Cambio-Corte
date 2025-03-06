@@ -10,7 +10,7 @@
     opacity: 0;
     animation: stampAppear 0.5s forwards;
     animation-delay: 0.8s;
-    mix-blend-mode: multiply; /* Hace que el sello se mezcle mejor con el documento */
+    mix-blend-mode: multiply;
   }
   
   @keyframes stampAppear {
@@ -39,87 +39,54 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: 3px solid #cc0e1e; /* Borde rojo */
-    border-radius: 50%; /* Forma circular */
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 
-      0 0 0 1px rgba(204, 14, 30, 0.3),
-      0 0 20px rgba(0, 0, 0, 0.2) inset;
-    animation: rotateBorder 15s linear infinite;
-  }
-  
-  @keyframes rotateBorder {
-    0% {
-      border-radius: 50% 45% 48% 47%;
-    }
-    25% {
-      border-radius: 47% 50% 45% 48%;
-    }
-    50% {
-      border-radius: 48% 47% 50% 45%;
-    }
-    75% {
-      border-radius: 45% 48% 47% 50%;
-    }
-    100% {
-      border-radius: 50% 45% 48% 47%;
-    }
-  }
-  
-  .stamp-star {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-    animation: pulseStar 2s ease-in-out infinite;
-  }
-  
-  @keyframes pulseStar {
-    0% {
-      transform: scale(1);
-      filter: drop-shadow(0 0 3px rgba(204, 14, 30, 0.7));
-    }
-    50% {
-      transform: scale(1.05);
-      filter: drop-shadow(0 0 8px rgba(204, 14, 30, 0.9));
-    }
-    100% {
-      transform: scale(1);
-      filter: drop-shadow(0 0 3px rgba(204, 14, 30, 0.7));
-    }
-  }
-  
-  .stamp-star svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
-  }
-  
-  .stamp-star svg path {
-    fill: #cc0e1e; /* Color rojo de tu logo */
-    stroke: #ffffff; /* Borde blanco */
-    stroke-width: 1;
   }
   
   .stamp-text {
-    color: #3a69b9; /* Color azul de tu logo */
+    color: #cc0e1e; /* Color rojo de tu logo */
     font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     letter-spacing: 2px;
     text-shadow: 
-      -1px -1px 0 #fff, 
-      1px -1px 0 #fff, 
-      -1px 1px 0 #fff, 
-      1px 1px 0 #fff,
-      0 0 10px rgba(255, 255, 255, 0.5);
+      -1px -1px 0 rgba(255, 255, 255, 0.7), 
+      1px -1px 0 rgba(255, 255, 255, 0.7), 
+      -1px 1px 0 rgba(255, 255, 255, 0.7), 
+      1px 1px 0 rgba(255, 255, 255, 0.7);
     transform: scale(1, 1.2); /* Ligeramente estirado verticalmente para efecto de sello */
     text-align: center;
-    background: linear-gradient(135deg, #3a69b9, #1e3d6e);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    border-bottom: 2px solid #3a69b9;
-    padding: 0 5px 3px;
+    padding: 10px 30px;
+    border: 3px solid #cc0e1e;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(204, 14, 30, 0.3);
+    white-space: nowrap;
+    animation: pulseText 2s infinite ease-in-out;
+  }
+  
+  @keyframes pulseText {
+    0% {
+      opacity: 0.85;
+      text-shadow: 
+        -1px -1px 0 rgba(255, 255, 255, 0.7), 
+        1px -1px 0 rgba(255, 255, 255, 0.7), 
+        -1px 1px 0 rgba(255, 255, 255, 0.7), 
+        1px 1px 0 rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      opacity: 0.95;
+      text-shadow: 
+        -1px -1px 0 rgba(255, 255, 255, 0.9), 
+        1px -1px 0 rgba(255, 255, 255, 0.9), 
+        -1px 1px 0 rgba(255, 255, 255, 0.9), 
+        1px 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 5px rgba(204, 14, 30, 0.5);
+    }
+    100% {
+      opacity: 0.85;
+      text-shadow: 
+        -1px -1px 0 rgba(255, 255, 255, 0.7), 
+        1px -1px 0 rgba(255, 255, 255, 0.7), 
+        -1px 1px 0 rgba(255, 255, 255, 0.7), 
+        1px 1px 0 rgba(255, 255, 255, 0.7);
+    }
   }

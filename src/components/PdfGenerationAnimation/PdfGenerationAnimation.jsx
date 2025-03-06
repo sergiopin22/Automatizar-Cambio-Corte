@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './PdfGenerationAnimation.css';
 import StarConfetti from '../StarConfetti/StarConfetti';
-import PdfStamp from '../PdfStamp/PdfStamp'; // Importar el componente de sello
+import PdfStamp from '../PdfStamp/PdfStamp';
 
 const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [progress, setProgress] = useState(0);
