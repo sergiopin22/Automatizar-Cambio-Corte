@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useRef, useCallback, useMemo, lazy, Suspense } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './PdfGenerationAnimation.css';
 import StarConfetti from '../StarConfetti/StarConfetti';
-
-// Carga diferida del componente PdfStamp para mejor rendimiento
-const PdfStamp = lazy(() => import('../PdfStamp/PdfStamp'));
+import PdfStamp from '../PdfStamp/PdfStamp';
 
 const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -18,17 +16,15 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
   const progressIntervalRef = useRef(null);
   const animationMountedRef = useRef(false);
 
-  // Cálculo optimizado para el offset del progreso
-  const progressOffset = useMemo(() => 100 - progress, [progress]);
-
-  // Evitamos que eventos inesperados reinicien la animación
   useEffect(() => {
+    // Evitamos que eventos inesperados reinicien la animación
     const handleScroll = (e) => {
       if (isCompleteRef.current) {
         e.preventDefault();
       }
     };
 
+    // Agregamos y limpiamos el event listener
     window.addEventListener('scroll', handleScroll, { passive: false });
     
     return () => {
@@ -36,10 +32,11 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
     };
   }, []);
 
-  // Marcar que el componente está montado
   useEffect(() => {
+    // Marcar que el componente está montado
     animationMountedRef.current = true;
     
+    // Limpiar cuando el componente se desmonte
     return () => {
       animationMountedRef.current = false;
       if (progressIntervalRef.current) {
@@ -48,52 +45,6 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
     };
   }, []);
 
-  // Función para manejar la finalización del proceso
-  const handleCompletion = useCallback(() => {
-    if (!animationMountedRef.current) return;
-    
-    setIsComplete(true);
-    isCompleteRef.current = true;
-    
-    // Activar el confeti y efectos de éxito simultáneamente
-    setTimeout(() => {
-      if (!animationMountedRef.current) return;
-      
-      setShowConfetti(true);
-      
-      // Mostrar el sello después de un pequeño retraso
-      setTimeout(() => {
-        if (!animationMountedRef.current) return;
-        setShowStamp(true);
-      }, 600); // Tiempo ajustado para mejor coordinación visual
-      
-      // Añadir clase de éxito destacado al documento
-      const pdfDocument = document.querySelector('.pdf-document');
-      if (pdfDocument) {
-        pdfDocument.classList.add('success-highlight');
-        
-        // Quitar la clase después de la animación
-        setTimeout(() => {
-          if (pdfDocument) {
-            pdfDocument.classList.remove('success-highlight');
-          }
-        }, 1500);
-      }
-    }, 100);
-    
-    // Mostrar el botón de descarga
-    setTimeout(() => {
-      if (!animationMountedRef.current) return;
-      
-      setShowDownloadButton(true);
-      
-      // Disparar un evento personalizado para señalar que la animación terminó
-      const event = new Event('pdfAnimationComplete');
-      window.dispatchEvent(event);
-    }, 500);
-  }, []);
-
-  // Efecto principal para animación de generación
   useEffect(() => {
     if (isActive && animationMountedRef.current) {
       // Reiniciamos los estados cuando se activa
@@ -108,39 +59,83 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
       document.body.style.overflow = 'hidden';
       
       // Comenzamos la animación de las líneas después de un breve retraso
-      const animationTimeout = setTimeout(() => {
+      setTimeout(() => {
         if (!animationMountedRef.current) return;
         setIsAnimationActive(true);
       }, 300);
       
-      // Función optimizada para incrementar el progreso
-      const incrementProgress = () => {
+      // Animamos el progreso
+      progressIntervalRef.current = setInterval(() => {
+        if (!animationMountedRef.current) return;
+        
         setProgress(prev => {
           const newProgress = prev + 1;
+          
+          // Al llegar al 100%
           if (newProgress >= 100) {
             clearInterval(progressIntervalRef.current);
-            setTimeout(() => handleCompletion(), 500);
-            return 100;
+            
+            // Mostrar animación de completado
+            setTimeout(() => {
+              if (!animationMountedRef.current) return;
+              
+              setIsComplete(true);
+              isCompleteRef.current = true;
+              
+              // Activar el confeti y efectos de éxito simultáneamente
+              setTimeout(() => {
+                if (!animationMountedRef.current) return;
+                
+                setShowConfetti(true);
+                
+                // Mostrar el sello después de un pequeño retraso
+                setTimeout(() => {
+                  if (!animationMountedRef.current) return;
+                  setShowStamp(true);
+                }, 400);
+                
+                // Añadir clase de éxito destacado al documento
+                const pdfDocument = document.querySelector('.pdf-document');
+                if (pdfDocument) {
+                  pdfDocument.classList.add('success-highlight');
+                  
+                  // Quitar la clase después de la animación
+                  setTimeout(() => {
+                    if (pdfDocument) {
+                      pdfDocument.classList.remove('success-highlight');
+                    }
+                  }, 1500);
+                }
+              }, 100);
+              
+              // Mostrar el botón de descarga
+              setTimeout(() => {
+                if (!animationMountedRef.current) return;
+                
+                setShowDownloadButton(true);
+                
+                // Disparar un evento personalizado para señalar que la animación terminó
+                const event = new Event('pdfAnimationComplete');
+                window.dispatchEvent(event);
+              }, 500);
+            }, 500);
           }
+          
           return newProgress;
         });
-      };
-      
-      // Iniciamos el intervalo para incrementar el progreso
-      progressIntervalRef.current = setInterval(incrementProgress, 50);
+      }, 50);
       
       return () => {
-        clearTimeout(animationTimeout);
         clearInterval(progressIntervalRef.current);
       };
     } else if (!isActive) {
       // Restaurar el scroll cuando la animación se cierra
       document.body.style.overflow = '';
     }
-  }, [isActive, handleCompletion]);
+  }, [isActive]);
 
-  // Función optimizada para manejar la descarga
-  const handleDownload = useCallback(() => {
+  // Función para manejar la descarga manual
+  const handleDownload = () => {
     // Disparar el evento para iniciar la descarga
     const event = new Event('pdfDownloadRequested');
     window.dispatchEvent(event);
@@ -153,7 +148,7 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
         onComplete();
       }
     }, 1500);
-  }, [onComplete]);
+  };
 
   return (
     <div className={`pdf-animation-overlay ${isActive ? 'active' : ''}`}>
@@ -162,12 +157,8 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
       
       <div className="pdf-animation-container">
         <div className="pdf-document">
-          {/* Sello del documento cuando se completa - cargado de manera diferida */}
-          {showStamp && (
-            <Suspense fallback={null}>
-              <PdfStamp />
-            </Suspense>
-          )}
+          {/* Sello del documento cuando se completa */}
+          {showStamp && <PdfStamp />}
           
           <div className={`pdf-document-content ${isAnimationActive ? 'pdf-animation-active' : ''} ${isComplete ? 'pdf-animation-complete' : ''}`}>
             <div className="pdf-line"></div>
@@ -199,7 +190,7 @@ const PdfGenerationAnimation = ({ isActive, onComplete }) => {
                   d="M18 2.0845
                   a 15.9155 15.9155 0 0 1 0 31.831
                   a 15.9155 15.9155 0 0 1 0 -31.831" 
-                  style={{ strokeDashoffset: progressOffset }}
+                  style={{ strokeDashoffset: 100 - progress }}
                 />
               </svg>
               <div className="pdf-progress-text">{progress}%</div>

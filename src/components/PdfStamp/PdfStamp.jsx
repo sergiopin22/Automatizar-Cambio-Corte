@@ -1,8 +1,7 @@
-import React, { memo } from 'react';
+import React from 'react';
 import './PdfStamp.css';
 
-// Utilizamos memo para evitar re-renders innecesarios
-const PdfStamp = memo(() => {
+const PdfStamp = () => {
   return (
     <div className="pdf-stamp">
       <div className="pdf-stamp-inner">
@@ -10,8 +9,6 @@ const PdfStamp = memo(() => {
       </div>
     </div>
   );
-});
-
-PdfStamp.displayName = 'PdfStamp';
+};
 
 export default PdfStamp;
