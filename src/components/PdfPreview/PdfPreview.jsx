@@ -4,9 +4,63 @@ import './PdfPreview.css';
 const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [debugInfo, setDebugInfo] = useState(null);
   const modalRef = useRef(null);
 
-  // Manejar clic fuera del modal para cerrarlo
+  // Efecto para generar la vista previa cuando se abre el modal
+  useEffect(() => {
+    if (!isOpen) return;
+    
+    const generatePreview = async () => {
+      setLoading(true);
+      setError(null);
+      setDebugInfo(null);
+      
+      try {
+        // Mostrar los datos que se enviarán para depuración
+        console.log("Datos a enviar:", formData);
+        setDebugInfo(JSON.stringify(formData, null, 2));
+        
+        const formDataObj = new FormData();
+        
+        // Asegurarnos de que los campos requeridos no sean undefined o null
+        formDataObj.append('name', formData.name || '');
+        formDataObj.append('aNumber', formData.aNumber || '');
+        formDataObj.append('streetAddress', formData.streetAddress || '');
+        
+        // Añadir el resto de campos
+        Object.entries(formData).forEach(([key, value]) => {
+          if (key !== 'name' && key !== 'aNumber' && key !== 'streetAddress') {
+            formDataObj.append(key, value || '');
+          }
+        });
+        
+        const response = await fetch('https://backend-cambio-corte.vercel.app/preview-pdf', {
+          method: 'POST',
+          body: formDataObj
+        });
+        
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Error ${response.status}: ${errorText}`);
+        }
+        
+        // Si llegamos aquí, el PDF se ha generado correctamente
+        // Redirigir a una nueva pestaña para ver el PDF
+        window.open('https://backend-cambio-corte.vercel.app/preview-pdf', '_blank');
+        setLoading(false);
+        
+      } catch (err) {
+        console.error("Error al generar vista previa:", err);
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+    
+    generatePreview();
+  }, [isOpen, formData]);
+
+  // Handler para clic fuera del modal
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -23,54 +77,6 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
     };
   }, [isOpen, onClose]);
 
-  // Generar la URL de vista previa
-  const generatePreviewUrl = async () => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      // Crear y enviar formulario directamente para obtener el PDF
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://backend-cambio-corte.vercel.app/preview-pdf';
-      form.target = '_blank'; // Abrir en nueva pestaña
-      form.style.display = 'none';
-
-      // Agregar todos los campos del formulario
-      Object.entries(formData).forEach(([key, value]) => {
-        if (value !== undefined && value !== null) {
-          const input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = key;
-          input.value = value.toString();
-          form.appendChild(input);
-        }
-      });
-
-      // Añadir el formulario al documento y enviarlo
-      document.body.appendChild(form);
-      
-      // Ya no necesitamos el indicador de carga
-      setLoading(false);
-      
-      return form;
-    } catch (err) {
-      console.error('Error preparando formulario:', err);
-      setError('Error al preparar vista previa');
-      setLoading(false);
-      return null;
-    }
-  };
-
-  // Manejar la apertura del PDF en una nueva ventana
-  const handleOpenPreview = async () => {
-    const form = await generatePreviewUrl();
-    if (form) {
-      form.submit();
-      document.body.removeChild(form);
-    }
-  };
-
   if (!isOpen) return null;
 
   return (
@@ -81,7 +87,7 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
           <button className="close-button" onClick={onClose}>×</button>
         </div>
 
-        <div className="pdf-preview-content simplified">
+        <div className="pdf-preview-content">
           {loading ? (
             <div className="loading-indicator">
               <div className="spinner"></div>
@@ -89,21 +95,22 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
             </div>
           ) : error ? (
             <div className="error-message">
-              <p>❌ {error}</p>
+              <h3>Error al generar la vista previa:</h3>
+              <p>{error}</p>
+              <div className="debug-info">
+                <h4>Datos enviados:</h4>
+                <pre>{debugInfo}</pre>
+              </div>
+              <button onClick={() => window.open('https://backend-cambio-corte.vercel.app/preview-pdf', '_blank')}>
+                Intentar ver vista previa directamente
+              </button>
             </div>
           ) : (
-            <div className="preview-instructions">
-              <p>Para visualizar la vista previa del documento PDF:</p>
-              <button 
-                className="preview-button" 
-                onClick={handleOpenPreview}
-              >
-                Abrir Vista Previa
+            <div className="success-message">
+              <p>La vista previa se ha abierto en una nueva pestaña.</p>
+              <button onClick={() => window.open('https://backend-cambio-corte.vercel.app/preview-pdf', '_blank')}>
+                Abrir vista previa de nuevo
               </button>
-              <p className="info-text">
-                Esto abrirá tu documento en una nueva pestaña. 
-                Una vez revisado, puedes cerrarla y regresar a esta ventana.
-              </p>
             </div>
           )}
         </div>
@@ -114,10 +121,7 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
           </p>
           <div className="button-group">
             <button className="cancel-button" onClick={onClose}>Cancelar</button>
-            <button 
-              className="confirm-button" 
-              onClick={onConfirm}
-            >
+            <button className="confirm-button" onClick={onConfirm}>
               Generar PDF Final
             </button>
           </div>

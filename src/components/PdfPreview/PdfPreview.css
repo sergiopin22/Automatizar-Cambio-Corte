@@ -208,3 +208,35 @@
     font-size: 0.9rem;
     margin-top: 15px;
   }
+
+  .debug-info {
+    margin-top: 15px;
+    text-align: left;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .debug-info pre {
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 12px;
+  }
+  
+  .success-message {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .error-message button,
+  .success-message button {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
