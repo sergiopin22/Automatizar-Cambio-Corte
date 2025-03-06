@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import courtsData from './data/courts.json';
-import { usStates } from './data/usStates'; // Importamos la nueva lista completa de estados
+import { usStates } from './data/usStates'; // Asegúrate de tener este archivo creado con todos los estados
 import PdfGenerationAnimation from './components/PdfGenerationAnimation/PdfGenerationAnimation';
 import ProgressBar from './components/ProgressBar/ProgressBar';
+import PdfPreview from './components/PdfPreview/PdfPreview'; // Importamos el componente de vista previa
 
 function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
   const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     streetAddress: '',
     city: '',
     postalCode: '',
-    residenceState: '', // Ahora usará la lista completa de estados
+    residenceState: '', // Estado de residencia
     
     // Corte Actual (6 campos)
     currentCourtState: '',
@@ -46,6 +47,8 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     newCourt: 0,
     additionalInfo: 0
   });
+  // Nuevo estado para controlar la vista previa del PDF
+  const [showPreview, setShowPreview] = useState(false);
 
   // Función para calcular el progreso de cada sección
   const calculateSectionProgress = () => {
@@ -111,11 +114,6 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     const stateData = courtsData.find((item) => item.state === state);
     const court = stateData?.courts.find((c) => c.name === courtName);
     return court ? court.judges : [];
-  };
-
-  // Obtener la lista de estados que tienen cortes de inmigración
-  const getStatesWithCourts = () => {
-    return courtsData.map(data => data.state);
   };
 
   // Efecto para actualizar la información cuando cambia el estado de la corte actual
@@ -197,9 +195,18 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     }));
   };
 
-  // Función modificada para incluir la animación sincronizada
+  // Función modificada para mostrar la vista previa en lugar de generar el PDF directamente
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Mostrar la vista previa del PDF
+    setShowPreview(true);
+  };
+
+  // Nueva función para generar el PDF final después de confirmar en la vista previa
+  const handleGenerateFinalPdf = async () => {
+    // Cerrar el diálogo de vista previa
+    setShowPreview(false);
     
     // Mostrar la animación de generación de PDF
     setShowAnimation(true);
@@ -225,7 +232,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
       });
       
     } catch (error) {
-      console.error('Error en handleSubmit:', error);
+      console.error('Error en handleGenerateFinalPdf:', error);
       alert('Hubo un problema al generar el PDF.');
       
       // Cerrar la animación si hay un error
@@ -302,7 +309,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
             />
           </div>
           
-          {/* Actualizado: Campo para estado de residencia con TODOS los estados */}
+          {/* Campo para estado de residencia con todos los estados */}
           <div className="form-field">
             <label>Estado de Residencia:</label>
             <select 
@@ -545,13 +552,22 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
           />
         </div>
         
-        <button type="submit">Generar PDF</button>
+        {/* Cambiamos el texto del botón para indicar que es vista previa */}
+        <button type="submit" className="preview-button">Ver Vista Previa</button>
       </form>
       
       {/* Componente de animación de generación de PDF */}
       <PdfGenerationAnimation 
         isActive={showAnimation} 
         onComplete={() => setShowAnimation(false)}
+      />
+      
+      {/* Componente de vista previa del PDF */}
+      <PdfPreview 
+        formData={formData}
+        isOpen={showPreview}
+        onClose={() => setShowPreview(false)}
+        onConfirm={handleGenerateFinalPdf}
       />
     </div>
   );
