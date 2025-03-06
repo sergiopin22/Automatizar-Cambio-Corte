@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './PdfPreview.css';
 
 const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
@@ -22,63 +22,31 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
     };
   }, [isOpen, onClose]);
 
-  // Función para abrir vista previa directamente
+  // Función para abrir la vista previa del PDF directamente
   const openPreviewDirectly = () => {
     setLoading(true);
-    
-    // Verificar campos obligatorios
-    if (!formData.name || !formData.aNumber || !formData.streetAddress) {
-      alert("Por favor, complete los campos obligatorios: Nombre, Número A y Dirección");
-      setLoading(false);
-      return;
-    }
-    
-    // Crear formulario para enviar
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://backend-cambio-corte.vercel.app/preview-pdf';
-    form.target = '_blank';
-    form.style.display = 'none';
-    
-    // Agregar explícitamente los campos obligatorios primero
-    const requiredFields = {
-      name: formData.name || '',
-      aNumber: formData.aNumber || '',
-      streetAddress: formData.streetAddress || ''
-    };
-    
-    // Agregar campos obligatorios
-    Object.entries(requiredFields).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = value;
-      form.appendChild(input);
-    });
-    
-    // Agregar el resto de campos
-    Object.entries(formData).forEach(([key, value]) => {
-      // Saltarse los campos obligatorios ya agregados
-      if (key !== 'name' && key !== 'aNumber' && key !== 'streetAddress') {
-        if (value !== undefined && value !== null) {
-          const input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = key;
-          input.value = value.toString();
-          form.appendChild(input);
+
+    try {
+      // Construir una URL con todos los parámetros del formulario
+      const url = new URL("https://backend-cambio-corte.vercel.app/preview-pdf");
+      
+      // Añadir todos los campos del formulario como parámetros
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== '') {
+          url.searchParams.append(key, value);
         }
-      }
-    });
-    
-    // Agregar formulario al documento y enviarlo
-    document.body.appendChild(form);
-    form.submit();
-    
-    // Limpiar
-    setTimeout(() => {
-      document.body.removeChild(form);
-      setLoading(false);
-    }, 1000);
+      });
+
+      // Añadir un timestamp para evitar caching
+      url.searchParams.append('timestamp', Date.now().toString());
+      
+      // Abrir en una nueva pestaña
+      window.open(url.toString(), '_blank');
+    } catch (error) {
+      console.error("Error al generar URL de vista previa:", error);
+    }
+
+    setLoading(false);
   };
 
   if (!isOpen) return null;
