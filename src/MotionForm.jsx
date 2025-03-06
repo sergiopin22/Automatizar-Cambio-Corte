@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import courtsData from './data/courts.json';
+import { usStates } from './data/usStates'; // Importamos la nueva lista completa de estados
 import PdfGenerationAnimation from './components/PdfGenerationAnimation/PdfGenerationAnimation';
-import ProgressBar from './components/ProgressBar/ProgressBar'; // Importamos el nuevo componente
+import ProgressBar from './components/ProgressBar/ProgressBar';
 
 function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     streetAddress: '',
     city: '',
     postalCode: '',
-    residenceState: '', // Nuevo campo para el estado de residencia
+    residenceState: '', // Ahora usará la lista completa de estados
     
     // Corte Actual (6 campos)
     currentCourtState: '',
@@ -112,6 +113,11 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     return court ? court.judges : [];
   };
 
+  // Obtener la lista de estados que tienen cortes de inmigración
+  const getStatesWithCourts = () => {
+    return courtsData.map(data => data.state);
+  };
+
   // Efecto para actualizar la información cuando cambia el estado de la corte actual
   useEffect(() => {
     if (formData.currentCourtState && formData.currentCourt) {
@@ -133,7 +139,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     }
   }, [formData.newCourtState, formData.newCourt]);
 
-  // Efecto para manejar el evento de animación completa - ya no descarga automáticamente
+  // Efecto para manejar el evento de animación completa
   useEffect(() => {
     const handleAnimationComplete = () => {
       // Ya no descargamos automáticamente
@@ -296,7 +302,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
             />
           </div>
           
-          {/* Nuevo campo para estado de residencia */}
+          {/* Actualizado: Campo para estado de residencia con TODOS los estados */}
           <div className="form-field">
             <label>Estado de Residencia:</label>
             <select 
@@ -306,9 +312,9 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
               required
             >
               <option value="">Selecciona un estado</option>
-              {courtsData.map((courtData, index) => (
-                <option key={index} value={courtData.state}>
-                  {courtData.state}
+              {usStates.map((state, index) => (
+                <option key={index} value={state}>
+                  {state}
                 </option>
               ))}
             </select>
