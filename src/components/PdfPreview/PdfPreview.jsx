@@ -1,66 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './PdfPreview.css';
 
 const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [debugInfo, setDebugInfo] = useState(null);
+  const [loading, setLoading] = useState(false);
   const modalRef = useRef(null);
 
-  // Efecto para generar la vista previa cuando se abre el modal
-  useEffect(() => {
-    if (!isOpen) return;
-    
-    const generatePreview = async () => {
-      setLoading(true);
-      setError(null);
-      setDebugInfo(null);
-      
-      try {
-        // Mostrar los datos que se enviarán para depuración
-        console.log("Datos a enviar:", formData);
-        setDebugInfo(JSON.stringify(formData, null, 2));
-        
-        const formDataObj = new FormData();
-        
-        // Asegurarnos de que los campos requeridos no sean undefined o null
-        formDataObj.append('name', formData.name || '');
-        formDataObj.append('aNumber', formData.aNumber || '');
-        formDataObj.append('streetAddress', formData.streetAddress || '');
-        
-        // Añadir el resto de campos
-        Object.entries(formData).forEach(([key, value]) => {
-          if (key !== 'name' && key !== 'aNumber' && key !== 'streetAddress') {
-            formDataObj.append(key, value || '');
-          }
-        });
-        
-        const response = await fetch('https://backend-cambio-corte.vercel.app/preview-pdf', {
-          method: 'POST',
-          body: formDataObj
-        });
-        
-        if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(`Error ${response.status}: ${errorText}`);
-        }
-        
-        // Si llegamos aquí, el PDF se ha generado correctamente
-        // Redirigir a una nueva pestaña para ver el PDF
-        window.open('https://backend-cambio-corte.vercel.app/preview-pdf', '_blank');
-        setLoading(false);
-        
-      } catch (err) {
-        console.error("Error al generar vista previa:", err);
-        setError(err.message);
-        setLoading(false);
-      }
-    };
-    
-    generatePreview();
-  }, [isOpen, formData]);
-
-  // Handler para clic fuera del modal
+  // Manejar clic fuera del modal para cerrarlo
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -77,6 +22,65 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
     };
   }, [isOpen, onClose]);
 
+  // Función para abrir vista previa directamente
+  const openPreviewDirectly = () => {
+    setLoading(true);
+    
+    // Verificar campos obligatorios
+    if (!formData.name || !formData.aNumber || !formData.streetAddress) {
+      alert("Por favor, complete los campos obligatorios: Nombre, Número A y Dirección");
+      setLoading(false);
+      return;
+    }
+    
+    // Crear formulario para enviar
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://backend-cambio-corte.vercel.app/preview-pdf';
+    form.target = '_blank';
+    form.style.display = 'none';
+    
+    // Agregar explícitamente los campos obligatorios primero
+    const requiredFields = {
+      name: formData.name || '',
+      aNumber: formData.aNumber || '',
+      streetAddress: formData.streetAddress || ''
+    };
+    
+    // Agregar campos obligatorios
+    Object.entries(requiredFields).forEach(([key, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+    
+    // Agregar el resto de campos
+    Object.entries(formData).forEach(([key, value]) => {
+      // Saltarse los campos obligatorios ya agregados
+      if (key !== 'name' && key !== 'aNumber' && key !== 'streetAddress') {
+        if (value !== undefined && value !== null) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = value.toString();
+          form.appendChild(input);
+        }
+      }
+    });
+    
+    // Agregar formulario al documento y enviarlo
+    document.body.appendChild(form);
+    form.submit();
+    
+    // Limpiar
+    setTimeout(() => {
+      document.body.removeChild(form);
+      setLoading(false);
+    }, 1000);
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -88,31 +92,21 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
         </div>
 
         <div className="pdf-preview-content">
-          {loading ? (
-            <div className="loading-indicator">
-              <div className="spinner"></div>
-              <p>Preparando vista previa...</p>
-            </div>
-          ) : error ? (
-            <div className="error-message">
-              <h3>Error al generar la vista previa:</h3>
-              <p>{error}</p>
-              <div className="debug-info">
-                <h4>Datos enviados:</h4>
-                <pre>{debugInfo}</pre>
-              </div>
-              <button onClick={() => window.open('https://backend-cambio-corte.vercel.app/preview-pdf', '_blank')}>
-                Intentar ver vista previa directamente
-              </button>
-            </div>
-          ) : (
-            <div className="success-message">
-              <p>La vista previa se ha abierto en una nueva pestaña.</p>
-              <button onClick={() => window.open('https://backend-cambio-corte.vercel.app/preview-pdf', '_blank')}>
-                Abrir vista previa de nuevo
-              </button>
-            </div>
-          )}
+          <div className="preview-message">
+            <h3>Previsualización de Documento</h3>
+            <p>Para ver la vista previa de su documento de moción completo:</p>
+            <button 
+              className="preview-button" 
+              onClick={openPreviewDirectly}
+              disabled={loading}
+            >
+              {loading ? "Cargando..." : "Ver Vista Previa"}
+            </button>
+            <p className="instructions">
+              Se abrirá una nueva pestaña con el documento. 
+              Una vez revisado, puede regresar aquí para generar la versión final.
+            </p>
+          </div>
         </div>
 
         <div className="pdf-preview-footer">

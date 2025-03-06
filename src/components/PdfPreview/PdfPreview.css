@@ -240,3 +240,43 @@
     margin-top: 15px;
     cursor: pointer;
   }
+
+  .preview-message {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .preview-message h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+  }
+  
+  .preview-button {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 30px;
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .preview-button:hover {
+    background-color: #1e40af;
+  }
+  
+  .preview-button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+  }
+  
+  .instructions {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    max-width: 400px;
+    margin: 15px auto 0;
+  }
