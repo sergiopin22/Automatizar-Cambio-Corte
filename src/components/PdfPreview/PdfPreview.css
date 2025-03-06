@@ -17,7 +17,7 @@
     border-radius: 8px;
     width: 90%;
     max-width: 1000px;
-    height: 80vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 20px;
+    padding: 12px 20px;
     background-color: #1e3a8a; /* Azul oscuro */
     color: white;
     border-bottom: 1px solid #e5e7eb;
@@ -37,6 +37,9 @@
   .pdf-preview-header h2 {
     margin: 0;
     font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .close-button {
@@ -56,17 +59,40 @@
     overflow: hidden;
   }
   
-  .iframe-container {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
   .pdf-iframe {
     width: 100%;
     height: 100%;
     border: none;
     background-color: white;
+  }
+  
+  .pdf-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+  }
+  
+  .external-view-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d1d5db;
+    color: #1e3a8a;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .external-view-button:hover {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .external-view-button .icon {
+    margin-right: 5px;
   }
   
   .loading-indicator {
@@ -79,7 +105,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     z-index: 10;
   }
   
@@ -105,27 +131,34 @@
     transform: translate(-50%, -50%);
     background-color: #fee2e2;
     color: #b91c1c;
-    padding: 16px;
+    padding: 24px;
     border-radius: 8px;
     text-align: center;
     max-width: 80%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .error-message button {
-    background-color: #b91c1c;
+  .error-message h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  
+  .alternate-button {
+    background-color: #1e3a8a;
     color: white;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
-    margin-top: 12px;
+    margin-top: 15px;
     cursor: pointer;
+    font-weight: 500;
   }
-  
+
   .pdf-preview-footer {
     padding: 16px 20px;
     border-top: 1px solid #e5e7eb;
     background-color: white;
+    z-index: 10;
   }
   
   .watermark-notice {
@@ -148,6 +181,11 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .cancel-button:hover {
+    background-color: #e5e7eb;
   }
   
   .confirm-button {
@@ -158,6 +196,11 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .confirm-button:hover {
+    background-color: #1e40af;
   }
   
   .confirm-button:disabled {
@@ -171,130 +214,43 @@
       width: 95%;
       height: 90vh;
     }
-  }
-
-  .simplified {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    background-color: #f7f7f7;
-  }
-  
-  .preview-instructions {
-    text-align: center;
-    max-width: 400px;
-  }
-  
-  .preview-button {
-    background-color: #1e3a8a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 24px;
-    font-size: 16px;
-    margin: 20px 0;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s;
+    
+    .pdf-preview-header h2 {
+      font-size: 1.3rem;
+    }
+    
+    .pdf-actions {
+      bottom: 10px;
+      top: auto;
+    }
+    
+    .external-view-button {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+    }
+    
+    .button-group {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .cancel-button, .confirm-button {
+      width: 100%;
+    }
   }
   
-  .preview-button:hover {
-    background-color: #1e40af;
+  /* Estilos para navegadores específicos */
+  @supports (-webkit-appearance:none) {
+    .pdf-iframe {
+      /* Mejoras para Safari/Chrome */
+      -webkit-overflow-scrolling: touch;
+    }
   }
   
-  .info-text {
-    color: #6b7280;
-    font-size: 0.9rem;
-    margin-top: 15px;
-  }
-
-  .debug-info {
-    margin-top: 15px;
-    text-align: left;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 4px;
-    max-height: 200px;
-    overflow-y: auto;
-  }
-  
-  .debug-info pre {
-    white-space: pre-wrap;
-    font-family: monospace;
-    font-size: 12px;
-  }
-  
-  .success-message {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .error-message button,
-  .success-message button {
-    background-color: #1e3a8a;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    margin-top: 15px;
-    cursor: pointer;
-  }
-
-  .preview-message {
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  .preview-message h3 {
-    color: #1e3a8a;
-    margin-bottom: 15px;
-  }
-  
-  .preview-button {
-    background-color: #1e3a8a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 30px;
-    margin: 20px 0;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .preview-button:hover {
-    background-color: #1e40af;
-  }
-  
-  .preview-button:disabled {
-    background-color: #93c5fd;
-    cursor: not-allowed;
-  }
-  
-  .instructions {
-    color: #6b7280;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    max-width: 400px;
-    margin: 15px auto 0;
-  }
-
-  .pdf-preview-modal {
-    width: 90%;
-    max-width: 1100px;
-    height: 85vh;
-  }
-  
-  .pdf-preview-content {
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  .pdf-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  @supports (display: flex) {
+    /* Ajustes para navegadores modernos con soporte flex */
+    .pdf-preview-content {
+      display: flex;
+      flex-direction: column;
+    }
   }

@@ -1,14 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './PdfPreview.css';
 
+/**
+ * Componente de vista previa de PDF integrado
+ * @param {Object} props - Propiedades del componente
+ * @param {Object} props.formData - Datos del formulario para generar el PDF
+ * @param {boolean} props.isOpen - Controla si el modal está abierto
+ * @param {Function} props.onClose - Función para cerrar el modal
+ * @param {Function} props.onConfirm - Función para confirmar y generar el PDF final
+ */
 const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [pdfUrl, setPdfUrl] = useState(null);
+  const [error, setError] = useState(null);
   const modalRef = useRef(null);
+  const iframeRef = useRef(null);
 
-  // Generar URL con parámetros
+  // Generar URL para el iframe cuando se abre el modal
   useEffect(() => {
-    if (isOpen) {
+    if (!isOpen) return;
+    
+    try {
       setLoading(true);
       
       // Construir URL con parámetros
@@ -25,6 +37,10 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
       url.searchParams.append('timestamp', Date.now().toString());
       
       setPdfUrl(url.toString());
+      setLoading(false);
+    } catch (err) {
+      console.error("Error al generar URL:", err);
+      setError("Error al preparar la vista previa");
       setLoading(false);
     }
   }, [isOpen, formData]);
@@ -46,6 +62,23 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
     };
   }, [isOpen, onClose]);
 
+  // Manejar eventos de carga del iframe
+  const handleIframeLoad = () => {
+    setLoading(false);
+  };
+
+  const handleIframeError = () => {
+    setError("Error al cargar el PDF. Por favor, inténtelo de nuevo.");
+    setLoading(false);
+  };
+
+  // Abrir en nueva pestaña como alternativa
+  const openInNewTab = () => {
+    if (pdfUrl) {
+      window.open(pdfUrl, '_blank');
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -62,14 +95,31 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
               <div className="spinner"></div>
               <p>Generando vista previa...</p>
             </div>
-          ) : pdfUrl ? (
-            <iframe 
-              src={pdfUrl} 
-              className="pdf-iframe" 
-              title="Vista Previa de PDF"
-            ></iframe>
+          ) : error ? (
+            <div className="error-message">
+              <h3>Error</h3>
+              <p>{error}</p>
+              <button onClick={openInNewTab} className="alternate-button">
+                Intentar abrir en nueva pestaña
+              </button>
+            </div>
           ) : (
-            <div className="error-message">Error al generar la URL</div>
+            <>
+              <iframe
+                ref={iframeRef}
+                src={pdfUrl}
+                className="pdf-iframe"
+                title="Vista Previa de PDF"
+                onLoad={handleIframeLoad}
+                onError={handleIframeError}
+              ></iframe>
+              
+              <div className="pdf-actions">
+                <button onClick={openInNewTab} className="external-view-button">
+                  <span className="icon">↗️</span> Ver en pestaña completa
+                </button>
+              </div>
+            </>
           )}
         </div>
 
@@ -79,7 +129,11 @@ const PdfPreview = ({ formData, isOpen, onClose, onConfirm }) => {
           </p>
           <div className="button-group">
             <button className="cancel-button" onClick={onClose}>Cancelar</button>
-            <button className="confirm-button" onClick={onConfirm}>
+            <button 
+              className="confirm-button" 
+              onClick={onConfirm}
+              disabled={loading || error}
+            >
               Generar PDF Final
             </button>
           </div>
