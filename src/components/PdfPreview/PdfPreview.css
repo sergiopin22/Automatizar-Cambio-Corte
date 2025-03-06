@@ -17,7 +17,7 @@
     border-radius: 8px;
     width: 90%;
     max-width: 1000px;
-    max-height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -51,45 +51,36 @@
   
   .pdf-preview-content {
     flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    background-color: #f3f4f6;
     position: relative;
+    background-color: #f3f4f6;
+    overflow: hidden;
   }
   
-  .pdf-page-container {
-    margin: 0 auto 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+  .iframe-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
     background-color: white;
   }
   
-  /* Aplicar marca de agua a cada página */
-  .pdf-page-container::after {
-    content: "VISTA PREVIA - PRO TRÁMITES LLC";
+  .loading-indicator {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: rgba(255, 0, 0, 0.2);
-    transform: rotate(-30deg);
-    pointer-events: none;
-    z-index: 10;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .loading-indicator {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
   }
   
   .spinner {
@@ -108,11 +99,17 @@
   }
   
   .error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #fee2e2;
     color: #b91c1c;
     padding: 16px;
     border-radius: 8px;
     text-align: center;
+    max-width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .error-message button {
@@ -168,19 +165,10 @@
     cursor: not-allowed;
   }
   
-  .loading-pdf {
-    text-align: center;
-    padding: 20px;
-    color: #6b7280;
-  }
-  
   /* Ajustes de responsive */
   @media (max-width: 768px) {
     .pdf-preview-modal {
       width: 95%;
-    }
-    
-    .pdf-page-container::after {
-      font-size: 2rem;
+      height: 90vh;
     }
   }
