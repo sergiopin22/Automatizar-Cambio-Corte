@@ -1,1242 +1,1647 @@
 [
-  {
-      "state": "Arizona",
-      "courts": [
-          {
-              "name": "Eloy Immigration Court",
-              "city": "Eloy",
-              "address": "1705 E. Hanna Road, Suite 366, Eloy, AZ 85131",
-              "oplaOffice": "1705 East Hanna Road, Eloy, AZ 85131",
-              "judges": [
-                  "Orechwa, Nicolas",
-                  "Bartlemay, Robert C., Sr.",
-                  "Phelps, Richard A.",
-                  "Gaz, Jennifer I.",
-                  "Habich, Paul M.",
-                  "Penalosa, Jose Luis, Jr."
-              ]
-          },
-          {
-              "name": "Florence Immigration Court",
-              "city": "Florence",
-              "address": "3260 N. Pinal Parkway Avenue, Florence, AZ 85132",
-              "oplaOffice": "3250 N. Pinal Parkway Avenue, Florence, AZ 85132",
-              "judges": [
-                  "Guerrero, Marni",
-                  "Taylor, Bruce A.",
-                  "Frazer, Molly S."
-              ]
-          },
-          {
-              "name": "Phoenix Immigration Court",
-              "city": "Phoenix",
-              "address": "250 N. Seventh Ave., Suite 300, Phoenix, AZ 85007",
-              "oplaOffice": "2035 N. Central Avenue, Phoenix, AZ 85004",
-              "judges": [
-                  "Spencer-Walters, Linda Inez",
-                  "Bartlemay, Robert C., Sr.",
-                  "Sharda, Munish",
-                  "Imburgia, Joseph S.",
-                  "Cottor, Elizabeth A.",
-                  "Cortes, John W.",
-                  "Karlen, Melissa Beth",
-                  "Freerks, LaMonte S.",
-                  "Habich, Paul M."
-              ]
-          },
-          {
-              "name": "Tucson Immigration Court",
-              "city": "Tucson",
-              "address": "300 West Congress Street, Suite 300, Tucson, AZ 85701",
-              "oplaOffice": "6431 S. Country Club Road, Tucson, AZ 85706",
-              "judges": [
-                  "Terrazas, Gilda M.",
-                  "O'Leary, Thomas Michael",
-                  "Davis, John W.",
-                  "Keenan, Sean H.",
-                  "Deangelis, Kathryn L."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "California",
-      "courts": [
-          {
-              "name": "Adelanto Immigration Court",
-              "city": "Adelanto",
-              "address": "10250 Rancho Road, Suite 201A, Adelanto, CA 92301",
-              "oplaOffice": "10250 Rancho Road, Adelanto, CA 92301",
-              "judges": [
-                  "Mullins, Katie G.",
-                  "Riley, Kevin W.",
-                  "Depowell, Bryan E.",
-                  "White, Curtis G.",
-                  "Left, James M.",
-                  "Walker, Nathaniel B.",
-                  "Penalosa, Jose Luis, Jr.",
-                  "Lee, Amy T.",
-                  "Santos-Garcia, Sandra J.",
-                  "Bjornerud, Maria"
-              ]
-          },
-          {
-              "name": "Concord Immigration Court",
-              "city": "Concord",
-              "address": "1855 Gateway Boulevard, Ste 850, Concord, CA 94520",
-              "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
-              "judges": [
-                  "Wilson, Roberta A.",
-                  "Lilien, Kyra S.",
-                  "Butler, Jeremy J.",
-                  "Stender, Jacob J.",
-                  "Chamberlin, Florence A.",
-                  "Price, Justin M."
-              ]
-          },
-          {
-              "name": "Imperial Immigration Court",
-              "city": "Imperial",
-              "address": "2409 La Brucherie Road, Imperial, CA 92251",
-              "oplaOffice": "2409 La Brucherie Road, Suite 3, Imperial, CA 92251",
-              "judges": [
-                  "Perry, Anne",
-                  "Pressman, Christian M.",
-                  "Barcus, E. Mark",
-                  "Robinson, Eugene H., Jr.",
-                  "Munoz, Jeffrey V."
-              ]
-          },
-          {
-              "name": "Otay Mesa Immigration Court",
-              "city": "San Ysidro",
-              "address": "P.O. Box 438150, San Ysidro, CA 92143-8150",
-              "oplaOffice": "7488 Calzada de la Fuente, San Diego, CA 92154",
-              "judges": [
-                  "Halliday-Roberts, Catherine",
-                  "Sameit, Mark",
-                  "Robinson, Eugene H., Jr.",
-                  "Attia, Olga E.",
-                  "Partida, Ana",
-                  "Burch, Valerie A."
-              ]
-          },
-          {
-              "name": "Sacramento Immigration Court",
-              "city": "Sacramento",
-              "address": "John Moss Federal Building, 650 Capitol Mall, Suite 4-200, Sacramento, CA 95814",
-              "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
-              "judges": [
-                  "Halperin, Ravit R.",
-                  "Roberts, Lindsy M.",
-                  "Hitesman, Jonathan W.",
-                  "Terrazas, Gilda M.",
-                  "Phan, Susan",
-                  "Geisse, Loreto S.",
-                  "Badrinath, Vikram",
-                  "Neumeister, David",
-                  "Daw, Alison E.",
-                  "Hunter, Denise",
-                  "Maggard, Robert P."
-              ]
-          },
-          {
-              "name": "San Diego Immigration Court",
-              "city": "San Diego",
-              "address": "880 Front Street, Suite 4240, San Diego, CA 92101",
-              "oplaOffice": "880 Front Street, Suite 2246, San Diego, CA 92101",
-              "judges": [
-                  "Bither, Christine A.",
-                  "Romig, Jeffrey L.",
-                  "Law, Philip S.",
-                  "O'Connor, Lee A.",
-                  "DeVitto, James Alan",
-                  "Grande, Guy G.",
-                  "Attia, Olga E.",
-                  "Bartolomei, Richard J., Jr.",
-                  "Partida, Ana",
-                  "Clemente, Jesus",
-                  "Simpson, Scott",
-                  "Anderson, Amelia"
-              ]
-          },
-          {
-              "name": "San Francisco Immigration Court",
-              "city": "San Francisco",
-              "address": "100 Montgomery Street, Suite 800, San Francisco, CA 94104",
-              "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
-              "judges": [
-                  "Aina, Nathan N.",
-                  "Halperin, Ravit R.",
-                  "Nelson, Julie L.",
-                  "Caborn, Andrew J.",
-                  "Dinh, Roger H.",
-                  "Morwood, Dion A.",
-                  "Seminerio, Frank A.",
-                  "Simmons, Gregory L.",
-                  "Nava, Marlem",
-                  "Phan, Susan",
-                  "O'Brien, Patrick S.",
-                  "Ford, Nicholas R.",
-                  "Lake, Kelly B.",
-                  "Gambill, Scott D.",
-                  "Picton, Cory M.",
-                  "Park, Joseph Y."
-              ]
-          },
-          {
-              "name": "Santa Ana Immigration Court",
-              "city": "Santa Ana",
-              "address": "1241 E. Dyer Road, Suite 200, Santa Ana, CA 92705",
-              "oplaOffice": "1231 E. Dyer Road, Suite 155, Santa Ana, CA 92705",
-              "judges": [
-                  "Piepmeyer, Kristin",
-                  "Lee, Wilbur",
-                  "Simmons, Gregory L.",
-                  "Ghasri, Iman",
-                  "Winfield, Jennifer",
-                  "McNary, Christopher D.",
-                  "Norregard, Aggie",
-                  "Amaya, Roberto",
-                  "Francis, Leon J.",
-                  "Rothschild, Jerome M., Jr.",
-                  "Hsu, Lily C.",
-                  "Brooks, Alicia",
-                  "Brown, Charlotte D.",
-                  "Huang, Jonathan",
-                  "McFadden, Anita",
-                  "Chan, Matthew",
-                  "Waterloo, Jason",
-                  "Noche, Joyce",
-                  "Tadros-Ibarra, Terese",
-                  "Fishkin, Andrew",
-                  "Hom, Howard",
-                  "Mabry III, William",
-                  "Levin, Victoria"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Colorado",
-      "courts": [
-          {
-              "name": "Aurora Immigration Court",
-              "city": "Aurora",
-              "address": "3130 North Oakland Street, Aurora, CO 80010",
-              "oplaOffice": "12445 East Caley Avenue, Centennial, CO 80111-6432",
-              "judges": [
-                  "Sims, Deitrich H.",
-                  "McGrail, Elizabeth H.",
-                  "Caley, Steven",
-                  "Carbone, Nina M."
-              ]
-          },
-          {
-              "name": "Denver Immigration Court",
-              "city": "Denver",
-              "address": "1961 Stout Street, Suite 3101, Denver, CO 80294",
-              "oplaOffice": "12445 East Caley Avenue, Centennial, CO 80111-6432",
-              "judges": [
-                  "Masters, Bobbie C.",
-                  "Wood, Tyler",
-                  "O'Hare, Donald C.",
-                  "Corrin, Melanie K.",
-                  "Gardzelewski, Ivan E.",
-                  "Kaufman, Matthew W.",
-                  "Calcador, Kerri",
-                  "Carbone, Nina M.",
-                  "Kane, Alison R.",
-                  "Koppenhofer, Andrea"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Connecticut",
-      "courts": [
-          {
-              "name": "Hartford Immigration Court",
-              "city": "Hartford",
-              "address": "AA Ribicoff Federal Building & Courthouse, 450 Main Street, Suite 628, Hartford, CT 06103-3015",
-              "oplaOffice": "Ribicoff Federal Building, 450 Main Street, Room 483, Hartford, CT 06103-3060",
-              "judges": [
-                  "Straus, Michael W.",
-                  "Verrillo, Philip",
-                  "Morris, Daniel A."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Florida",
-      "courts": [
-          {
-              "name": "Miami Immigration Court",
-              "city": "Miami",
-              "address": "One Riverview Square, 333 S. Miami Avenue, Suite 700, Miami, FL 33130",
-              "oplaOffice": "333 S. Miami Avenue, Suite 200, Miami, FL 33130",
-              "judges": [
-                  "Chait, Barry S.",
-                  "Nettles, Marsha K.",
-                  "Goodwin, Deborah K.",
-                  "Siegel, Stuart A.",
-                  "Horn, Michael C.",
-                  "Martyak, Christina M.",
-                  "Martínez-Esquivel, Lourdes",
-                  "Videla, Gabriel C.",
-                  "Torren-Bayouth, Lilliana",
-                  "García, Madeline",
-                  "Dowell, J. Daniel",
-                  "Brown, Charlotte D.",
-                  "Ayze, Thomas",
-                  "Sogocio, Rico M.",
-                  "Sanders, Charles J.",
-                  "Marks Lane, Denise A.",
-                  "Walleisa, Michael",
-                  "Alexander, Scott G.",
-                  "Rosen, Benjamin",
-                  "Araneta, Michelle",
-                  "Holyoak, Dalin R.",
-                  "Herman, Lakshmi",
-                  "Rivera, Jose",
-                  "Mateo, Rene D.",
-                  "Balasquide, Javier E.",
-                  "Lerner, Romy",
-                  "Maingot, Anthony E.",
-                  "Cole, Timothy M.",
-                  "Burgess, Abraham L.",
-                  "Recio, Irene M.",
-                  "Rodríguez de Jongh, Lourdes A.",
-                  "Pereira, Jorge L.",
-                  "Reis, Christine",
-                  "Mander, Stephen E."
-              ]
-          },
-          {
-              "name": "Orlando Immigration Court",
-              "city": "Orlando",
-              "address": "500 N. Orange Ave, Suite 1100, Orlando, FL 32801",
-              "oplaOffice": "500 North Orange Avenue, Suite 5000, Orlando, FL 32801",
-              "judges": [
-                  "Lippman, Daniel",
-                  "Chapman, Kevin J.",
-                  "Karden, Stuart F.",
-                  "Ghartey, Victoria L.",
-                  "Alberdi, Yon K.",
-                  "Page-Lozano, Jennifer Leigh",
-                  "Harris, Monique",
-                  "Rojas, Raphael",
-                  "Grim, James",
-                  "Stanley, Kevin",
-                  "Adams, Anna",
-                  "Lang, Elizabeth G.",
-                  "Jamadar, Richard"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Georgia",
-      "courts": [
-          {
-              "name": "Atlanta - Ted Turner Drive Immigration Court",
-              "city": "Georgia",
-              "address": "180 Ted Turner Drive, SW, Suite 241, Atlanta, GA 30303",
-              "oplaOffice": "180 Ted Turner Drive, SW, Suite 332, Atlanta, GA 30303",
-              "judges": [
-                  "Gillies, John M.",
-                  "Farrar-Crockett, Emily",
-                  "Coaxum, Ghunise L.",
-                  "Maldonado, Njeri B.",
-                  "Taylor, Philip P.",
-                  "Fisher, Ryan",
-                  "Barr, Philip A.",
-                  "Schnitzer, Michael",
-                  "Doughty, Blake",
-                  "Smikle, Suzette",
-                  "Chapman, Kevin J.",
-                  "Watson, Bryan D.",
-                  "Fairchild Haer, Amy",
-                  "Murray, Winfield W."
-              ]
-          },
-          {
-              "name": "Atlanta - W. Peachtree Street Immigration Court",
-              "city": "Atlanta",
-              "address": "Peachtree Summit Federal Building, 401 W. Peachtree Street, Suite 2600, Atlanta, GA 30308",
-              "oplaOffice": "Peachtree Summit Federal Building, 401 W. Peachtree Street, NW, Suite 2850, Atlanta, GA 30308",
-              "judges": [
-                  "Joy Lampley-Fortson",
-                  "Jennifer R. Bell",
-                  "Ghunise L. Coaxum",
-                  "Kevin Chapman",
-                  "Blake Doughty",
-                  "Ryan Fisher",
-                  "Amy F. Haer",
-                  "Njeri Maldonado",
-                  "Suzette Smikle",
-                  "Philip Taylor",
-                  "Winfield Murray"
-              ]
-          },
-          {
-              "name": "Stewart Immigration Court",
-              "city": "Stewart",
-              "address": "146 CCA Road, PO Box 248, Lumpkin, GA 31815",
-              "oplaOffice": "Stewart County Detention Facility, 146 CCA Road, Lumpkin, GA 31815",
-              "judges": [
-                  "Duncan, Randall",
-                  "Fuller, Steven B.",
-                  "Criss, Scott D.",
-                  "Trimble, Dan",
-                  "Nance, Jeffery R.",
-                  "Brown, Bianca H.",
-                  "Rothschild, Jerome M., Jr."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Hawaii",
-      "courts": [
-          {
-              "name": "Honolulu Immigration Court",
-              "city": "Honolulu",
-              "address": "PJKK Federal Building, 300 Ala Moana Blvd., Room 8-112, Honolulu, HI 96850",
-              "oplaOffice": "300 Ala Moana Boulevard, Suite 7-220, Honolulu, HI 96850",
-              "judges": [
-                  "Beamer, Dayna M.",
-                  "Wagner, Clarence M., Jr."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Illinois",
-      "courts": [
-          {
-              "name": "Chicago Immigration Court",
-              "city": "Chicago",
-              "address": "55 E. Monroe St., Suite 1500, Chicago, IL 60603",
-              "oplaOffice": "55 E. Monroe Street, Suite 1400, Chicago, IL 60603",
-              "judges": [
-                  "Ellison, Sarah M.",
-                  "Defoe, Craig A.",
-                  "Venci, Michelle",
-                  "Salovaara, Kaarina",
-                  "Curran, Brendan C.",
-                  "Cole, Samuel B.",
-                  "Naseem, Samia",
-                  "McKenna, Patrick M.",
-                  "Mencini, Ana",
-                  "Rosche, Robin J.",
-                  "Stahl, Marc",
-                  "Deangelis, Kathryn L.",
-                  "Barilla, Jody",
-                  "Klosowsky, Michael",
-                  "Luskin, Joshua D.",
-                  "Treacy, Elizabeth",
-                  "Lang, Elizabeth G.",
-                  "Klein, Eliza C.",
-                  "Crites, Elizabeth",
-                  "Saltzman, Eva S.",
-                  "Espinoza, Carla",
-                  "Peyton, Jennifer I.",
-                  "Patti, Sebastian T.",
-                  "Reynolds, Gina"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Louisiana",
-      "courts": [
-          {
-              "name": "LaSalle Immigration Court",
-              "city": "Jena",
-              "address": "830 Pine Hill Road, P.O. Box 2179, Jena, LA 71342",
-              "oplaOffice": "LaSalle Detention Center, 830 Pinehill Road, Jena, LA 71342",
-              "judges": [
-                  "Crooks, Grady A.",
-                  "Landis, Brent H.",
-                  "Baumgarten, Mary C.",
-                  "Fuller, Steven B.",
-                  "Thogersen, Cassie A.",
-                  "Midgley, Ian D.",
-                  "Munson, Angela",
-                  "Robbins, Kandra K.",
-                  "Mwangi, Francis",
-                  "Hoover, Forrest W., III"
-              ]
-          },
-          {
-              "name": "New Orleans Immigration Court",
-              "city": "New Orleans",
-              "address": "One Canal Place, 365 Canal Street, Suite 500, New Orleans, LA 70130",
-              "oplaOffice": "423 Canal Street, Suite 450, New Orleans, LA 70130",
-              "judges": [
-                  "Fluke, Randall L.",
-                  "Connelly, Steven J.",
-                  "Marquez, Charlotte",
-                  "Larocca, Joseph",
-                  "Marsteller, Eric",
-                  "Guillory, Kevin P.",
-                  "Jones, Gabrielle",
-                  "Depuy, Alberto"
-              ]
-          },
-          {
-              "name": "Oakdale Immigration Court",
-              "city": "Oakdale",
-              "address": "1900 E. Whatley Road, Oakdale, LA 71463",
-              "oplaOffice": "1010 E. Whatley Road, Oakdale, LA 71463-1128",
-              "judges": [
-                  "Bashore, Jacob D.",
-                  "Laragy, W. Scott",
-                  "Ashworth, Sherron",
-                  "Duck, John A., Jr.",
-                  "Schools, Shelly W.",
-                  "Martz, Nicholas A.",
-                  "Díaz-Rex, Julia",
-                  "Taylor, Brock E.",
-                  "Espinal, Pedro J."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Maryland",
-      "courts": [
-          {
-              "name": "Baltimore Immigration Court",
-              "city": "Baltimore",
-              "address": "George Fallon Federal Building, 31 Hopkins Plaza, Room 440, Baltimore, MD 21201",
-              "oplaOffice": "31 Hopkins Plaza, Room 1600, Baltimore, MD 21201",
-              "judges": [
-                  "Williams, Phillip T.",
-                  "Jones, David M.",
-                  "Crosland, David W.",
-                  "Padilla, Nelson Vargas",
-                  "Golparvar, Kuyomars Q.",
-                  "Kessler, Elizabeth A.",
-                  "Mahasa, Zakia",
-                  "Verma, Dinesh C.",
-                  "Koelsch, David",
-                  "Smulow, Daniel",
-                  "Slavin, Denise N.",
-                  "Harty, Alice S.",
-                  "Weil, Jack H."
-              ]
-          },
-          {
-              "name": "Hyattsville Immigration Court",
-              "city": "Hyattsville",
-              "address": "3311 Toledo Road, Suite 105, Hyattsville, MD 20782",
-              "oplaOffice": "500 12th Street, S.W., Stop 5904, Washington, DC 20536-5904",
-              "judges": [
-                  "Bohrer, Matthew",
-                  "Kessler, Elizabeth A.",
-                  "Welhaf, Ann",
-                  "Lee, June",
-                  "Kanellakos, Thanos",
-                  "Reilly, Kathleen",
-                  "Williams, Phillip T.",
-                  "Bowens, Tanisha",
-                  "Igoe, Alison",
-                  "Niburg, Rebecca",
-                  "Rubenstein, John S.",
-                  "Jones, David M.",
-                  "Gansallo, Ayodele",
-                  "Verma, Dinesh C.",
-                  "Koelsch, David",
-                  "Cubas, Claudia"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Massachusetts",
-      "courts": [
-          {
-              "name": "Boston Immigration Court",
-              "city": "Boston",
-              "address": "JFK Federal Building, 15 New Sudbury Street, Room 320, Boston, MA 02203",
-              "oplaOffice": "JFK Federal Building, 15 New Sudbury Street, Room 425, Boston, MA 02203",
-              "judges": [
-                  "Robertson, David",
-                  "Zach, Juliana",
-                  "Mulcahy, Jennifer A.",
-                  "Cho, Yul-Mi",
-                  "Pappas, George",
-                  "Terrien, Jeb",
-                  "Kubica, Hannah",
-                  "Smith, Natalie",
-                  "Munro, Angela",
-                  "Kahan, Michelle",
-                  "Saldana Mistry, Lucero",
-                  "Furlong, John M., Jr.",
-                  "Roe, Adrian N.",
-                  "Napier, Wade Thomas",
-                  "Masters, Todd A.",
-                  "Tregerman, Gwendylan E.",
-                  "Jalelian, Lincoln S.",
-                  "Cato, Richard",
-                  "Sturla, Mario J.",
-                  "Cade, Sarah",
-                  "Rusher, Marna M.",
-                  "Sady, Michael",
-                  "O'Malley, Brenda M.",
-                  "Feder, Robin E.",
-                  "O'Sullivan, Maureen S.",
-                  "Ahmed, Sameer"
-              ]
-          },
-          {
-              "name": "Chelmsford Immigration Court",
-              "city": "Chelmsford",
-              "address": "2 Courthouse Lane, 2nd Floor, Unit B, Chelmsford, MA 01824",
-              "oplaOffice": "2 Courthouse Lane, 2nd Floor, Unit B, Chelmsford, MA 01824",
-              "judges": [
-                  "Klein, Eliza C.",
-                  "Tregerman, Gwendylan E.",
-                  "Napier, Wade Thomas",
-                  "Jalelian, Lincoln S.",
-                  "Cato, Richard",
-                  "Sturla, Mario J."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Michigan",
-      "courts": [
-          {
-              "name": "Detroit Immigration Court",
-              "city": "Detroit",
-              "address": "477 Michigan Avenue, Suite 440, Detroit, MI 48226",
-              "oplaOffice": "Rosa Parks Federal Building, 985 Michigan Avenue, Suite 1010, Detroit, MI 48226",
-              "judges": [
-                  "Davey, Benjamin",
-                  "Jebson, Mark J.",
-                  "Gorland, Jennifer M.",
-                  "Paruch, David H.",
-                  "Simons, Ian R."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Minnesota",
-      "courts": [
-          {
-              "name": "Fort Snelling Immigration Court",
-              "city": "Fort Snelling",
-              "address": "Bishop Henry Whipple Federal Building, 1 Federal Drive, Suite 1850, Fort Snelling, MN 55111",
-              "oplaOffice": "1 Federal Drive, Suite 1800, Fort Snelling, MN 55111",
-              "judges": [
-                  "Miller, Monte G.",
-                  "Ward, George James",
-                  "Sardelli, Brian",
-                  "Mazzie, Sarah B.",
-                  "Cardona, Lisa De",
-                  "Dierkes, Joseph R.",
-                  "Wood, Ryan R.",
-                  "Auh, Kyung S.",
-                  "Carr, M. Audrey",
-                  "Sagerman, Roger F.",
-                  "Hansen, Katherine L."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Missouri",
-      "courts": [
-          {
-              "name": "Kansas City Immigration Court",
-              "city": "Kansas City",
-              "address": "2345 Grand Boulevard, Suite 525, Kansas City, MO 64108",
-              "oplaOffice": "2345 Grand Boulevard, Suite 500, Kansas City, MO 64108",
-              "judges": [
-                  "Salinardi, Jayme",
-                  "Baker, Glen R.",
-                  "Howard, Justin W.",
-                  "Johnson, Colin Patrick"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Nebraska",
-      "courts": [
-          {
-              "name": "Omaha Immigration Court",
-              "city": "Omaha",
-              "address": "1717 Avenue H, Suite 100, Omaha, NE 68110",
-              "oplaOffice": "1717 Avenue H, Room 174, Omaha, NE 68110",
-              "judges": [
-                  "Larsen, Alexandra R.",
-                  "Meyer, Abby L.",
-                  "Morrissey, Matthew E."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Nevada",
-      "courts": [
-          {
-              "name": "Las Vegas Immigration Court",
-              "city": "Las Vegas",
-              "address": "110 North City Parkway, Suite 400, Las Vegas, NV 89106",
-              "oplaOffice": "501 S. Las Vegas Blvd, Suite 200, Las Vegas, NV 89101",
-              "judges": [
-                  "Sharda, Munish",
-                  "Daugherty, Daniel J.",
-                  "McDermott, Ann M.",
-                  "Nguyen, An Mai",
-                  "Baker, Glen R.",
-                  "Roberts, Lindsy M."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "New Jersey",
-      "courts": [
-          {
-              "name": "Elizabeth Immigration Court",
-              "city": "Elizabeth",
-              "address": "625 Evans Street, Room 148A, Elizabeth, NJ 07201",
-              "oplaOffice": "Elizabeth Detention Facility, 625 Evans Street, Room 135, Elizabeth, NJ 07201",
-              "judges": [
-                  "Wilson, Tamar H.",
-                  "Tadal, Mirlande",
-                  "Bailey, Richard",
-                  "Golparvar, Kuyomars Q.",
-                  "Panopoulos, Adam",
-                  "Shirole, Pallavi S.",
-                  "Pope, Jason L.",
-                  "Harty, Alice S."
-              ]
-          },
-          {
-              "name": "Newark Immigration Court",
-              "city": "Newark",
-              "address": "970 Broad Street, Room 1200, Newark, NJ 07102",
-              "oplaOffice": "970 Broad Street, Room 1300, Newark, NJ 07102",
-              "judges": [
-                  "Akalski, Maria I.",
-                  "Mannion, Steve",
-                  "Chen, Shana W.",
-                  "Ryan, Dennis",
-                  "Lane, Nicole",
-                  "Hinds Roach, Denise A.",
-                  "Bailey, Richard",
-                  "Shirole, Pallavi S.",
-                  "Cheng, David",
-                  "Pierro, Laura N.",
-                  "Wilson, Tamar H."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "New Mexico",
-      "courts": [
-          {
-              "name": "Otero Immigration Court",
-              "city": "Otero",
-              "address": "26 McGregor Range Road, Door #1, Chaparral, NM 88081",
-              "oplaOffice": "Trial Attorney Unit, 26 McGregor Range Road, Chaparral, NM 88081",
-              "judges": [
-                  "French, Kathleen",
-                  "Girvin, Ralph E.",
-                  "Palomino, Jacinto",
-                  "Fernandez, Lorely Ramirez",
-                  "Taylor, Brock E."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "New York",
-      "courts": [
-          {
-              "name": "Batavia Immigration Court",
-              "city": "Batavia",
-              "address": "4250 Federal Drive, Room F108, Batavia, NY 14020",
-              "oplaOffice": "Buffalo Federal Detention Facility, 4250 Federal Drive, Batavia, NY 14020",
-              "judges": [
-                  "Driscoll, Robert",
-                  "Aikman, Susan F."
-              ]
-          },
-          {
-              "name": "Buffalo Immigration Court",
-              "city": "Buffalo",
-              "address": "130 Delaware Avenue, Suite 300, Buffalo, NY 14202",
-              "oplaOffice": "250 Delaware Avenue, Suite 773, Buffalo, NY 14202",
-              "judges": [
-                  "Baumgarten, Mary C.",
-                  "Ruehle, Walter",
-                  "Connelly, Steven J.",
-                  "Hochul, Denise"
-              ]
-          },
-          {
-              "name": "New York - Broadway Immigration Court",
-              "city": "New York",
-              "address": "290 Broadway, 27th Floor, New York, NY 10007",
-              "oplaOffice": "26 Federal Plaza, Room 1130, New York, NY 10278",
-              "judges": [
-                  "Gordon, Cynthia",
-                  "Ehrens, Lisa",
-                  "McFarland, Michael G.",
-                  "Calvelli, Andrew",
-                  "Wright, Virna A."
-              ]
-          },
-          {
-              "name": "New York - Federal Plaza Immigration Court",
-              "city": "New York",
-              "address": "26 Federal Plaza, 12th Floor, Room 1237, New York, NY 10278",
-              "oplaOffice": "26 Federal Plaza, Room 1130, New York, NY 10278",
-              "judges": [
-                  "Brennan, Noel A.",
-                  "Kouris, Theodora N.",
-                  "Bain, Terry A.",
-                  "Khan, Amiena",
-                  "Gordon-Urakpa, Vivienne E.",
-                  "Adams, Lori",
-                  "Koppenhofer, Andrea",
-                  "Little, Anna C.",
-                  "Kim, David"
-              ]
-          },
-          {
-              "name": "New York - Varick Immigration Court",
-              "city": "New York",
-              "address": "201 Varick Street, Room 1140, New York, NY 10014",
-              "oplaOffice": "201 Varick Street, Room 1140, New York, NY 10014",
-              "judges": [
-                  "Bartleson, Thomas",
-                  "Navarro, María E.",
-                  "Martínez Soler, Dianna Michelle",
-                  "McDermott, William",
-                  "Sponzo, Jen C.",
-                  "Schoppert, Douglas B."
-              ]
-          },
-          {
-              "name": "Ulster Immigration Court",
-              "city": "Napanoch",
-              "address": "Ulster Correctional Facility, 750 Berme Road, Napanoch, NY 12458",
-              "oplaOffice": "Ulster Correctional Facility, 750 Berme Road, Napanoch, NY 12458",
-              "judges": [
-                  "Pieters, Edwin",
-                  "Loprest, F. James, Jr.",
-                  "Campanella, Lorianne",
-                  "Golovnin, Lena"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "North Carolina",
-      "courts": [
-          {
-              "name": "Charlotte Immigration Court",
-              "city": "Charlotte",
-              "address": "5701 Executive Center Drive, Suite 400, Charlotte, NC 28212",
-              "oplaOffice": "5701 Executive Center Drive, Suite 300, Charlotte, NC 28212",
-              "judges": [
-                  "Riggs, George W.",
-                  "Couch, V. Stuart",
-                  "Lee, Amy T.",
-                  "Nance, Jeffery R.",
-                  "Lopez-Enriquez, Maria M.",
-                  "Rainey, Zol",
-                  "Holmes-Simmons, Theresa",
-                  "Harris, Rodger C.",
-                  "Criss, Scott D."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Northern Mariana Islands",
-      "courts": [
-          {
-              "name": "Saipan Immigration Court",
-              "city": "Saipan",
-              "address": "Horiguchi Building, 2nd Floor, Garapan, Saipan, MP 96950",
-              "oplaOffice": "Horiguchi Building, 2nd Floor, Garapan, Saipan, MP 96950",
-              "judges": [
-                  "No permanent judges assigned"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Ohio",
-      "courts": [
-          {
-              "name": "Cleveland Immigration Court",
-              "city": "Cleveland",
-              "address": "801 W. Superior Avenue, Suite 13-100, Cleveland, OH 44113",
-              "oplaOffice": "925 Keynote Circle, Room 201, Brooklyn Heights, OH 44131",
-              "judges": [
-                  "Brown, Alison M.",
-                  "Seppanen, Christopher R.",
-                  "McCarthy, James F., III",
-                  "Owens, Jonathan W.",
-                  "Riley, Teresa L.",
-                  "Horton, Monte J.",
-                  "Riedthaler-Williams, Jennifer M.",
-                  "Drucker, Richard",
-                  "Pashayan, Donald",
-                  "Imbacuan, Bruce",
-                  "Santoro, Jeremy",
-                  "Tripi, Michael",
-                  "Whipple, David C."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Oregon",
-      "courts": [
-          {
-              "name": "Portland Immigration Court",
-              "city": "Portland",
-              "address": "1220 SW 3rd Avenue, Suite 500, Portland, OR 97204",
-              "oplaOffice": "1220 SW 3rd Avenue, Suite 300, Portland, OR 97204",
-              "judges": [
-                  "Truman, Phillip M.",
-                  "Greer, Christopher M.",
-                  "Anderson, David C.",
-                  "Hoeppner, Mindy E.",
-                  "Zanfardino, Richard",
-                  "Lyons, Joren",
-                  "Evans, David W.",
-                  "Lemke, Kathy J."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Pennsylvania",
-      "courts": [
-          {
-              "name": "Philadelphia Immigration Court",
-              "city": "Philadelphia",
-              "address": "Robert Nix Federal Building & Courthouse, 900 Market Street, Suite 504, Philadelphia, PA 19107",
-              "oplaOffice": "900 Market Street, Suite 346, Philadelphia, PA 19107",
-              "judges": [
-                  "Golparvar, Kuyomars Q.",
-                  "Hoover, Forrest W., III",
-                  "Lee, Mary C.",
-                  "Malloy, Rosalind K.",
-                  "Verma, Dinesh C.",
-                  "Ehlers, Patrick J.",
-                  "Carle, John B.",
-                  "Scott, Joseph C.",
-                  "Morley, Steven A.",
-                  "Kulick, Dawn",
-                  "Honeyman, Charles M.",
-                  "Garcy, Annie S.",
-                  "Capistrano, Antonio"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Tennessee",
-      "courts": [
-          {
-              "name": "Memphis Immigration Court",
-              "city": "Memphis",
-              "address": "80 Monroe Avenue, Lower Level, Suite G-10, Memphis, TN 38103",
-              "oplaOffice": "80 Monroe Avenue, Suite 200, Memphis, TN 38103",
-              "judges": [
-                  "Miles, Vernon Benet",
-                  "Hansell, Renae M.",
-                  "Kinnicutt, Daniel P.",
-                  "Johnson, Kelly S.",
-                  "Averwater, Richard J.",
-                  "Holt, Rebecca L.",
-                  "Newburn, Irma J.",
-                  "Lake, Kelly B.",
-                  "Campos, Alisha C.",
-                  "Maldonado, Luis",
-                  "Josephsen, Brandon J.",
-                  "Russo, David",
-                  "Clancy, Sean D."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Texas",
-      "courts": [
-          {
-              "name": "Conroe Immigration Court",
-              "city": "Conroe",
-              "address": "806 Hilbig Road, Suite 2-300, 2nd Floor, Conroe, TX 77301",
-              "oplaOffice": "Montgomery Processing Center, 806 Hilbig Road, Suite 2-201, Conroe, TX 77301",
-              "judges": [
-                  "Caborn, Andrew J.",
-                  "Cole, Andrea",
-                  "McPhail, John",
-                  "Cole, Timothy M.",
-                  "May, Jennifer A.",
-                  "Powell, Robert L.",
-                  "Sapp, Billy J.",
-                  "Jacobs, Richard C.",
-                  "Brisack, Chris A.",
-                  "Evans, Mark S.",
-                  "D'Andrea, Holly A."
-              ]
-          },
-          {
-              "name": "Dallas Immigration Court",
-              "city": "Dallas",
-              "address": "1100 Commerce Street, Suite 1060, Dallas, TX 75242",
-              "oplaOffice": "125 E. John Carpenter Fwy., Suite 500, Irving, TX 75062",
-              "judges": [
-                  "Sims, Deitrich H.",
-                  "Kimball, R. Wayne",
-                  "Ozmun, Richard R.",
-                  "Eller, Donald R., Jr.",
-                  "Herrington, Robert",
-                  "Thielemann, Christopher J.",
-                  "John-Baptiste, Allan",
-                  "Davis-Gumbs, Xiomara Diana",
-                  "Ferguson, Jason D.",
-                  "Ellison, Sarah M.",
-                  "Perez-Guzman, Virginia"
-              ]
-          },
-          {
-              "name": "El Paso Immigration Court",
-              "city": "El Paso",
-              "address": "700 E. San Antonio Avenue, Suite 750, El Paso, TX 79901",
-              "oplaOffice": "11541 Montana Avenue, Suite O, El Paso, TX 79936",
-              "judges": [
-                  "Jacobs, Richard C.",
-                  "Herbert, Nathan",
-                  "Miller, James J., Jr.",
-                  "Bonilla, Judith F.",
-                  "Fernandez, Lorely Ramirez"
-              ]
-          },
-          {
-              "name": "Houston - Jefferson Street Immigration Court",
-              "city": "Houston",
-              "address": "500 Jefferson Street, Suite 300, Houston, TX 77002",
-              "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
-              "judges": [
-                  "Harris, Monique",
-                  "Imbacuan, Bruce",
-                  "Brown, Sam, IV",
-                  "Guidry, Monica Thompson",
-                  "May, Jennifer A.",
-                  "Hughes, Erica",
-                  "Gorman, Stephanie",
-                  "McGuirk, Erica J.",
-                  "Walton, Richard D.",
-                  "Jamadar, Richard",
-                  "Gemoets, Marcos"
-              ]
-          },
-          {
-              "name": "Houston - Greenspoint Park Immigration Court",
-              "city": "Houston",
-              "address": "16800 Greenspoint Park Drive, 2nd Floor, Houston, TX 77060",
-              "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
-              "judges": [
-                  "Dinsdale, Justin",
-                  "Wells, Kenya",
-                  "Landis, Brent H.",
-                  "Spencer, Oshea Denise",
-                  "Parker, Martinique",
-                  "Hempel, Nicholle N.",
-                  "Stern, Jason L.",
-                  "Jovanovic, Adam",
-                  "McGuirk, Erica J.",
-                  "Pobjecky, Artie",
-                  "Schwab, Jodie",
-                  "White, Romaine",
-                  "Guidry, Monica Thompson",
-                  "Lee, Alexander",
-                  "Perez, Alex",
-                  "Osborn, Joshua D.",
-                  "Whitworth, Mark",
-                  "Tamez, Lydia",
-                  "Phan, Christopher",
-                  "Jaimes-Salgado, Maria"
-              ]
-          },
-          {
-              "name": "Houston - S. Gessner Road Immigration Court",
-              "city": "Houston",
-              "address": "8701 S. Gessner Road, 10th Floor, Houston, TX 77074",
-              "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
-              "judges": [
-                  "Brown, Kevin",
-                  "McPhail, John",
-                  "Rankin Yates, Clarease Rankin",
-                  "Jones, Delana M.",
-                  "Schumann, Christopher M.",
-                  "Jenkins, Arkesia",
-                  "Thompson, Kenley",
-                  "Dvorak, Charissa",
-                  "Cordero Gonzalez, Miguel A.",
-                  "Hoffman, Geoffrey"
-              ]
-          },
-          {
-              "name": "Harlingen Immigration Court",
-              "city": "Harlingen",
-              "address": "2009 West Jefferson Avenue, Suite 300, Harlingen, TX 78550",
-              "oplaOffice": "1717 Zoy Street, Annex, Harlingen, TX 78552",
-              "judges": [
-                  "Guidry, Monica Thompson",
-                  "Crews, John G.",
-                  "Schools, Shelly W.",
-                  "Freeman, D'Anna H.",
-                  "Ellison, Sarah M.",
-                  "Castaneda, Julian",
-                  "Gonzalez, Delia I.",
-                  "Leonard, Joseph T.",
-                  "Garcia, Melissa Joy"
-              ]
-          },
-          {
-              "name": "Laredo Immigration Court",
-              "city": "Laredo",
-              "address": "1406 Jacaman Road, Suite B, Laredo, TX 78041",
-              "oplaOffice": "1406 Jacaman Road, Suite C, Laredo, TX 78041",
-              "judges": [
-                  "Adams, Justin",
-                  "Figueroa, Laura C.",
-                  "Crossan, Thomas G., Jr.",
-                  "Hart, Brandon L.",
-                  "Harlow, Craig A.",
-                  "Eller, Donald R., Jr.",
-                  "Newaz, Rifian S.",
-                  "Gonzalez, Yvonne",
-                  "McCullough, Charles M.",
-                  "Lafuente-Gaona, Cynthia",
-                  "Santander, Daniel J."
-              ]
-          },
-          {
-              "name": "Pearsall Immigration Court",
-              "city": "Pearsall",
-              "address": "566 Veterans Drive, Pearsall, TX 78061",
-              "oplaOffice": "South Texas ICE Processing Center, 566 Veterans Drive, Pearsall, TX 78061",
-              "judges": [
-                  "McKee, Robert R.",
-                  "Tyrakoski, Meredith B.",
-                  "Paulissen, Walter L.",
-                  "Martínez, Elizabeth",
-                  "Alcorn, Stuart Douglas",
-                  "Tijerina, Eric J."
-              ]
-          },
-          {
-              "name": "Port Isabel Immigration Court",
-              "city": "Los Fresnos",
-              "address": "27991 Buena Vista Blvd., Los Fresnos, TX 78566",
-              "oplaOffice": "Port Isabel Detention Center, 27991 Buena Vista Blvd, Los Fresnos, TX 78566",
-              "judges": [
-                  "Onyewuchi, Morris I.",
-                  "Hable, Paul A.",
-                  "Pimentel, Frank T.",
-                  "MacGregor, Margaret R.",
-                  "Cigarroa, Barbara"
-              ]
-          },
-          {
-              "name": "San Antonio Immigration Court",
-              "city": "San Antonio",
-              "address": "800 Dolorosa, Suite 300, San Antonio, TX 78207",
-              "oplaOffice": "1015 Jackson-Keller Road, Suite 100, San Antonio, TX 78213",
-              "judges": [
-                  "Adams, Justin",
-                  "Newaz, Rifian S.",
-                  "Martin, Clay Nelson",
-                  "Harlow, Craig A.",
-                  "Tyrakoski, Meredith B.",
-                  "McCullough, Charles M.",
-                  "Tijerina, Eric J.",
-                  "Martínez, Aníbal D.",
-                  "González, Yvonne",
-                  "Lafuente-Gaona, Cynthia",
-                  "Santander, Daniel J.",
-                  "Burkhart, Margaret D."
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Virginia",
-      "courts": [
-          {
-              "name": "Sterling Immigration Court",
-              "city": "Sterling",
-              "address": "21400 Ridgetop Circle, Suite 200, Sterling, VA 20166",
-              "oplaOffice": "21400 Ridgetop Circle, Suite 100, Sterling, VA 20166",
-              "judges": [
-                  "Pope, Jason L.",
-                  "Snavely, Luther W.",
-                  "Davis, Michael P.",
-                  "Baez, Lucy",
-                  "Egy, Julia E.",
-                  "Bonet, Illya-Karina J.",
-                  "Dehn, James T.",
-                  "Racine, Xavier F.",
-                  "Kneedler, Jennie L.",
-                  "Padron, Kristie A.",
-                  "Yeomans, Sarah Beth",
-                  "Wyrosdick, Laura"
-              ]
-          }
-      ]
-  },
-  {
-      "state": "Washington",
-      "courts": [
-          {
-              "name": "Seattle Immigration Court",
-              "city": "Seattle",
-              "address": "915 2nd Ave., Suite 613, Seattle, WA 98174",
-              "oplaOffice": "915 Second Avenue, Suite 708, Seattle, WA 98174",
-              "judges": [
-                  "Sogabe, Kenneth",
-                  "Tisocco, Michael",
-                  "Evans, David W.",
-                  "Johnson, Shane E.",
-                  "Reyes, Susana",
-                  "McSeveney, Robert B.C.",
-                  "Windrow, Hayden E.",
-                  "Parchert, Brett M."
-              ]
-          },
-          {
-              "name": "Tacoma Immigration Court",
-              "city": "Tacoma",
-              "address": "1623 East J Street, Suite 3, Tacoma, WA 98421",
-              "oplaOffice": "Northwest ICE Processing Center, 1623 East J Street, Suite 2, Tacoma, WA 98421",
-              "judges": [
-                  "Odell, John C.",
-                  "Floyd, Charles Neil",
-                  "Fitting, Tammy L."
-              ]
-          }
-      ]
-  }
+    {
+        "state": "Arizona",
+        "courts": [
+            {
+                "name": "Eloy Immigration Court",
+                "city": "Eloy",
+                "address": "1705 E. Hanna Road, Suite 366, Eloy, AZ 85131",
+                "oplaOffice": "1705 East Hanna Road, Eloy, AZ 85131",
+                "judges": [
+                    "Orechwa, Nicolas",
+                    "Bartlemay, Robert C., Sr.",
+                    "Phelps, Richard A.",
+                    "Gaz, Jennifer I.",
+                    "Habich, Paul M.",
+                    "Penalosa, Jose Luis, Jr.",
+                    "Feldman, Irene C.",
+                    "Mabry, William III",
+                    "Schnitzer, Michael"
+                ]
+            },
+            {
+                "name": "Florence Immigration Court",
+                "city": "Florence",
+                "address": "3260 N. Pinal Parkway Avenue, Florence, AZ 85132",
+                "oplaOffice": "3250 N. Pinal Parkway Avenue, Florence, AZ 85132",
+                "judges": [
+                    "Guerrero, Marni",
+                    "Taylor, Bruce A.",
+                    "Frazer, Molly S.",
+                    "Feldman, Irene C.",
+                    "Huddleston, Natalie",
+                    "Levin, Victoria",
+                    "Travieso, Frank"
+                ]
+            },
+            {
+                "name": "Phoenix Immigration Court",
+                "city": "Phoenix",
+                "address": "250 N. Seventh Ave., Suite 300, Phoenix, AZ 85007",
+                "oplaOffice": "2035 N. Central Avenue, Phoenix, AZ 85004",
+                "judges": [
+                    "Spencer-Walters, Linda Inez",
+                    "Bartlemay, Robert C., Sr.",
+                    "Sharda, Munish",
+                    "Imburgia, Joseph S.",
+                    "Cottor, Elizabeth A.",
+                    "Cortes, John W.",
+                    "Karlen, Melissa Beth",
+                    "Freerks, LaMonte S.",
+                    "Habich, Paul M.",
+                    "Feldman, Irene C.",
+                    "Gaz, Jennifer",
+                    "Guerrero, Marni"
+                ]
+            },
+            {
+                "name": "Tucson Immigration Court",
+                "city": "Tucson",
+                "address": "300 West Congress Street, Suite 300, Tucson, AZ 85701",
+                "oplaOffice": "6431 S. Country Club Road, Tucson, AZ 85706",
+                "judges": [
+                    "Terrazas, Gilda M.",
+                    "O'Leary, Thomas Michael",
+                    "Davis, John W.",
+                    "Keenan, Sean H.",
+                    "Deangelis, Kathryn L.",
+                    "Lloyd, Michael W."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "California",
+        "courts": [
+            {
+                "name": "Adelanto Immigration Court",
+                "city": "Adelanto",
+                "address": "10250 Rancho Road, Suite 201A, Adelanto, CA 92301",
+                "oplaOffice": "10250 Rancho Road, Adelanto, CA 92301",
+                "judges": [
+                    "Mullins, Katie G.",
+                    "Riley, Kevin W.",
+                    "Depowell, Bryan E.",
+                    "White, Curtis G.",
+                    "Left, James M.",
+                    "Walker, Nathaniel B.",
+                    "Penalosa, Jose Luis, Jr.",
+                    "Lee, Amy T.",
+                    "Santos-Garcia, Sandra J.",
+                    "Bjornerud, Maria",
+                    "Hitesman, Jonathan W.",
+                    "Barrett, Patrick",
+                    "Halperin, Ravit"
+                ]
+            },
+            {
+                "name": "Concord Immigration Court",
+                "city": "Concord",
+                "address": "1855 Gateway Boulevard, Ste 850, Concord, CA 94520",
+                "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
+                "judges": [
+                    "Wilson, Roberta A.",
+                    "Lilien, Kyra S.",
+                    "Butler, Jeremy J.",
+                    "Stender, Jacob J.",
+                    "Chamberlin, Florence A.",
+                    "Price, Justin M.",
+                    "Nelson, Julie",
+                    "Eichenberger, Colin P.",
+                    "Nava, Marlem",
+                    "Star, Shadee M.",
+                    "Torres, Sarah"
+                ]
+            },
+            {
+                "name": "Imperial Immigration Court",
+                "city": "Imperial",
+                "address": "2409 La Brucherie Road, Imperial, CA 92251",
+                "oplaOffice": "2409 La Brucherie Road, Suite 3, Imperial, CA 92251",
+                "judges": [
+                    "Perry, Anne",
+                    "Pressman, Christian M.",
+                    "Barcus, E. Mark",
+                    "Robinson, Eugene H., Jr.",
+                    "Munoz, Jeffrey V.",
+                    "Banuelos-Rodriguez, Vicenta"
+                ]
+            },
+            {
+                "name": "Otay Mesa Immigration Court",
+                "city": "San Ysidro",
+                "address": "P.O. Box 438150, San Ysidro, CA 92143-8150",
+                "oplaOffice": "7488 Calzada de la Fuente, San Diego, CA 92154",
+                "judges": [
+                    "Halliday-Roberts, Catherine",
+                    "Sameit, Mark",
+                    "Robinson, Eugene H., Jr.",
+                    "Attia, Olga E.",
+                    "Partida, Ana",
+                    "Burch, Valerie A.",
+                    "Perry, Anne Kristina",
+                    "Dixon, Paula"
+                ]
+            },
+            {
+                "name": "Sacramento Immigration Court",
+                "city": "Sacramento",
+                "address": "John Moss Federal Building, 650 Capitol Mall, Suite 4-200, Sacramento, CA 95814",
+                "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
+                "judges": [
+                    "Halperin, Ravit R.",
+                    "Roberts, Lindsy M.",
+                    "Hitesman, Jonathan W.",
+                    "Terrazas, Gilda M.",
+                    "Phan, Susan",
+                    "Geisse, Loreto S.",
+                    "Badrinath, Vikram",
+                    "Neumeister, David",
+                    "Neumeister, William David",
+                    "Daw, Alison E.",
+                    "Hunter, Denise",
+                    "Maggard, Robert P.",
+                    "Maggard, Print"
+                ]
+            },
+            {
+                "name": "San Diego Immigration Court",
+                "city": "San Diego",
+                "address": "880 Front Street, Suite 4240, San Diego, CA 92101",
+                "oplaOffice": "880 Front Street, Suite 2246, San Diego, CA 92101",
+                "judges": [
+                    "Bither, Christine A.",
+                    "Romig, Jeffrey L.",
+                    "Law, Philip S.",
+                    "O'Connor, Lee A.",
+                    "DeVitto, James Alan",
+                    "Grande, Guy G.",
+                    "Attia, Olga E.",
+                    "Bartolomei, Richard J., Jr.",
+                    "Partida, Ana",
+                    "Clemente, Jesus",
+                    "Simpson, Scott",
+                    "Anderson, Amelia",
+                    "Perry, Anne Kristina",
+                    "Halliday-Roberts, Catherine",
+                    "Heesch, Meghan E.",
+                    "Najjar, George R.",
+                    "Penalosa, Jose"
+                ]
+            },
+            {
+                "name": "San Francisco Immigration Court",
+                "city": "San Francisco",
+                "address": "100 Montgomery Street, Suite 800, San Francisco, CA 94104",
+                "oplaOffice": "100 Montgomery Street, Suite 200, San Francisco, CA 94104",
+                "judges": [
+                    "Aina, Nathan N.",
+                    "Halperin, Ravit R.",
+                    "Nelson, Julie L.",
+                    "Caborn, Andrew J.",
+                    "Dinh, Roger H.",
+                    "Morwood, Dion A.",
+                    "Seminerio, Frank A.",
+                    "Simmons, Gregory L.",
+                    "Nava, Marlem",
+                    "Phan, Susan",
+                    "O'Brien, Patrick S.",
+                    "Ford, Nicholas R.",
+                    "Lake, Kelly B.",
+                    "Gambill, Scott D.",
+                    "Picton, Cory M.",
+                    "Park, Joseph Y.",
+                    "Shugall, Ilyce",
+                    "Jefferson-Webb, Lettricea L.",
+                    "Kirchner, Steven N.",
+                    "Masterson, Jason R.",
+                    "Star, Shadee M.",
+                    "Pierce, Curtis F.",
+                    "Paulino, Robin K.",
+                    "McCleskey, Loi L.",
+                    "Young, Elizabeth L.",
+                    "Slayton, Michelle A.",
+                    "Figueroa, Laura C.",
+                    "Schulz, Karen W.",
+                    "Swink, Arwen A.",
+                    "Butler, Jeremy J.",
+                    "Geisse, Loreto S.",
+                    "Greene, Charles S., III",
+                    "Little, Anna C.",
+                    "Jackson, Jacqueline J.",
+                    "Price, Justin M.",
+                    "Johnson, Jeremiah",
+                    "Stender, Jacob J.",
+                    "Marks, Dana Leigh",
+                    "Deiss, Ila C.",
+                    "Savage, Patrick S.",
+                    "Davis, Howard R.",
+                    "Riedthaler-Williams, Jennifer M.",
+                    "George, Amber D",
+                    "Chen, Shuting",
+                    "Gordon, Louis A.",
+                    "Vigil, Jami",
+                    "Kim, Samuel Y.",
+                    "Levine, Shira M.",
+                    "Dillon, Chloe S.",
+                    "Brasil, Elisa C."
+                ]
+            },
+            {
+                "name": "Santa Ana Immigration Court",
+                "city": "Santa Ana",
+                "address": "1241 E. Dyer Road, Suite 200, Santa Ana, CA 92705",
+                "oplaOffice": "1231 E. Dyer Road, Suite 155, Santa Ana, CA 92705",
+                "judges": [
+                    "Piepmeier, Kristin",
+                    "Lee, Wilbur",
+                    "Simmons, Gregory L.",
+                    "Ghasri, Iman",
+                    "Winfield, Jennifer",
+                    "McNary, Christopher D.",
+                    "Norregard, Aggie",
+                    "Amaya, Roberto",
+                    "Francis, Leon J.",
+                    "Rothschild, Jerome M., Jr.",
+                    "Hsu, Lily C.",
+                    "Brooks, Alicia",
+                    "Brown, Charlotte D.",
+                    "Huang, Jonathan",
+                    "McFadden, Anita",
+                    "Chan, Matthew",
+                    "Waterloo, Jason",
+                    "Noche, Joyce",
+                    "Tadros-Ibarra, Terese",
+                    "Fishkin, Andrew",
+                    "Hom, Howard",
+                    "Mabry III, William",
+                    "Levin, Victoria",
+                    "Hope, Karen Y.",
+                    "Libeu, Heather",
+                    "Pepi, Lindsay W.",
+                    "Walker, Nathaniel B."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Colorado",
+        "courts": [
+            {
+                "name": "Aurora Immigration Court",
+                "city": "Aurora",
+                "address": "3130 North Oakland Street, Aurora, CO 80010",
+                "oplaOffice": "12445 East Caley Avenue, Centennial, CO 80111-6432",
+                "judges": [
+                    "Sims, Deitrich H.",
+                    "McGrail, Elizabeth H.",
+                    "Caley, Steven",
+                    "Carbone, Nina M.",
+                    "Kaufman, Matthew W.",
+                    "Cintron, Elaine",
+                    "Imburgia, Joseph S."
+                ]
+            },
+            {
+                "name": "Denver Immigration Court",
+                "city": "Denver",
+                "address": "1961 Stout Street, Suite 3101, Denver, CO 80294",
+                "oplaOffice": "12445 East Caley Avenue, Centennial, CO 80111-6432",
+                "judges": [
+                    "Masters, Bobbie C.",
+                    "Wood, Tyler",
+                    "O'Hare, Donald C.",
+                    "Corrin, Melanie K.",
+                    "Gardzelewski, Ivan E.",
+                    "Kaufman, Matthew W.",
+                    "Calcador, Kerri",
+                    "Carbone, Nina M.",
+                    "Kane, Alison R.",
+                    "Koppenhofer, Andrea",
+                    "Trujillo, Eileen R.",
+                    "Burgie, Brea C."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Connecticut",
+        "courts": [
+            {
+                "name": "Hartford Immigration Court",
+                "city": "Hartford",
+                "address": "AA Ribicoff Federal Building & Courthouse, 450 Main Street, Suite 628, Hartford, CT 06103-3015",
+                "oplaOffice": "Ribicoff Federal Building, 450 Main Street, Room 483, Hartford, CT 06103-3060",
+                "judges": [
+                    "Straus, Michael W.",
+                    "Verrillo, Philip",
+                    "Morris, Daniel A.",
+                    "ul-Haq, Ubaid",
+                    "Doolittle, Theodore"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Florida",
+        "courts": [
+            {
+                "name": "Miami Immigration Court",
+                "city": "Miami",
+                "address": "One Riverview Square, 333 S. Miami Avenue, Suite 700, Miami, FL 33130",
+                "oplaOffice": "333 S. Miami Avenue, Suite 200, Miami, FL 33130",
+                "judges": [
+                    "Chait, Barry S.",
+                    "Nettles, Marsha K.",
+                    "Goodwin, Deborah K.",
+                    "Siegel, Stuart A.",
+                    "Horn, Michael C.",
+                    "Martyak, Christina M.",
+                    "Martínez-Esquivel, Lourdes",
+                    "Videla, Gabriel C.",
+                    "Torren-Bayouth, Lilliana",
+                    "García, Madeline",
+                    "Dowell, J. Daniel",
+                    "Brown, Charlotte D.",
+                    "Ayze, Thomas",
+                    "Sogocio, Rico M.",
+                    "Sanders, Charles J.",
+                    "Marks Lane, Denise A.",
+                    "Walleisa, Michael",
+                    "Alexander, Scott G.",
+                    "Rosen, Benjamin",
+                    "Araneta, Michelle",
+                    "Holyoak, Dalin R.",
+                    "Herman, Lakshmi",
+                    "Rivera, Jose",
+                    "Rivera-Ortiz, Jose",
+                    "Mateo, Rene D.",
+                    "Balasquide, Javier E.",
+                    "Lerner, Romy",
+                    "Maingot, Anthony E.",
+                    "Cole, Timothy M.",
+                    "Burgess, Abraham L.",
+                    "Recio, Irene M.",
+                    "Rodríguez de Jongh, Lourdes A.",
+                    "Pereira, Jorge L.",
+                    "Reis, Christine",
+                    "Mander, Stephen E.",
+                    "Sukkar, Elisa M.",
+                    "Khanna, Rohit",
+                    "Neumann, Monica",
+                    "Pressman, Christian",
+                    "Ubarri, Maria T."
+                ]
+            },
+            {
+                "name": "Orlando Immigration Court",
+                "city": "Orlando",
+                "address": "500 N. Orange Ave, Suite 1100, Orlando, FL 32801",
+                "oplaOffice": "500 North Orange Avenue, Suite 5000, Orlando, FL 32801",
+                "judges": [
+                    "Chapman, Kevin J.",
+                    "Karden, Stuart F.",
+                    "Ghartey, Victoria L.",
+                    "Alberdi, Yon K.",
+                    "Page-Lozano, Jennifer Leigh",
+                    "Harris, Monique",
+                    "Rojas, Raphael",
+                    "Grim, James",
+                    "Stanley, Kevin",
+                    "Adams, Anna",
+                    "Lang, Elizabeth G.",
+                    "Jamadar, Richard",
+                    "Burke, Brian",
+                    "Cato, Richard B.",
+                    "Frederick, Jeffrey",
+                    "Harris, Rodger",
+                    "Niziolek, Alec",
+                    "Rosen, Benjamin D.",
+                    "Lippman, Daniel"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Georgia",
+        "courts": [
+            {
+                "name": "Atlanta - Ted Turner Drive Immigration Court",
+                "city": "Georgia",
+                "address": "180 Ted Turner Drive, SW, Suite 241, Atlanta, GA 30303",
+                "oplaOffice": "180 Ted Turner Drive, SW, Suite 332, Atlanta, GA 30303",
+                "judges": [
+                    "Gillies, John M.",
+                    "Farrar-Crockett, Emily",
+                    "Coaxum, Ghunise L.",
+                    "Maldonado, Njeri B.",
+                    "Taylor, Philip P.",
+                    "Fisher, Ryan",
+                    "Barr, Philip A.",
+                    "Schnitzer, Michael",
+                    "Doughty, Blake",
+                    "Smikle, Suzette",
+                    "Chapman, Kevin J.",
+                    "Watson, Bryan D.",
+                    "Fairchild Haer, Amy",
+                    "Murray, Winfield W.",
+                    "Lampley-Fortson, Joy",
+                    "Crofts, James",
+                    "Gallow, Sheila E.",
+                    "Hewitt, Andrew",
+                    "Sydnor, Kelley"
+                ]
+            },
+            {
+                "name": "Atlanta - W. Peachtree Street Immigration Court",
+                "city": "Atlanta",
+                "address": "Peachtree Summit Federal Building, 401 W. Peachtree Street, Suite 2600, Atlanta, GA 30308",
+                "oplaOffice": "Peachtree Summit Federal Building, 401 W. Peachtree Street, NW, Suite 2850, Atlanta, GA 30308",
+                "judges": [
+                    "Lampley-Fortson, Joy",
+                    "Bell, Jennifer R.",
+                    "Coaxum, Ghunise L.",
+                    "Chapman, Kevin J.",
+                    "Doughty, Blake",
+                    "Fisher, Ryan",
+                    "Haer, Amy F.",
+                    "Maldonado, Njeri B.",
+                    "Smikle, Suzette",
+                    "Taylor, Philip P.",
+                    "Murray, Winfield W.",
+                    "Gillies, John M.",
+                    "Farrar-Crockett, Emily",
+                    "Barr, Philip A.",
+                    "Schnitzer, Michael",
+                    "Watson, Bryan D.",
+                    "Gallow, Sheila E."
+                ]
+            },
+            {
+                "name": "Stewart Immigration Court",
+                "city": "Stewart",
+                "address": "146 CCA Road, PO Box 248, Lumpkin, GA 31815",
+                "oplaOffice": "Stewart County Detention Facility, 146 CCA Road, Lumpkin, GA 31815",
+                "judges": [
+                    "Duncan, Randall",
+                    "Fuller, Steven B.",
+                    "Criss, Scott D.",
+                    "Trimble, Dan",
+                    "Nance, Jeffery R.",
+                    "Brown, Bianca H.",
+                    "Rothschild, Jerome M., Jr.",
+                    "Lampley-Fortson, Joy",
+                    "Harness, Jerrica",
+                    "Ward, James"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Hawaii",
+        "courts": [
+            {
+                "name": "Honolulu Immigration Court",
+                "city": "Honolulu",
+                "address": "PJKK Federal Building, 300 Ala Moana Blvd., Room 8-112, Honolulu, HI 96850",
+                "oplaOffice": "300 Ala Moana Boulevard, Suite 7-220, Honolulu, HI 96850",
+                "judges": [
+                    "Beamer, Dayna M.",
+                    "Wagner, Clarence M., Jr.",
+                    "Perry, Anne Kristina",
+                    "Feder, Robin"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Illinois",
+        "courts": [
+            {
+                "name": "Chicago Immigration Court",
+                "city": "Chicago",
+                "address": "55 E. Monroe St., Suite 1500, Chicago, IL 60603",
+                "oplaOffice": "55 E. Monroe Street, Suite 1400, Chicago, IL 60603",
+                "judges": [
+                    "Ellison, Sarah M.",
+                    "Defoe, Craig A.",
+                    "Venci, Michelle",
+                    "Salovaara, Kaarina",
+                    "Curran, Brendan C.",
+                    "Cole, Samuel B.",
+                    "Naseem, Samia",
+                    "McKenna, Patrick M.",
+                    "Mencini, Ana",
+                    "Rosche, Robin J.",
+                    "Stahl, Marc",
+                    "Deangelis, Kathryn L.",
+                    "Barilla, Jody",
+                    "Klosowsky, Michael",
+                    "Luskin, Joshua D.",
+                    "Treacy, Elizabeth",
+                    "Lang, Elizabeth G.",
+                    "Klein, Eliza C.",
+                    "Crites, Elizabeth",
+                    "Saltzman, Eva S.",
+                    "Espinoza, Carla",
+                    "Peyton, Jennifer I.",
+                    "Patti, Sebastian T.",
+                    "Reynolds, Gina",
+                    "Fluhr, Philip",
+                    "Nelson, Kristi"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Indiana",
+        "courts": [
+            {
+                "name": "Indianapolis Immigration Court ",
+                "address": "Edificio federal Minton-Capehart 575 N. Pennsylvania Street, Suite 617 Indianápolis, IN 46204",
+                "oplaOffice": "55 E. Monroe Street Suite 1400 Chicago, IL 60603",
+                "judges": [
+                    "Driscoll, Robert P.",
+                    "Barrow, Sarjo",
+                    "Bratton, Scott",
+                    "Burch, Valerie",
+                    "Conklin, Daniel",
+                    "Miter, Jane",
+                    "Thomsen, Scott"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Louisiana",
+        "courts": [
+            {
+                "name": "LaSalle Immigration Court",
+                "city": "Jena",
+                "address": "830 Pine Hill Road, P.O. Box 2179, Jena, LA 71342",
+                "oplaOffice": "LaSalle Detention Center, 830 Pinehill Road, Jena, LA 71342",
+                "judges": [
+                    "Crooks, Grady A.",
+                    "Landis, Brent H.",
+                    "Baumgarten, Mary C.",
+                    "Fuller, Steven B.",
+                    "Thogersen, Cassie A.",
+                    "Midgley, Ian D.",
+                    "Munson, Angela",
+                    "Robbins, Kandra K.",
+                    "Mwangi, Francis",
+                    "Hoover, Forrest W., III",
+                    "Comans, James E.",
+                    "Gonzalez, Maithe"
+                ]
+            },
+            {
+                "name": "New Orleans Immigration Court",
+                "city": "New Orleans",
+                "address": "One Canal Place, 365 Canal Street, Suite 500, New Orleans, LA 70130",
+                "oplaOffice": "423 Canal Street, Suite 450, New Orleans, LA 70130",
+                "judges": [
+                    "Fluke, Randall L.",
+                    "Connelly, Steven J.",
+                    "Marquez, Charlotte",
+                    "LaRocca, Joseph",
+                    "Marsteller, Eric",
+                    "Guillory, Kevin P.",
+                    "Jones, Gabrielle",
+                    "Depuy, Alberto",
+                    "De Puy, Alberto",
+                    "Comans, James E."
+                ]
+            },
+            {
+                "name": "Oakdale Immigration Court",
+                "city": "Oakdale",
+                "address": "1900 E. Whatley Road, Oakdale, LA 71463",
+                "oplaOffice": "1010 E. Whatley Road, Oakdale, LA 71463-1128",
+                "judges": [
+                    "Bashore, Jacob D.",
+                    "Laragy, W. Scott",
+                    "Ashworth, Sherron",
+                    "Duck, John A., Jr.",
+                    "Schools, Shelly W.",
+                    "Martz, Nicholas A.",
+                    "Diaz-Rex, Julia",
+                    "Taylor, Brock E.",
+                    "Espinal, Pedro J.",
+                    "Comans, James E.",
+                    "Thogersen, Cassie A."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Maryland",
+        "courts": [
+            {
+                "name": "Baltimore Immigration Court",
+                "city": "Baltimore",
+                "address": "George Fallon Federal Building, 31 Hopkins Plaza, Room 440, Baltimore, MD 21201",
+                "oplaOffice": "31 Hopkins Plaza, Room 1600, Baltimore, MD 21201",
+                "judges": [
+                    "Williams, Phillip T.",
+                    "Jones, David M.",
+                    "Crosland, David W.",
+                    "Padilla, Nelson Vargas",
+                    "Golparvar, Kuyomars Q.",
+                    "Kessler, Elizabeth A.",
+                    "Mahasa, Zakia",
+                    "Verma, Dinesh C.",
+                    "Koelsch, David",
+                    "Smulow, Daniel",
+                    "Slavin, Denise N.",
+                    "Harty, Alice S.",
+                    "Hartye, Alice S.",
+                    "Weil, Jack H.",
+                    "Cubas, Claudia",
+                    "Kohler-Maya, Elizabeth",
+                    "Shirole, Pallavi"
+                ]
+            },
+            {
+                "name": "Hyattsville Immigration Court",
+                "city": "Hyattsville",
+                "address": "3311 Toledo Road, Suite 105, Hyattsville, MD 20782",
+                "oplaOffice": "500 12th Street, S.W., Stop 5904, Washington, DC 20536-5904",
+                "judges": [
+                    "Bohrer, Matthew",
+                    "Kessler, Elizabeth A.",
+                    "Welhaf, Ann",
+                    "Lee, June",
+                    "Kanellakos, Thanos",
+                    "Reilly, Kathleen",
+                    "Williams, Phillip T.",
+                    "Bowens, Tanisha",
+                    "Bowens-McCatty, Tanisha",
+                    "Igoe, Alison",
+                    "Niburg, Rebecca",
+                    "Rubenstein, John S.",
+                    "Jones, David M.",
+                    "Gansallo, Ayodele",
+                    "Verma, Dinesh C.",
+                    "Koelsch, David",
+                    "Cubas, Claudia",
+                    "Brooks, Mark K.",
+                    "Diaz, Irma",
+                    "Mathew, Rajesh",
+                    "Miller-Wein, Sondra J.",
+                    "Quiros, Ana L.",
+                    "Walker, Davené"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Massachusetts",
+        "courts": [
+            {
+                "name": "Boston Immigration Court",
+                "city": "Boston",
+                "address": "JFK Federal Building, 15 New Sudbury Street, Room 320, Boston, MA 02203",
+                "oplaOffice": "JFK Federal Building, 15 New Sudbury Street, Room 425, Boston, MA 02203",
+                "judges": [
+                    "Robertson, David",
+                    "Zach, Juliana",
+                    "Mulcahy, Jennifer A.",
+                    "Cho, Yul-Mi",
+                    "Pappas, George",
+                    "Terrien, Jeb",
+                    "Kubica, Hannah",
+                    "Smith, Natalie",
+                    "Munro, Angela",
+                    "Kahan, Michelle",
+                    "Saldana Mistry, Lucero",
+                    "Furlong, John M., Jr.",
+                    "Roe, Adrian N.",
+                    "Napier, Wade Thomas",
+                    "Masters, Todd A.",
+                    "Tregerman, Gwendylan E.",
+                    "Jalelian, Lincoln S.",
+                    "Cato, Richard",
+                    "Sturla, Mario J.",
+                    "Cade, Sarah",
+                    "Rusher, Marna M.",
+                    "Sady, Michael",
+                    "O'Malley, Brenda M.",
+                    "Feder, Robin E.",
+                    "O'Sullivan, Maureen S.",
+                    "Ahmed, Sameer",
+                    "Holmes-Simmons, Theresa",
+                    "Donovan, Mark",
+                    "Gover, Erin",
+                    "Patel, Roopal"
+                ]
+            },
+            {
+                "name": "Chelmsford Immigration Court",
+                "city": "Chelmsford",
+                "address": "2 Courthouse Lane, 2nd Floor, Unit B, Chelmsford, MA 01824",
+                "oplaOffice": "2 Courthouse Lane, 2nd Floor, Unit B, Chelmsford, MA 01824",
+                "judges": [
+                    "Klein, Eliza C.",
+                    "Treegerman, Gwendylan E.",
+                    "Napier, Wade Thomas",
+                    "Jalelian, Lincoln S.",
+                    "Cato, Richard",
+                    "Sturla, Mario J.",
+                    "Cheng, David",
+                    "Ahmed, Sameer",
+                    "Beverly, Jenny",
+                    "Cho, Yul-mi",
+                    "Froes, Nina",
+                    "Griffiths, Nancy",
+                    "Hall, Jonathan",
+                    "Kubica, Hannah",
+                    "Le, Huy",
+                    "McEwen, Justin",
+                    "Munson, Angela",
+                    "Munro, Angela",
+                    "Olson, Christine",
+                    "Ostrom, Donald",
+                    "Pappas, George",
+                    "Smith, Natalie",
+                    "Saldana Mistry, Lucero"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Michigan",
+        "courts": [
+            {
+                "name": "Detroit Immigration Court",
+                "city": "Detroit",
+                "address": "477 Michigan Avenue, Suite 440, Detroit, MI 48226",
+                "oplaOffice": "Rosa Parks Federal Building, 985 Michigan Avenue, Suite 1010, Detroit, MI 48226",
+                "judges": [
+                    "Davey, Benjamin",
+                    "Jebson, Mark J.",
+                    "Gorland, Jennifer M.",
+                    "Paruch, David H.",
+                    "Simons, Ian R.",
+                    "Hansen, Katherine",
+                    "Koelsch, David"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Minnesota",
+        "courts": [
+            {
+                "name": "Fort Snelling Immigration Court",
+                "city": "Fort Snelling",
+                "address": "Bishop Henry Whipple Federal Building, 1 Federal Drive, Suite 1850, Fort Snelling, MN 55111",
+                "oplaOffice": "1 Federal Drive, Suite 1800, Fort Snelling, MN 55111",
+                "judges": [
+                    "Miller, Monte G.",
+                    "Ward, George James",
+                    "Sardelli, Brian",
+                    "Mazzie, Sarah B.",
+                    "Cardona, Lisa De",
+                    "Dierkes, Joseph R.",
+                    "Wood, Ryan R.",
+                    "Auh, Kyung S.",
+                    "Carr, M. Audrey",
+                    "Sagerman, Roger F.",
+                    "Hansen, Katherine L.",
+                    "Davey, Benjamin",
+                    "Ivany, Kalin",
+                    "Zaske, Amy"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Missouri",
+        "courts": [
+            {
+                "name": "Kansas City Immigration Court",
+                "city": "Kansas City",
+                "address": "2345 Grand Boulevard, Suite 525, Kansas City, MO 64108",
+                "oplaOffice": "2345 Grand Boulevard, Suite 500, Kansas City, MO 64108",
+                "judges": [
+                    "Salinardi, Jayme",
+                    "Baker, Glen R.",
+                    "Howard, Justin W.",
+                    "Johnson, Colin Patrick"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Nebraska",
+        "courts": [
+            {
+                "name": "Omaha Immigration Court",
+                "city": "Omaha",
+                "address": "1717 Avenue H, Suite 100, Omaha, NE 68110",
+                "oplaOffice": "1717 Avenue H, Room 174, Omaha, NE 68110",
+                "judges": [
+                    "Larsen, Alexandra R.",
+                    "Meyer, Abby L.",
+                    "Morrissey, Matthew E.",
+                    "Dillow, Eric L."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Nevada",
+        "courts": [
+            {
+                "name": "Las Vegas Immigration Court",
+                "city": "Las Vegas",
+                "address": "110 North City Parkway, Suite 400, Las Vegas, NV 89106",
+                "oplaOffice": "501 S. Las Vegas Blvd, Suite 200, Las Vegas, NV 89101",
+                "judges": [
+                    "Sharda, Munish",
+                    "Daugherty, Daniel J.",
+                    "McDermott, Ann M.",
+                    "Nguyen, An Mai",
+                    "Baker, Glen R.",
+                    "Roberts, Lindsy M.",
+                    "Feldman, Irene C."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "New Jersey",
+        "courts": [
+            {
+                "name": "Elizabeth Immigration Court",
+                "city": "Elizabeth",
+                "address": "625 Evans Street, Room 148A, Elizabeth, NJ 07201",
+                "oplaOffice": "Elizabeth Detention Facility, 625 Evans Street, Room 135, Elizabeth, NJ 07201",
+                "judges": [
+                    "Wilson, Tamar H.",
+                    "Tadal, Mirlande",
+                    "Bailey, Richard",
+                    "Golparvar, Kuyomars Q.",
+                    "Panopoulos, Adam",
+                    "Shirole, Pallavi S.",
+                    "Pope, Jason L.",
+                    "Harty, Alice S.",
+                    "Cheng, David",
+                    "Armstrong, Adrian N."
+                ]
+            },
+            {
+                "name": "Newark Immigration Court",
+                "city": "Newark",
+                "address": "970 Broad Street, Room 1200, Newark, NJ 07102",
+                "oplaOffice": "970 Broad Street, Room 1300, Newark, NJ 07102",
+                "judges": [
+                    "Akalski, Maria I.",
+                    "Mannion, Steve",
+                    "Chen, Shana W.",
+                    "Ryan, Dennis",
+                    "Lane, Nicole",
+                    "Hinds Roach, Denise A.",
+                    "Bailey, Richard",
+                    "Shirole, Pallavi S.",
+                    "Cheng, David",
+                    "Pierro, Laura N.",
+                    "Wilson, Tamar H.",
+                    "Panopoulos, Adam",
+                    "McNeill Mullican, Leila",
+                    "Pope, Jason L.",
+                    "Ranasinghe, Arya S.",
+                    "Rastegar, Ramin",
+                    "Jeannopoulos, Amanda",
+                    "Finston, Leo A.",
+                    "Rubin, Shifra",
+                    "Little, Anna C.",
+                    "Riefkohl, Alberto J.",
+                    "Neal, Michael"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "New Mexico",
+        "courts": [
+            {
+                "name": "Otero Immigration Court",
+                "city": "Otero",
+                "address": "26 McGregor Range Road, Door #1, Chaparral, NM 88081",
+                "oplaOffice": "Trial Attorney Unit, 26 McGregor Range Road, Chaparral, NM 88081",
+                "judges": [
+                    "French, Kathleen",
+                    "Girvin, Ralph E.",
+                    "Palomino, Jacinto",
+                    "Fernandez, Lorely Ramirez",
+                    "Taylor, Brock E.",
+                    "Kinnicutt, Daniel P.",
+                    "Williams, Samuel G."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "New York",
+        "courts": [
+            {
+                "name": "Batavia Immigration Court",
+                "city": "Batavia",
+                "address": "4250 Federal Drive, Room F108, Batavia, NY 14020",
+                "oplaOffice": "Buffalo Federal Detention Facility, 4250 Federal Drive, Batavia, NY 14020",
+                "judges": [
+                    "Driscoll, Robert",
+                    "Aikman, Susan F.",
+                    "ul-Haq, Ubaid",
+                    "Counihan, Brian",
+                    "Schultz, Eric"
+                ]
+            },
+            {
+                "name": "Buffalo Immigration Court",
+                "city": "Buffalo",
+                "address": "130 Delaware Avenue, Suite 300, Buffalo, NY 14202",
+                "oplaOffice": "250 Delaware Avenue, Suite 773, Buffalo, NY 14202",
+                "judges": [
+                    "Baumgarten, Mary C.",
+                    "Ruehle, Walter",
+                    "Connelly, Steven J.",
+                    "Hochul, Denise",
+                    "ul-Haq, Ubaid",
+                    "Lohr, Brandi M."
+                ]
+            },
+            {
+                "name": "New York - Broadway Immigration Court",
+                "city": "New York",
+                "address": "290 Broadway, 27th Floor, New York, NY 10007",
+                "oplaOffice": "26 Federal Plaza, Room 1130, New York, NY 10278",
+                "judges": [
+                    "Gordon, Cynthia",
+                    "Ehrens, Lisa",
+                    "McFarland, Michael G.",
+                    "Calvelli, Andrew",
+                    "Wright, Virna A.",
+                    "Taylor, Khalilah",
+                    "Bartleson, J. Thomas",
+                    "Bratton, Scott",
+                    "Brennan, Noel A.",
+                    "Burns, John P.",
+                    "Cassin, Olivia L.",
+                    "Christensen, Jess",
+                    "Chung, Jennifer",
+                    "Diao, Anna",
+                    "Dodd, Diane L.",
+                    "Gundlach, Robert L.",
+                    "Grogan, Edward P.",
+                    "Habib, Fayaz",
+                    "Krasinski, Carolyn L.",
+                    "Lazare-Raphael, Shirley",
+                    "Lebreton, Tanawa",
+                    "Lee, Kalenna",
+                    "Martinez, Dianna",
+                    "McCarthy, James M.",
+                    "McKee, James R.",
+                    "Navarro, Maria",
+                    "Moore, Carol",
+                    "Perl, Adam",
+                    "Pocter, Aviva",
+                    "Sanon, Chevone",
+                    "Xu, ShaSha"
+                ]
+            },
+            {
+                "name": "New York - Federal Plaza Immigration Court",
+                "city": "New York",
+                "address": "26 Federal Plaza, 12th Floor, Room 1237, New York, NY 10278",
+                "oplaOffice": "26 Federal Plaza, Room 1130, New York, NY 10278",
+                "judges": [
+                    "Brennan, Noel A.",
+                    "Kouris, Theodora N.",
+                    "Bain, Terry A.",
+                    "Khan, Amiena",
+                    "Gordon-Urakpa, Vivienne E.",
+                    "Adams, Lori",
+                    "Koppenhofer, Andrea",
+                    "Little, Anna C.",
+                    "Kim, David",
+                    "Rey Caldas, Carmen Maria",
+                    "Crawford, Carol A.",
+                    "Dandelet, Kyle A.",
+                    "Douchy, Evalyn P.",
+                    "Ehrens, L. Betya Schwartz",
+                    "Factor, Samuel M.",
+                    "Golovnin, Lena",
+                    "Gordon, Cynthia",
+                    "Herbeck, Dorothy",
+                    "Jeannopoulos, Amanda",
+                    "Johnson-Papillo, Carrie",
+                    "Klahr, Deborah E.",
+                    "Leeds, Frederic G.",
+                    "Loprest Jr, F. James",
+                    "Lurye, Maria",
+                    "Maleitano, Gioia",
+                    "McDermott, William H.",
+                    "McFarland, Michael G.",
+                    "Nassar, Dania",
+                    "Nazaire, Karen",
+                    "Nelson, Barbara A.",
+                    "Peal, Tiesha",
+                    "Reingold, Jonathan",
+                    "Sagesse, Cathy",
+                    "Segal, Alice",
+                    "Siemietkowski, John J.",
+                    "Sponzo, Jem",
+                    "Thompson, Donald",
+                    "Wright, Virna",
+                    "Zagzoug, Randa"
+                ]
+            },
+            {
+                "name": "New York - Varick Immigration Court",
+                "city": "New York",
+                "address": "201 Varick Street, Room 1140, New York, NY 10014",
+                "oplaOffice": "201 Varick Street, Room 1140, New York, NY 10014",
+                "judges": [
+                    "Bartleson, Thomas",
+                    "Navarro, Maria E.",
+                    "Martinez Soler, Dianna Michelle",
+                    "McDermott, William",
+                    "Sponzo, Jen C.",
+                    "Schoppert, Douglas B.",
+                    "ul-Haq, Ubaid",
+                    "Billings, Lucy",
+                    "Burnham, Shayne R.",
+                    "Conroy, Charles R.",
+                    "DeCure, John",
+                    "Durkin, Jennifer",
+                    "Kolbe, Margaret",
+                    "Ling, Lisa W.",
+                    "Mulligan, Thomas",
+                    "Mungoven, Thomas J.",
+                    "Norkin, David A.",
+                    "Prieto, Francisco R.",
+                    "Reid, Dara F.",
+                    "Rubin, Shifra",
+                    "Wedderburn, Wendy"
+                ]
+            },
+            {
+                "name": "Ulster Immigration Court",
+                "city": "Napanoch",
+                "address": "Ulster Correctional Facility, 750 Berme Road, Napanoch, NY 12458",
+                "oplaOffice": "Ulster Correctional Facility, 750 Berme Road, Napanoch, NY 12458",
+                "judges": [
+                    "Pieters, Edwin",
+                    "Loprest, F. James, Jr.",
+                    "Campanella, Lorianne",
+                    "Golovnin, Lena",
+                    "ul-Haq, Ubaid",
+                    "Auh, Kyung",
+                    "Ouslander, Charles M.",
+                    "Sagerman, Roger"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "North Carolina",
+        "courts": [
+            {
+                "name": "Charlotte Immigration Court",
+                "city": "Charlotte",
+                "address": "5701 Executive Center Drive, Suite 400, Charlotte, NC 28212",
+                "oplaOffice": "5701 Executive Center Drive, Suite 300, Charlotte, NC 28212",
+                "judges": [
+                    "Riggs, George W.",
+                    "Couch, V. Stuart",
+                    "Lee, Amy T.",
+                    "Nance, Jeffery R.",
+                    "Lopez-Enriquez, Maria M.",
+                    "Rainey, Zol",
+                    "Holmes-Simmons, Theresa",
+                    "Harris, Rodger C.",
+                    "Criss, Scott D.",
+                    "Brown, Charlotte"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Northern Mariana Islands",
+        "courts": [
+            {
+                "name": "Saipan Immigration Court",
+                "city": "Saipan",
+                "address": "Horiguchi Building, 2nd Floor, Garapan, Saipan, MP 96950",
+                "oplaOffice": "Horiguchi Building, 2nd Floor, Garapan, Saipan, MP 96950",
+                "judges": [
+                    "Perry, Anne Kristina",
+                    "Wagner, Clarence"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Ohio",
+        "courts": [
+            {
+                "name": "Cleveland Immigration Court",
+                "city": "Cleveland",
+                "address": "801 W. Superior Avenue, Suite 13-100, Cleveland, OH 44113",
+                "oplaOffice": "925 Keynote Circle, Room 201, Brooklyn Heights, OH 44131",
+                "judges": [
+                    "Brown, Alison M.",
+                    "Seppanen, Christopher R.",
+                    "McCarthy, James F., III",
+                    "Owens, Jonathan W.",
+                    "Riley, Teresa L.",
+                    "Horton, Monte J.",
+                    "Riedthaler-Williams, Jennifer M.",
+                    "Drucker, Richard",
+                    "Pashayan, Donald",
+                    "Imbacuan, Bruce",
+                    "Santoro, Jeremy",
+                    "Tripi, Michael",
+                    "Whipple, David C.",
+                    "Davey, Benjamin",
+                    "Burke, Patrick"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Oregon",
+        "courts": [
+            {
+                "name": "Portland Immigration Court",
+                "city": "Portland",
+                "address": "1220 SW 3rd Avenue, Suite 500, Portland, OR 97204",
+                "oplaOffice": "1220 SW 3rd Avenue, Suite 300, Portland, OR 97204",
+                "judges": [
+                    "Truman, Phillip M.",
+                    "Greer, Christopher M.",
+                    "Anderson, David C.",
+                    "Hoeppner, Mindy E.",
+                    "Zanfardino, Richard",
+                    "Lyons, Joren",
+                    "Evans, David W.",
+                    "Lemke, Kathy J.",
+                    "Koutras, Charles P.",
+                    "Caley, Steven",
+                    "Johnson, Dustin"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Pennsylvania",
+        "courts": [
+            {
+                "name": "Philadelphia Immigration Court",
+                "city": "Philadelphia",
+                "address": "Robert Nix Federal Building & Courthouse, 900 Market Street, Suite 504, Philadelphia, PA 19107",
+                "oplaOffice": "900 Market Street, Suite 346, Philadelphia, PA 19107",
+                "judges": [
+                    "Golparvar, Kuyomars Q.",
+                    "Hoover, Forrest W., III",
+                    "Lee, Mary C.",
+                    "Malloy, Rosalind K.",
+                    "Verma, Dinesh C.",
+                    "Ehlers, Patrick J.",
+                    "Carle, John B.",
+                    "Scott, Joseph C.",
+                    "Morley, Steven A.",
+                    "Kulick, Dawn",
+                    "Honeyman, Charles M.",
+                    "Garcy, Annie S.",
+                    "Capistrano, Antonio",
+                    "Gansallo, Ayodele A.",
+                    "Farber, Lauren F.",
+                    "Futcher, Mary",
+                    "McDermott, William H."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Puerto Rico",
+        "courts": [
+            {
+                "name": "Guaynabo Immigration Court",
+                "address": "San Patricio Office Center #7 Tabonuco Street, Room 401 Guaynabo, PR 00968-4605",
+                "oplaOffice": "7 Tabonuco Street Room 300 (Suite 313) Guaynabo, PR 00968",
+                "judges": [
+                    "Grim, James K.",
+                    "Diaz-Rex, Julia",
+                    "Espinal, Pedro",
+                    "Talavera-Peraza, Elvin"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Tennessee",
+        "courts": [
+            {
+                "name": "Memphis Immigration Court",
+                "city": "Memphis",
+                "address": "80 Monroe Avenue, Lower Level, Suite G-10, Memphis, TN 38103",
+                "oplaOffice": "80 Monroe Avenue, Suite 200, Memphis, TN 38103",
+                "judges": [
+                    "Miles, Vernon Benet",
+                    "Hansell, Renae M.",
+                    "Kinnicutt, Daniel P.",
+                    "Johnson, Kelly S.",
+                    "Averwater, Richard J.",
+                    "Holt, Rebecca L.",
+                    "Newburn, Irma J.",
+                    "Lake, Kelly B.",
+                    "Campos, Alisha C.",
+                    "Maldonado, Luis",
+                    "Josephsen, Brandon J.",
+                    "Russo, David",
+                    "Clancy, Sean D.",
+                    "Jefferson-Webb, Lettricea",
+                    "Ward, Robert"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Texas",
+        "courts": [
+            {
+                "name": "Conroe Immigration Court",
+                "city": "Conroe",
+                "address": "806 Hilbig Road, Suite 2-300, 2nd Floor, Conroe, TX 77301",
+                "oplaOffice": "Montgomery Processing Center, 806 Hilbig Road, Suite 2-201, Conroe, TX 77301",
+                "judges": [
+                    "Caborn, Andrew J.",
+                    "Cole, Andrea",
+                    "McPhail, John",
+                    "Cole, Timothy M.",
+                    "May, Jennifer A.",
+                    "Powell, Robert L.",
+                    "Sapp, Billy J.",
+                    "Jacobs, Richard C.",
+                    "Brisack, Chris A.",
+                    "Evans, Mark S.",
+                    "D'Andrea, Holly A.",
+                    "Kinnicutt, Daniel P."
+                ]
+            },
+            {
+                "name": "Dallas Immigration Court",
+                "city": "Dallas",
+                "address": "1100 Commerce Street, Suite 1060, Dallas, TX 75242",
+                "oplaOffice": "125 E. John Carpenter Fwy., Suite 500, Irving, TX 75062",
+                "judges": [
+                    "Sims, Deitrich H.",
+                    "Kimball, R. Wayne",
+                    "Ozmun, Richard R.",
+                    "Eller, Donald R., Jr.",
+                    "Herrington, Robert",
+                    "Thielemann, Christopher J.",
+                    "John-Baptiste, Allan",
+                    "Davis-Gumbs, Xiomara Diana",
+                    "Ferguson, Jason D.",
+                    "Ellison, Sarah M.",
+                    "Perez-Guzman, Virginia",
+                    "Naselow-Nahas, Tara",
+                    "Dvorak, Charissa",
+                    "Irwin, Cait",
+                    "Nugent, James",
+                    "Winfield, Jennifer"
+                ]
+            },
+            {
+                "name": "El Paso Immigration Court",
+                "city": "El Paso",
+                "address": "700 E. San Antonio Avenue, Suite 750, El Paso, TX 79901",
+                "oplaOffice": "11541 Montana Avenue, Suite O, El Paso, TX 79936",
+                "judges": [
+                   "Jacobs, Richard C.",
+                    "Herbert, Nathan",
+                    "Miller, James J., Jr.",
+                    "Bonilla, Judith F.",
+                    "Fernandez, Lorely Ramirez",
+                    "Kinnicutt, Daniel P.",
+                    "Allen, Janette",
+                    "Holguin, Enrique",
+                    "Paredes, Adrian",
+                    "Razo, Danny"
+                ]
+            },
+            {
+                "name": "El Paso SPC Immigration Court",
+                "address": "8915 Montana Avenue, Suite 100 El Paso, TX 79925",
+                "oplaOffice": "11541 Montana Avenue, Suite O, El Paso, TX 79936",
+                "judges": [
+                    "Jacobs, Richard C.",
+                    "Herbert, Nathan",
+                    "Miller, James J., Jr.",
+                    "Bonilla, Judith F.",
+                    "Fernandez, Lorely Ramirez",
+                    "Abbott, William L.",
+                    "Pieters, Michael",
+                    "Ruhle, Stephen M.",
+                    "Tuckman, Dean S.",
+                    "Kinnicutt, Daniel P.",
+                    "Miles, Jessica"
+                ]
+            },
+            {
+                "name": "Harlingen Immigration Court",
+                "address": "2009 West Jefferson Avenue, Suite 300, Harlingen, TX 78550",
+                "oplaOffice": "1717 Zoy Street, Annex, Harlingen, TX 78552",
+                "judges": [
+                    "Guidry, Monica Thompson",
+                    "Crews, John G.",
+                    "Schools, Shelly W.",
+                    "Freeman, D'Anna H.",
+                    "Ellison, Sarah M.",
+                    "Castaneda, Julian",
+                    "Gonzalez, Delia I.",
+                    "Leonard, Joseph T.",
+                    "Garcia, Melissa Joy",
+                    "Pineda, Christopher"
+                ]
+            },
+            {
+                "name": "Houston - Jefferson Street Immigration Court",
+                "address": "500 Jefferson Street, Suite 300, Houston, TX 77002",
+                "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
+                "judges": [
+                    "Harris, Monique",
+                    "Imbacuan, Bruce",
+                    "Brown, Sam, IV",
+                    "Guidry, Monica Thompson",
+                    "May, Jennifer A.",
+                    "Hughes, Erica",
+                    "Gorman, Stephanie",
+                    "McGuirk, Erica J.",
+                    "Walton, Richard D.",
+                    "Jamadar, Richard",
+                    "Gemoets, Marcos",
+                    "Kinnicutt, Daniel P.",
+                    "Bhagat, Nimmo",
+                    "Endelman, Gary",
+                    "Greenstein, Saul",
+                    "Fenelon, Zahra Jivani",
+                    "Khan, Anwer",
+                    "Nguyen, Bao",
+                    "Picos, Georgina",
+                    "Ramos, Maritza",
+                    "Tida, Abdias",
+                    "Wang, Lynn",
+                    "Rankin Yates, Clarease Rankin",
+                    "Freeman, D'Anna H.",
+                    "Osborn, Joshua D."
+                ]
+            },
+            {
+                "name": "Houston - Greenspoint Park Immigration Court",
+                "address": "16800 Greenspoint Park Drive, 2nd Floor, Houston, TX 77060",
+                "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
+                "judges": [
+                    "Dinsdale, Justin",
+                    "Wells, Kenya",
+                    "Landis, Brent H.",
+                    "Spencer, Oshea Denise",
+                    "Parker, Martinique",
+                    "Hempel, Nicholle N.",
+                    "Stern, Jason L.",
+                    "Jovanovic, Adam",
+                    "McGuirk, Erica J.",
+                    "Pobjecky, Artie",
+                    "Schwab, Jodie",
+                    "White, Romaine",
+                    "Guidry, Monica Thompson",
+                    "Lee, Alexander",
+                    "Perez, Alex",
+                    "Osborn, Joshua D.",
+                    "Whitworth, Mark",
+                    "Tamez, Lydia",
+                    "Phan, Christopher",
+                    "Jaimes-Salgado, Maria",
+                    "Miller, Jeffery S.",
+                    "Garten, Danielle"
+                ]
+            },
+            {
+                "name": "Houston - S. Gessner Road Immigration Court",
+                "address": "8701 S. Gessner Road, 10th Floor, Houston, TX 77074",
+                "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
+                "judges": [
+                    "Brown, Kevin",
+                    "McPhail, John",
+                    "Rankin Yates, Clarease Rankin",
+                    "Jones, Delana M.",
+                    "Schumann, Christopher M.",
+                    "Jenkins, Arkesia",
+                    "Thompson, Kenley",
+                    "Dvorak, Charissa",
+                    "Cordero Gonzalez, Miguel A.",
+                    "Hoffman, Geoffrey",
+                    "Miller, Jeffery S.",
+                    "Joyce, Jacquelyn Jo",
+                    "Paxton, David M.",
+                    "Stawar, Andrew X."
+                ]
+            },
+            {
+                "name": "Laredo Immigration Court",
+                "address": "1406 Jacaman Road, Suite B, Laredo, TX 78041",
+                "oplaOffice": "1406 Jacaman Road, Suite C, Laredo, TX 78041",
+                "judges": [
+                    "Adams, Justin",
+                    "Figueroa, Laura C.",
+                    "Crossan, Thomas G., Jr.",
+                    "Hart, Brandon L.",
+                    "Harlow, Craig A.",
+                    "Eller, Donald R., Jr.",
+                    "Newaz, Rifian S.",
+                    "Gonzalez, Yvonne",
+                    "McCullough, Charles M.",
+                    "Lafuente-Gaona, Cynthia",
+                    "Santander, Daniel J.",
+                    "Garcia, Melissa Joy",
+                    "Canales, Roel",
+                    "Caudillo, Daniel",
+                    "Garcia, Emmanuel",
+                    "Stevens, Courtney"
+                ]
+            },
+            {
+                "name": "Pearsall Immigration Court",
+                "address": "566 Veterans Drive, Pearsall, TX 78061",
+                "oplaOffice": "South Texas ICE Processing Center, 566 Veterans Drive, Pearsall, TX 78061",
+                "judges": [
+                    "McKee, Robert R.",
+                    "Tyrakoski, Meredith B.",
+                    "Paulissen, Walter L.",
+                    "Martinez, Elizabeth",
+                    "Alcorn, Stuart Douglas",
+                    "Tijerina, Eric J.",
+                    "Garcia, Melissa Joy",
+                    "Segovia, Veronica",
+                    "Terrill, Kevin"
+                ]
+            },
+            {
+                "name": "Port Isabel Immigration Court",
+                "address": "27991 Buena Vista Blvd., Los Fresnos, TX 78566",
+                "oplaOffice": "Port Isabel Detention Center, 27991 Buena Vista Blvd, Los Fresnos, TX 78566",
+                "judges": [
+                    "Onyewuchi, Morris I.",
+                    "Hable, Paul A.",
+                    "Pimentel, Frank T.",
+                    "MacGregor, Margaret R.",
+                    "Cigarroa, Barbara",
+                    "Garcia, Melissa Joy"
+                ]
+            },
+            {
+                "name": "San Antonio Immigration Court",
+                "address": "800 Dolorosa, Suite 300, San Antonio, TX 78207",
+                "oplaOffice": "1015 Jackson-Keller Road, Suite 100, San Antonio, TX 78213",
+                "judges": [
+                    "Adams, Justin",
+                    "Newaz, Rifian S.",
+                    "Martin, Clay Nelson",
+                    "Harlow, Craig A.",
+                    "Tyrakoski, Meredith B.",
+                    "McCullough, Charles M.",
+                    "Tijerina, Eric J.",
+                    "Martinez, Anibal D.",
+                    "Gonzalez, Yvonne",
+                    "Lafuente-Gaona, Cynthia",
+                    "Santander, Daniel J.",
+                    "Burkhart, Margaret D.",
+                    "Garcia, Melissa Joy",
+                    "Crossan, Thomas",
+                    "Martinez, Elizabeth"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Utah",
+        "courts": [
+            {
+                "name": "Salt Lake City Immigration Court",
+                "address": "2975 South Decker Lake Drive, #200 West Valley City, UT 84119-6094",
+                "oplaOffice": "2975 Decker Lake Drive, Stop C West Valley City, UT 84119-6098",
+                "judges": [
+                    "Koutras, Charles P.",
+                    "Aina, Nathan N.",
+                    "Anderson, David C.",
+                    "Greer, Christopher M.",
+                    "Nelson, Douglas Donaldson",
+                    "Truman, Phillip M."
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Virginia",
+        "courts": [
+            {
+                "name": "Annandale Immigration Court",
+                "address": "7619 Little River Turnpike, Suite 400 Annandale, VA 22003",
+                "oplaOffice": "500 12th Street SW, Mail Stop 5902 Washington, D.C. 20536-5902",
+                "judges": [
+                    "Michael Davis",
+                    "John Barnes",
+                    "Jason Braun",
+                    "Lawrence E. Burman",
+                    "Lorianne M. Campanella",
+                    "Raphael Choi",
+                    "Karen Donoso Stevens",
+                    "Emily Farrar-Crockett",
+                    "Ashley Gadson-Andrews",
+                    "David Gardey",
+                    "Christina Jimenez",
+                    "Michelle Lakomy",
+                    "Michael Lewis",
+                    "Nicole Lomartire",
+                    "Lolita Lukose",
+                    "Robert Lundberg",
+                    "Francisco Mendez",
+                    "Paul McCloskey",
+                    "Deepali Nadkarni",
+                    "Jamie Perry",
+                    "Anam Pettit",
+                    "Sherease P. Pratt",
+                    "Emmett Soper",
+                    "Thomas Snow",
+                    "Cynthia Torg",
+                    "Richard Venveluhuisen",
+                    "Alysha Welsh"
+                ]
+            },
+            {
+                "name": "Sterling Immigration Court",
+                "address": "21400 Ridgetop Circle, Suite 200, Sterling, VA 20166",
+                "oplaOffice": "21400 Ridgetop Circle, Suite 100, Sterling, VA 20166",
+                "judges": [
+                    "Jason L. Pope",
+                    "Luther W. Snavely",
+                    "Michael P. Davis",
+                    "Lucy Baez",
+                    "Julia E. Egy",
+                    "Illya-Karina J. Bonet",
+                    "James T. Dehn",
+                    "Xavier F. Racine",
+                    "Jennie L. Kneedler",
+                    "Kristie A. Padron",
+                    "Sarah Beth Yeomans",
+                    "Laura Wyrosdick",
+                    "Erin L. Alexander",
+                    "Chase Calder Cleveland",
+                    "John Gillies",
+                    "Matthew Gordon",
+                    "Bobbie Masters",
+                    "Karen Marquez-Casillas"
+                ]
+            }
+        ]
+    },
+    {
+        "state": "Washington",
+        "courts": [
+            {
+                "name": "Seattle Immigration Court",
+                "city": "Seattle",
+                "address": "915 2nd Ave., Suite 613, Seattle, WA 98174",
+                "oplaOffice": "915 Second Avenue, Suite 708, Seattle, WA 98174",
+                "judges": [
+                    "Sogabe, Kenneth",
+                    "Tisocco, Michael",
+                    "Evans, David W.",
+                    "Johnson, Shane E.",
+                    "Reyes, Susana",
+                    "McSeveney, Robert B.C.",
+                    "Windrow, Hayden E.",
+                    "Parchert, Brett M.",
+                    "Theresa Scala"
+                ]
+            },
+            {
+                "name": "Tacoma Immigration Court",
+                "city": "Tacoma",
+                "address": "1623 East J Street, Suite 3, Tacoma, WA 98421",
+                "oplaOffice": "Northwest ICE Processing Center, 1623 East J Street, Suite 2, Tacoma, WA 98421",
+                "judges": [
+                    "Odell, John C.",
+                    "Floyd, Charles Neil",
+                    "Fitting, Tammy L.",
+                    "Theresa Scala"
+                ]
+            }
+        ]
+    }
 ]
