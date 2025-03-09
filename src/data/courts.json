@@ -558,6 +558,7 @@
         "courts": [
             {
                 "name": "Indianapolis Immigration Court ",
+                "city": "Indianapolis",
                 "address": "Edificio federal Minton-Capehart 575 N. Pennsylvania Street, Suite 617 Indianápolis, IN 46204",
                 "oplaOffice": "55 E. Monroe Street Suite 1400 Chicago, IL 60603",
                 "judges": [
@@ -1231,6 +1232,7 @@
         "courts": [
             {
                 "name": "Guaynabo Immigration Court",
+                "city": "Guaynabo",
                 "address": "San Patricio Office Center #7 Tabonuco Street, Room 401 Guaynabo, PR 00968-4605",
                 "oplaOffice": "7 Tabonuco Street Room 300 (Suite 313) Guaynabo, PR 00968",
                 "judges": [
@@ -1337,6 +1339,7 @@
             },
             {
                 "name": "El Paso SPC Immigration Court",
+                "city": "El Paso",
                 "address": "8915 Montana Avenue, Suite 100 El Paso, TX 79925",
                 "oplaOffice": "11541 Montana Avenue, Suite O, El Paso, TX 79936",
                 "judges": [
@@ -1355,6 +1358,7 @@
             },
             {
                 "name": "Harlingen Immigration Court",
+                "city": "Harlingen",
                 "address": "2009 West Jefferson Avenue, Suite 300, Harlingen, TX 78550",
                 "oplaOffice": "1717 Zoy Street, Annex, Harlingen, TX 78552",
                 "judges": [
@@ -1372,6 +1376,7 @@
             },
             {
                 "name": "Houston - Jefferson Street Immigration Court",
+                "city": "Houston",
                 "address": "500 Jefferson Street, Suite 300, Houston, TX 77002",
                 "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
                 "judges": [
@@ -1404,6 +1409,7 @@
             },
             {
                 "name": "Houston - Greenspoint Park Immigration Court",
+                "city": "Houston",
                 "address": "16800 Greenspoint Park Drive, 2nd Floor, Houston, TX 77060",
                 "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
                 "judges": [
@@ -1433,6 +1439,7 @@
             },
             {
                 "name": "Houston - S. Gessner Road Immigration Court",
+                "city": "Houston",
                 "address": "8701 S. Gessner Road, 10th Floor, Houston, TX 77074",
                 "oplaOffice": "126 Northpoint Drive, Room 2020, Houston, TX 77060",
                 "judges": [
@@ -1454,6 +1461,7 @@
             },
             {
                 "name": "Laredo Immigration Court",
+                "city": "Laredo",
                 "address": "1406 Jacaman Road, Suite B, Laredo, TX 78041",
                 "oplaOffice": "1406 Jacaman Road, Suite C, Laredo, TX 78041",
                 "judges": [
@@ -1477,6 +1485,7 @@
             },
             {
                 "name": "Pearsall Immigration Court",
+                "city": "Pearsall",
                 "address": "566 Veterans Drive, Pearsall, TX 78061",
                 "oplaOffice": "South Texas ICE Processing Center, 566 Veterans Drive, Pearsall, TX 78061",
                 "judges": [
@@ -1493,6 +1502,7 @@
             },
             {
                 "name": "Port Isabel Immigration Court",
+                "city": "Los Fresnos",
                 "address": "27991 Buena Vista Blvd., Los Fresnos, TX 78566",
                 "oplaOffice": "Port Isabel Detention Center, 27991 Buena Vista Blvd, Los Fresnos, TX 78566",
                 "judges": [
@@ -1506,6 +1516,7 @@
             },
             {
                 "name": "San Antonio Immigration Court",
+                "city": "San Antonio",
                 "address": "800 Dolorosa, Suite 300, San Antonio, TX 78207",
                 "oplaOffice": "1015 Jackson-Keller Road, Suite 100, San Antonio, TX 78213",
                 "judges": [
@@ -1533,6 +1544,7 @@
         "courts": [
             {
                 "name": "Salt Lake City Immigration Court",
+                "city": "West Valley City",
                 "address": "2975 South Decker Lake Drive, #200 West Valley City, UT 84119-6094",
                 "oplaOffice": "2975 Decker Lake Drive, Stop C West Valley City, UT 84119-6098",
                 "judges": [
@@ -1551,6 +1563,7 @@
         "courts": [
             {
                 "name": "Annandale Immigration Court",
+                "city": "Annandale",
                 "address": "7619 Little River Turnpike, Suite 400 Annandale, VA 22003",
                 "oplaOffice": "500 12th Street SW, Mail Stop 5902 Washington, D.C. 20536-5902",
                 "judges": [
@@ -1585,6 +1598,7 @@
             },
             {
                 "name": "Sterling Immigration Court",
+                "city": "Sterling",
                 "address": "21400 Ridgetop Circle, Suite 200, Sterling, VA 20166",
                 "oplaOffice": "21400 Ridgetop Circle, Suite 100, Sterling, VA 20166",
                 "judges": [
