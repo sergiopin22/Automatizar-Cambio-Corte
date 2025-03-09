@@ -78,7 +78,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>      
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <img src="/Logo_ProTramites.png" alt="Pro Trámites LLC" className="logo-image" />
+          <img src="/Logo_ProTramites.png" alt="Pro Tramites" className="logo-image" />
           <span className="logo-text">Pro Trámites LLC</span>
         </Link>
 
