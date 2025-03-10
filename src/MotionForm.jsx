@@ -89,6 +89,53 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     });
   };
 
+  // Función para manejar el cambio de plantilla de razón (Solución 1)
+  const handleReasonTemplateChange = (e) => {
+    const templateId = parseInt(e.target.value);
+    if (!templateId) return;
+    
+    // Datos para las plantillas
+    const name = formData.name || '[nombre]';
+    const aNumber = formData.aNumber || '[número A]';
+    const currentCourt = formData.currentCourt || '[corte actual]';
+    const currentCourtState = formData.currentCourtState || '[estado actual]';
+    const residenceState = formData.residenceState || '[estado residencia]';
+    const newCourt = formData.newCourt || '[nueva corte]';
+    const streetAddress = formData.streetAddress || '[dirección]';
+    const city = formData.city || '[ciudad]';
+    const postalCode = formData.postalCode || '[código postal]';
+    
+    // Texto según la plantilla seleccionada
+    let templateText = "";
+    
+    if (templateId === 1) {
+      templateText = `Yo, ${name}, con el número de caso ${aNumber}, estoy actualmente asignada a la Corte de Inmigración de ${currentCourt}. Sin embargo, resido en el estado de ${residenceState}, lo que hace que sea muy difícil para mí asistir a mis audiencias en ${currentCourtState} debido a la gran distancia. Además, estoy enfrentando dificultades económicas y no cuento con los recursos necesarios para comprar boletos de viaje ni para cubrir los costos asociados con la gestión de mi caso en ${currentCourtState}, que está muy lejos de mi residencia actual en ${residenceState}.
+
+Por lo tanto, respetuosamente solicito que mi caso sea transferido a la ${newCourt}, la cual está mucho más cerca de mi residencia actual y me permitiría asistir a mis audiencias de una manera más factible. Agradezco enormemente su comprensión y asistencia en este asunto.`;
+    } else if (templateId === 2) {
+      templateText = `Yo, ${name}, con número de caso ${aNumber}, solicito respetuosamente el cambio de mi caso actualmente asignado a la Corte de Inmigración de ${currentCourt} a la ${newCourt}.
+
+El motivo de esta solicitud es que he cambiado mi residencia permanente de ${currentCourtState} a ${residenceState}, lo que hace extremadamente difícil y costoso para mí asistir a las audiencias en mi corte actual.
+
+Mi nueva dirección está ubicada en ${streetAddress}, ${city}, ${residenceState} ${postalCode}, lo que me sitúa mucho más cerca de la ${newCourt}.
+
+Solicito amablemente que consideren esta petición para facilitar mi participación en el proceso migratorio.`;
+    } else if (templateId === 3) {
+      templateText = `Yo, ${name}, titular del número de caso ${aNumber}, actualmente asignado/a a la Corte de Inmigración de ${currentCourt}, respetuosamente solicito un cambio de sede a la ${newCourt}.
+
+Esta solicitud se basa en razones familiares, ya que toda mi familia inmediata ahora reside en ${residenceState}. Mantener mi caso en ${currentCourtState} representa una carga significativa ya que debo viajar largas distancias para asistir a mis audiencias, separándome de mis responsabilidades familiares.
+
+Mi domicilio actual está en ${streetAddress}, ${city}, ${residenceState} ${postalCode}, y considero que un cambio a la corte solicitada permitiría una gestión más eficiente de mi caso migratorio mientras mantengo mis obligaciones familiares.
+
+Agradezco su consideración a esta solicitud.`;
+    }
+    
+    // Actualiza el estado con una nueva copia para garantizar que React detecte el cambio
+    const newFormData = {...formData};
+    newFormData.reason = templateText;
+    setFormData(newFormData);
+  };
+
   const getCourtsByState = (state) => {
     const stateData = courtsData.find((item) => item.state === state);
     return stateData ? stateData.courts : [];
@@ -533,15 +580,30 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
           </div>
         </div>
         
-        <div className="form-field reason-field">
-          {/* No añadimos barra de progreso aquí porque ya está incluida en la Información Adicional */}
-          <label>Razón del Cambio:</label>
+        {/* NUEVO: Selector de plantillas para razón del cambio */}
+        <div className="form-field template-selector">
+          <label>Seleccione una plantilla para la razón del cambio:</label>
+          <select 
+            name="reasonTemplate" 
+            onChange={handleReasonTemplateChange}
+          >
+            <option value="">-- Seleccionar una plantilla --</option>
+            <option value="1">Distancia y dificultad económica</option>
+            <option value="2">Cambio de residencia</option>
+            <option value="3">Razones familiares</option>
+          </select>
+        </div>
+        
+        <div className={`form-field reason-field ${formData.reason ? 'reason-field-active' : ''}`}>
+          <label>Razón del Cambio:<span className="required">*</span></label>
           <textarea 
             name="reason" 
             value={formData.reason} 
             onChange={handleChange} 
             required 
             placeholder="Explica el motivo para solicitar el cambio de corte"
+            rows="8"
+            style={{ whiteSpace: 'pre-line' }}
           />
         </div>
         

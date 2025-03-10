@@ -753,7 +753,7 @@ body::before {
 
 /* Texto de libertad en el pie del formulario */
 form::after {
- content: "Trámites fáciles y accesibles para nuestros hermanos latinos: sin barreras, sin complicaciones.";
+ content: "✨Sea su propio gestor con Pro Trámites ✨. 📄 Procesos fáciles |⚡Tiempos rápidos | 💼 resultados efectivos. 🌎 Por y para latinos. 💪";
  display: block;
  width: 90%;
  max-width: 1260px;
@@ -762,7 +762,7 @@ form::after {
  font-family: var(--font-heading);
  font-size: 12px;
  font-style: italic;
- color: var(--color-text-tertiary);
+ color: #fcff37;
  opacity: 0.7;
  text-transform: uppercase;
  letter-spacing: 2px;
@@ -908,4 +908,67 @@ form::after {
 /* Estilos para la sección completada */
 .form-section.completed h2 {
   color: var(--color-success);
+}
+
+/* Estilos para el selector de plantillas */
+.template-selector {
+  margin-bottom: 15px;
+  background-color: #2c3e50;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #34495e;
+}
+
+.template-selector label {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.template-selector select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #34495e;
+  background-color: #1e2b3a;
+  color: #ecf0f1;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.template-selector select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+.template-selector select option {
+  background-color: #1e2b3a;
+  color: #ecf0f1;
+  padding: 8px;
+}
+
+/* Estilos para el campo de razón */
+.reason-field textarea {
+  min-height: 200px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  padding: 15px;
+  white-space: pre-line; /* Mantiene los saltos de línea exactamente como se definen */
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Resaltar el campo de razón cuando se selecciona una plantilla */
+.reason-field-active textarea {
+  border-color: #3498db !important;
+  background-color: rgba(52, 152, 219, 0.05);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Indicador de campo requerido */
+.required {
+  color: #e74c3c;
+  margin-left: 5px;
 }
