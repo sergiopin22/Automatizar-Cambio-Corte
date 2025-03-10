@@ -47,6 +47,28 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     additionalInfo: 0
   });
 
+  // Función para verificar si todos los campos requeridos están completos
+  const areRequiredFieldsComplete = () => {
+    // Lista de campos obligatorios para generar una plantilla válida
+    const requiredFields = [
+      'name', 
+      'aNumber', 
+      'streetAddress',
+      'city', 
+      'residenceState', 
+      'postalCode',
+      'currentCourtState', 
+      'currentCourt',
+      'newCourtState', 
+      'newCourt',
+    ];
+    
+    // Verifica si algún campo requerido está vacío
+    return !requiredFields.some(field => 
+      !formData[field] || (typeof formData[field] === 'string' && formData[field].trim() === '')
+    );
+  };
+
   // Función para calcular el progreso de cada sección
   const calculateSectionProgress = () => {
     // Definir los campos requeridos en cada sección
@@ -82,6 +104,7 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     calculateSectionProgress();
   }, [formData]);
 
+  // Función para manejar cambios en los campos del formulario
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -89,21 +112,34 @@ function MotionForm({ titulo = "FORMULARIO DE MOCIÓN PARA CAMBIO DE CORTE" }) {
     });
   };
 
-  // Función para manejar el cambio de plantilla de razón (Solución 1)
+  // Función para eliminar espacios al inicio y final cuando se sale del campo
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    
+    // Solo aplicar trim a valores string y si hay espacios al inicio o final
+    if (typeof value === 'string' && value !== value.trim()) {
+      setFormData(prevData => ({
+        ...prevData,
+        [name]: value.trim()
+      }));
+    }
+  };
+
+  // Función para manejar el cambio de plantilla de razón
   const handleReasonTemplateChange = (e) => {
     const templateId = parseInt(e.target.value);
     if (!templateId) return;
     
-    // Datos para las plantillas
-    const name = formData.name || '[nombre]';
-    const aNumber = formData.aNumber || '[número A]';
-    const currentCourt = formData.currentCourt || '[corte actual]';
-    const currentCourtState = formData.currentCourtState || '[estado actual]';
-    const residenceState = formData.residenceState || '[estado residencia]';
-    const newCourt = formData.newCourt || '[nueva corte]';
-    const streetAddress = formData.streetAddress || '[dirección]';
-    const city = formData.city || '[ciudad]';
-    const postalCode = formData.postalCode || '[código postal]';
+    // Datos para las plantillas - asegurarnos que no tienen espacios extra
+    const name = formData.name?.trim() || '[nombre]';
+    const aNumber = formData.aNumber?.trim() || '[número A]';
+    const currentCourt = formData.currentCourt?.trim() || '[corte actual]';
+    const currentCourtState = formData.currentCourtState?.trim() || '[estado actual]';
+    const residenceState = formData.residenceState?.trim() || '[estado residencia]';
+    const newCourt = formData.newCourt?.trim() || '[nueva corte]';
+    const streetAddress = formData.streetAddress?.trim() || '[dirección]';
+    const city = formData.city?.trim() || '[ciudad]';
+    const postalCode = formData.postalCode?.trim() || '[código postal]';
     
     // Texto según la plantilla seleccionada
     let templateText = "";
@@ -130,10 +166,23 @@ Mi domicilio actual está en ${streetAddress}, ${city}, ${residenceState} ${post
 Agradezco su consideración a esta solicitud.`;
     }
     
-    // Actualiza el estado con una nueva copia para garantizar que React detecte el cambio
+    // Actualiza el estado con una nueva copia
     const newFormData = {...formData};
     newFormData.reason = templateText;
     setFormData(newFormData);
+  };
+
+  // Función para limpiar todos los datos antes de enviar el formulario
+  const cleanFormData = (data) => {
+    const cleanedData = {};
+    
+    // Recorrer todas las propiedades y aplicar trim a los strings
+    Object.keys(data).forEach(key => {
+      const value = data[key];
+      cleanedData[key] = typeof value === 'string' ? value.trim() : value;
+    });
+    
+    return cleanedData;
   };
 
   const getCourtsByState = (state) => {
@@ -244,9 +293,12 @@ Agradezco su consideración a esta solicitud.`;
     }));
   };
 
-  // Función modificada para incluir la animación sincronizada
+  // Función modificada para incluir la limpieza de espacios
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Limpiar todos los datos antes de enviar
+    const cleanedFormData = cleanFormData(formData);
     
     // Mostrar la animación de generación de PDF
     setShowAnimation(true);
@@ -257,7 +309,7 @@ Agradezco su consideración a esta solicitud.`;
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(cleanedFormData), // Usar los datos limpios
       });
 
       if (!response.ok) throw new Error('Error al generar el PDF');
@@ -307,7 +359,8 @@ Agradezco su consideración a esta solicitud.`;
               type="text" 
               name="name" 
               value={formData.name} 
-              onChange={handleChange} 
+              onChange={handleChange}
+              onBlur={handleBlur} 
               required 
               placeholder="Nombre completo"
             />
@@ -319,7 +372,8 @@ Agradezco su consideración a esta solicitud.`;
               type="text" 
               name="aNumber" 
               value={formData.aNumber} 
-              onChange={handleChange} 
+              onChange={handleChange}
+              onBlur={handleBlur} 
               required 
               placeholder="Ej: 123456789"
             />
@@ -331,7 +385,8 @@ Agradezco su consideración a esta solicitud.`;
               type="text" 
               name="streetAddress" 
               value={formData.streetAddress} 
-              onChange={handleChange} 
+              onChange={handleChange}
+              onBlur={handleBlur} 
               required 
               placeholder="Dirección completa"
             />
@@ -343,7 +398,8 @@ Agradezco su consideración a esta solicitud.`;
               type="text" 
               name="city" 
               value={formData.city} 
-              onChange={handleChange} 
+              onChange={handleChange}
+              onBlur={handleBlur} 
               required 
               placeholder="Ciudad donde vive"
             />
@@ -373,7 +429,8 @@ Agradezco su consideración a esta solicitud.`;
               type="text" 
               name="postalCode" 
               value={formData.postalCode} 
-              onChange={handleChange} 
+              onChange={handleChange}
+              onBlur={handleBlur} 
               required 
               placeholder="Ej: 90210"
             />
@@ -580,30 +637,50 @@ Agradezco su consideración a esta solicitud.`;
           </div>
         </div>
         
-        {/* NUEVO: Selector de plantillas para razón del cambio */}
-        <div className="form-field template-selector">
-          <label>Seleccione una plantilla para la razón del cambio:</label>
-          <select 
-            name="reasonTemplate" 
-            onChange={handleReasonTemplateChange}
-          >
-            <option value="">-- Seleccionar una plantilla --</option>
-            <option value="1">Distancia y dificultad económica</option>
-            <option value="2">Cambio de residencia</option>
-            <option value="3">Razones familiares</option>
-          </select>
-        </div>
+        {/* Selector de plantillas condicional */}
+        {areRequiredFieldsComplete() ? (
+          // Muestra el selector de plantillas solo si todos los campos están completos
+          <div className="form-field template-selector">
+            <label>Seleccione una plantilla para la razón del cambio:</label>
+            <select 
+              name="reasonTemplate" 
+              onChange={handleReasonTemplateChange}
+            >
+              <option value="">-- Seleccionar una plantilla --</option>
+              <option value="1">Distancia y dificultad económica</option>
+              <option value="2">Cambio de residencia</option>
+              <option value="3">Razones familiares</option>
+            </select>
+          </div>
+        ) : (
+          // Muestra un mensaje informativo si faltan campos por completar
+          <div className="form-field template-info">
+            <div className="template-info-message">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>Complete todos los campos obligatorios para habilitar las plantillas para la razón de cambio</span>
+            </div>
+          </div>
+        )}
         
         <div className={`form-field reason-field ${formData.reason ? 'reason-field-active' : ''}`}>
           <label>Razón del Cambio:<span className="required">*</span></label>
           <textarea 
             name="reason" 
             value={formData.reason} 
-            onChange={handleChange} 
+            onChange={handleChange}
+            onBlur={handleBlur}
             required 
             placeholder="Explica el motivo para solicitar el cambio de corte"
             rows="8"
-            style={{ whiteSpace: 'pre-line' }}
+            style={{ 
+              whiteSpace: 'pre-line',
+              color: '#ffffff', 
+              backgroundColor: '#1e2b3a'
+            }}
           />
         </div>
         

@@ -972,3 +972,60 @@ form::after {
   color: #e74c3c;
   margin-left: 5px;
 }
+
+/* Estilos para el mensaje informativo cuando los campos no están completos */
+.template-info {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #34495e;
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.template-info-message {
+  display: flex;
+  align-items: center;
+  color: #3498db;
+}
+
+.template-info-message svg {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.template-info-message span {
+  font-size: 0.9rem;
+}
+
+/* Estilos para el selector de plantillas cuando está visible */
+.template-selector {
+  margin-bottom: 15px;
+  background-color: #2c3e50;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #34495e;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.template-selector label {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.template-selector select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #34495e;
+  background-color: #1e2b3a;
+  color: #ecf0f1;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
