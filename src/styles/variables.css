@@ -1,0 +1,73 @@
+/* ================== styles/variables.css ================== */
+:root {
+    /* Colores patrióticos optimizados */
+    --color-red: #cc0e1e;        /* Rojo del logo */
+    --color-red-light: #e62a3a;
+    --color-blue-primary: #2a4785;  /* Azul principal confiable */
+    --color-blue-dark: #172a55;     /* Azul oscuro para acentos */
+    --color-blue-light: #3a69b9;    /* Azul brillante para elementos interactivos */
+    --color-blue-pale: #506ca6;     /* Azul pálido para bordes sutiles */
+    --color-blue-dark-bg: #1e2b45;  /* Azul oscuro para fondos */
+    --color-white: #ffffff;
+    --color-off-white: #f0f0f0;
+    
+    /* Paleta de modo oscuro ajustada */
+    --color-bg: #12151e;
+    --color-surface: #1c202c;
+    --color-surface-raised: #262b3a;
+    --color-surface-blue: #1e2d45;   /* Contenedor azul oscuro - NUEVO */
+    --color-surface-blue-light: #23345a;  /* Contenedor azul más claro - NUEVO */
+    --color-border: #32374a;
+    --color-border-blue: #3a4e79;    /* Borde azul - NUEVO */
+    
+    /* Colores para los desplegables */
+    --color-dropdown-bg: #293858;
+    --color-dropdown-hover: #344573;
+    --color-dropdown-selected: #3a69b9;
+    --color-dropdown-text: #e6e8ee;
+    --color-dropdown-text-selected: #ffffff;
+    
+    /* Colores de texto */
+    --color-text: #e6e8ee;
+    --color-text-secondary: #a9aebb;
+    --color-text-tertiary: #767a8a;
+    
+    /* Colores de estado */
+    --color-success: #45d68a;
+    --color-error: #ff4758;
+    --color-warning: #ffb347;
+    --color-info: #47a3ff;
+    
+    /* Sombras y efectos */
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-blue: 0 4px 20px rgba(42, 71, 133, 0.25);
+    --shadow-dropdown: 0 6px 16px rgba(0, 0, 0, 0.3);
+    
+    /* Bordes redondeados */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-round: 9999px;
+    
+    /* Tipografía */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    
+    /* Espaciado */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+    
+    /* Grid */
+    --grid-gap: 20px;
+    
+    /* Transiciones */
+    --transition-fast: 0.15s ease;
+    --transition-medium: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }

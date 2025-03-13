@@ -1,0 +1,332 @@
+/* Estilos para el componente DependentField */
+.dependent-container {
+    border: 1px solid var(--color-border-blue);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    background-color: rgba(30, 45, 69, 0.5);
+    transition: all var(--transition-medium);
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dependent-container:hover {
+    background-color: rgba(30, 45, 69, 0.6);
+    border-color: var(--color-blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .saved-dependent {
+    border-left: 4px solid var(--color-success);
+  }
+  
+  .dependent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(42, 71, 133, 0.5);
+    padding-bottom: var(--space-xs);
+  }
+  
+  .dependent-header h3 {
+    font-family: var(--font-heading);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dependent-header h3::before {
+    content: "★";
+    color: var(--color-blue-light);
+    margin-right: var(--space-xs);
+    font-size: 14px;
+  }
+  
+  .dependent-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-dependent-btn,
+  .save-dependent-btn {
+    background-color: rgba(42, 71, 133, 0.3);
+    color: #ffffff;
+    border: 1px solid var(--color-blue-light);
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    min-width: 90px;
+  }
+  
+  /* Clase para eliminar iconos */
+  .no-icon::before,
+  .no-icon::after {
+    display: none !important;
+  }
+  
+  .no-icon svg,
+  .no-icon img {
+    display: none !important;
+  }
+  
+  .save-dependent-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--space-md);
+    padding: 10px 12px;
+    font-size: 14px;
+    background-color: rgba(69, 214, 138, 0.2);
+    color: #ffffff;
+    border-color: var(--color-success);
+  }
+  
+  .save-btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .edit-dependent-btn:hover {
+    background-color: var(--color-blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(58, 105, 185, 0.4);
+  }
+  
+  .save-dependent-btn:hover:not(:disabled) {
+    background-color: var(--color-success);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(69, 214, 138, 0.4);
+  }
+  
+  .save-dependent-btn:disabled {
+    cursor: not-allowed;
+  }
+  
+  .remove-dependent-btn {
+    background-color: rgba(204, 14, 30, 0.3);
+    color: #ffffff;
+    border: 1px solid var(--color-red-light);
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    min-width: 90px;
+  }
+  
+  .remove-dependent-btn:hover {
+    background-color: var(--color-red-light);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(204, 14, 30, 0.4);
+  }
+  
+  .dependent-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+  
+  .dependent-fields label {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .add-dependent-btn {
+    background-color: rgba(42, 71, 133, 0.3);
+    color: #ffffff;
+    border: 1px solid var(--color-blue-light);
+    border-radius: var(--radius-sm);
+    padding: 12px 15px;
+    margin-top: var(--space-md);
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-dependent-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .add-dependent-btn:hover:not(:disabled) {
+    background-color: var(--color-blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 12px rgba(42, 71, 133, 0.4);
+  }
+  
+  .dependents-description {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    padding-left: calc(var(--space-sm) + 4px);
+    border-left: 4px solid var(--color-blue-light);
+    background-color: rgba(58, 105, 185, 0.1);
+    border-radius: var(--radius-sm);
+  }
+  
+  /* Mensaje cuando no hay dependientes */
+  .no-dependents-message {
+    color: #b5bac9;
+    font-size: 14px;
+    padding: var(--space-md);
+    text-align: center;
+    background-color: rgba(30, 45, 69, 0.3);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-md);
+    border: 1px dashed rgba(42, 71, 133, 0.5);
+  }
+  
+  /* Estilos para campos de solo lectura */
+  .readonly-input {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-color: rgba(42, 71, 133, 0.3);
+    color: #b5bac9;
+    font-weight: 500;
+  }
+  
+  /* Animación para nuevos dependientes */
+  @keyframes fadeInDependent {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .dependent-container {
+    animation: fadeInDependent 0.4s ease-out;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dependent-fields {
+      grid-template-columns: 1fr;
+    }
+    
+    .dependent-container {
+      padding: var(--space-sm);
+    }
+    
+    .dependent-header h3 {
+      font-size: 15px;
+    }
+    
+    .dependent-actions {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .edit-dependent-btn,
+    .remove-dependent-btn,
+    .save-dependent-btn {
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dependent-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    
+    .dependent-actions {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .edit-dependent-btn,
+    .remove-dependent-btn {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+
+  /* Estilo para botón deshabilitado */
+.disabled-btn {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    background-color: rgba(100, 100, 100, 0.3) !important;
+    border-color: rgba(100, 100, 100, 0.5) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    pointer-events: none !important;
+  }
+  
+  .disabled-btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: rgba(100, 100, 100, 0.3) !important;
+  }
+  
+  /* Tooltip para mostrar mensaje cuando el botón está deshabilitado */
+  [title] {
+    position: relative;
+  }
+  
+  [title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 100;
+    margin-bottom: 5px;
+  }
+  
+  /* Mejoras adicionales para el estado "guardado" de los dependientes */
+  .saved-dependent {
+    border-left: 4px solid var(--color-success);
+    background-color: rgba(30, 45, 69, 0.4);
+  }
+  
+  .saved-dependent::after {
+    content: "✓ Guardado";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(69, 214, 138, 0.2);
+    color: rgba(69, 214, 138, 0.9);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  /* Clase para eliminar iconos */
+  .no-icon::before,
+  .no-icon::after {
+    display: none !important;
+  }
+  
+  .no-icon svg,
+  .no-icon img {
+    display: none !important;
+  }

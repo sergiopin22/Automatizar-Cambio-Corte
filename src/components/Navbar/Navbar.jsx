@@ -79,7 +79,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <img src="/Logo_ProTramites.png" alt="Pro Tramites" className="logo-image" />
-          <span className="logo-text">Pro Trámites LLC</span>
+          <span className="logo-text">Pro Trámites</span>
         </Link>
 
         {/* Botón de hamburguesa para móviles */}
