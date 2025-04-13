@@ -1,70 +1,168 @@
-# Getting Started with Create React App
+# Automatizador de Moción para Cambio de Corte de Inmigración
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
+Esta aplicación web está diseñada específicamente para ayudar a los inmigrantes en Estados Unidos a generar correctamente una moción para cambio de corte de inmigración. El sistema sigue estrictamente el manual de procedimientos de la corte de inmigración y cumple con todos los requisitos legales establecidos.
 
-## Available Scripts
+## Características Principales
 
-In the project directory, you can run:
+### 1. Formulario Inteligente
+- **Información Personal del Inmigrante**
+  - Nombre completo
+  - Número A (número de registro de extranjero)
+  - Dirección actual completa
+  - Ciudad, Estado y Código Postal
 
-### `npm start`
+- **Información de Cortes**
+  - Corte actual con detalles del juez y fechas de audiencia
+  - Nueva corte solicitada
+  - Información de la oficina OPLA correspondiente
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Gestión de Dependientes**
+  - Capacidad para agregar hasta 3 dependientes
+  - Campos para nombre y número A de cada dependiente
+  - Sistema de guardado y validación de dependientes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Información Adicional**
+  - Fecha de presentación
+  - Método de entrega
+  - Razón del cambio de corte con plantillas predefinidas
 
-### `npm test`
+### 2. Base de Datos de Cortes
+La aplicación utiliza una base de datos completa (`courts.json`) que incluye:
+```json
+[
+    {
+        "state": "Nombre del Estado",
+        "courts": [
+            {
+                "name": "Nombre de la Corte",
+                "city": "Ciudad",
+                "address": "Dirección completa",
+                "oplaOffice": "Dirección de la oficina OPLA",
+                "judges": [
+                    "Nombre del Juez 1",
+                    "Nombre del Juez 2"
+                ]
+            }
+        ]
+    }
+]
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Funcionalidades Avanzadas
+- **Validación en Tiempo Real**
+  - Verificación de campos requeridos
+  - Control de dependientes no guardados
+  - Validación de fechas y formatos
 
-### `npm run build`
+- **Generación de PDF**
+  - Animación durante la generación
+  - Formato estandarizado
+  - Inclusión automática de información de cortes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Plantillas de Razones**
+  - Selección de razones predefinidas
+  - Personalización de texto
+  - Sistema de plantillas inteligente
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Estructura del Proyecto
+```
+src/
+├── components/         # Componentes reutilizables
+│   ├── FormFields/    # Campos de formulario
+│   ├── FormSections/  # Secciones del formulario
+│   └── PdfGenerationAnimation/ # Animación de generación
+├── hooks/             # Hooks personalizados
+├── data/             # Datos estáticos
+│   └── courts.json   # Base de datos de cortes
+├── pages/            # Páginas principales
+└── styles/           # Estilos globales
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tecnologías Utilizadas
+- React.js para el frontend
+- React Router para la navegación
+- Hooks personalizados para la lógica de negocio
+- Sistema de componentes reutilizables
+- Generación de PDFs
 
-### `npm run eject`
+## Características de Usabilidad
+- Formulario paso a paso
+- Validación en tiempo real
+- Mensajes de error claros
+- Interfaz intuitiva
+- Soporte para múltiples dependientes
+- Generación automática de documentos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Base de Datos de Cortes
+### Contenido
+- **Estados**: Lista completa de estados con cortes de inmigración
+- **Cortes por Estado**: Cada estado contiene sus cortes de inmigración
+- **Información por Corte**:
+  - Nombre oficial de la corte
+  - Ciudad donde se encuentra
+  - Dirección física completa
+  - Dirección de la oficina OPLA correspondiente
+  - Lista completa de jueces asignados
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Funcionalidades Basadas en la Base de Datos
+1. **Selección de Corte**
+   - Autocompletado de estados
+   - Filtrado de cortes por estado
+   - Validación de jurisdicción
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Información de Jueces**
+   - Lista actualizada de jueces por corte
+   - Verificación de asignación de jueces
+   - Historial de cambios de juez
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Información de OPLA**
+   - Direcciones correctas de oficinas OPLA
+   - Correspondencia corte-OPLA
+   - Información de contacto actualizada
 
-## Learn More
+## Requisitos Legales Implementados
+- Formato correcto según el manual de la corte
+- Plazos de presentación
+- Requisitos de notificación
+- Especificaciones de formato
+- Requisitos de firma
+- Documentación de respaldo necesaria
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Uso
+1. Ingresar información personal del inmigrante
+2. Seleccionar la corte actual y la nueva corte deseada
+3. Elegir una razón válida para el cambio
+4. Agregar información de dependientes si aplica
+5. Generar el documento PDF
+6. Revisar y firmar el documento
+7. Presentar según las instrucciones de la corte
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Beneficios
+1. **Precisión Legal**
+   - Cumplimiento exacto con los requisitos de la corte
+   - Reducción de errores en la presentación
+   - Formato estandarizado
 
-### Code Splitting
+2. **Eficiencia**
+   - Generación rápida del documento
+   - Validación automática de requisitos
+   - Ahorro de tiempo en la preparación
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Accesibilidad**
+   - Interfaz en español
+   - Instrucciones claras
+   - Guía paso a paso
 
-### Analyzing the Bundle Size
+## Importante
+- La aplicación ayuda a generar el documento pero no garantiza su aprobación
+- Se recomienda consultar con un abogado de inmigración
+- Los usuarios son responsables de la precisión de la información proporcionada
+- La presentación debe hacerse según los plazos y métodos especificados por la corte
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Actualizaciones
+La base de datos de cortes, jueces y oficinas OPLA se mantiene actualizada para reflejar:
+- Cambios en las ubicaciones de las cortes
+- Nuevos jueces asignados
+- Cambios en las oficinas de fiscalía
+- Actualizaciones en los requisitos de presentación
